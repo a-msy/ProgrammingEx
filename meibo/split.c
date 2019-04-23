@@ -30,7 +30,7 @@ void testprint(char *str,char *ret[],char sep,int max){
     
     if(count <0 ) {
         error_split(count);
-        return ;
+        return 0;
     }
     
     for(int i = 0; i < count; i++){;
@@ -61,6 +61,7 @@ int split (char *str,char *ret[],char sep,int max){
         *str = '\0';//必ず区切り文字のはずだからくぎる
 	str++;//インクリメントさせる
         
+        
     }
     //if(count<max) count = -1;
     if(count>max)  count = -2;
@@ -79,6 +80,7 @@ void error_split(int check){
             break;
         
         default:
+            return ;
             break;
     }
 }

@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.0-180226-2.6 (utf8.sjis) (TeX Live 2018/W32TeX) (preloaded format=platex 2018.4.26)  15 APR 2019 23:54
+This is e-pTeX, Version 3.14159265-p3.8.0-180226-2.6 (utf8.sjis) (TeX Live 2018/W32TeX) (preloaded format=platex 2018.4.26)  18 APR 2019 23:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -137,14 +137,14 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10.95> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 41.
 [1
 
-] [2] (./untitled-2.aux) ) 
+] [2] [3] [4] [5] (./untitled-2.aux) ) 
 Here is how much of TeX's memory you used:
- 840 strings out of 493281
- 11221 string characters out of 6146979
- 85414 words of memory out of 5000000
- 4819 multiletter control sequences out of 15000+600000
+ 841 strings out of 493281
+ 11239 string characters out of 6146979
+ 90416 words of memory out of 5000000
+ 4820 multiletter control sequences out of 15000+600000
  15434 words of font info for 61 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 23i,6n,20p,259b,233s stack positions out of 5000i,500n,10000p,500000b,80000s
+ 23i,6n,20p,400b,397s stack positions out of 5000i,500n,10000p,500000b,80000s
 
-Output written on untitled-2.dvi (2 pages, 4724 bytes).
+Output written on untitled-2.dvi (5 pages, 11476 bytes).
