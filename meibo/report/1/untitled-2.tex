@@ -16,7 +16,7 @@
 
 % ToDo: 教員の指示に従って適切に書き換える
 \date{出題日: 2019年04月10日 \\
-      提出日: 2019年04月18日 \\
+      提出日: 2019年04月24日 \\
       締切日: 2019年05月08日 \\}  % 注：最後の\\は不要に見えるが必要．
 
 % ToDo: 図を入れる場合，以下の1行を有効にする
@@ -41,7 +41,7 @@
  \begin{description}
     \item[関数] \verb|int subst(char *str,char c1,char c2)|
     \item[行数]  4章のソースコードの43行目から53行目に記述してある.
-    \item[概要]　引数として与えられた文字列\verb|str|の特定の文字を別の文字に置き換え, 置き換えた文字数をカウントする.
+    \item[概要]　引数として与えられた文字列\verb|str|の特定の文字を別の文字に置き換え， 置き換えた文字数をカウントする.
     \item[戻り値]整数型で引数\verb|str|の置き換えた文字数を返す.
     \item[引数]  \verb|char *str|は置き換えたい元の文字列を与える. \verb|char c1|は置き換え対象の文字を与える. \verb|char c2|は置き換え後の文字を与える.
     \item[使用例]
@@ -64,7 +64,7 @@
     \item[行数]  4章のソースコードの55行目から81行目に記述してある.
     \item[概要]　引数として与えられた文字列\verb|str|を指定された文字\verb|sep|で文字列\verb|str|の終わりまで順に区切っていく．
     \item[戻り値]　整数型で引数\verb|str|を分割した回数を返す.
-    \item[引数]  \verb|char *str|は分割したい元の文字列を与える. \verb|char *ret[]|は分割後の文字列を保存する. \verb|char sep|は区切る対象の文字を与える.\verb|int max|は区切る最大の回数を与える. 
+    \item[引数]  \verb|char *str|は分割したい元の文字列を与える. \verb|char *ret[]|は分割後の文字列を保存する. \verb|char sep|は区切る対象の文字を与える．\verb|int max|は区切る最大の回数を与える. 
     \item[使用例]
       \begin{verbatim}
 
@@ -76,7 +76,7 @@
           printf("count is %d.\n\n",count);
       \end{verbatim}
 \end{description}
-関数\verb|split|の内容としては，分割したい文字列のポインタアドレスを分割した文字列を保存する\verb|ret|に格納すしている．そうすることで，元の文字列\verb|str|をコピーしなくとも分割後の文字列を保存することが可能になっている．あなお，後述の\verb|error_split|で分割数が\verb|max|より大きくなった際の処理を行わせている．
+関数\verb|split|の内容としては，分割したい文字列のポインタアドレスを分割した文字列を保存する\verb|ret|に格納している．そうすることで，元の文字列\verb|str|をコピーしなくとも分割後の文字列を保存することが可能になっている．
 
 %------------------------------------------------------------------%
 %------------------------------------------------------------------%
@@ -84,7 +84,7 @@
  \begin{description}
     \item[関数] \verb|void error_split(int check)|
     \item[行数]  4章のソースコードの83行目から97行目に記述してある.
-    \item[概要]　引数として与えられた整数値\verb|int check|の値に応じて処理を行う．
+    \item[概要]　引数として与えられた整数値\verb|int check|の値に応じてエラー処理を行う．
     \item[戻り値]　なし．
     \item[引数]  \verb|int check|はエラー処理を行わせたい値を与える．
     \item[使用例]
@@ -94,14 +94,14 @@
           error_split(count);
       \end{verbatim}
 \end{description}
-関数\verb|error_split|は関数\verb|split|のエラー処理を，\verb|split|内で行わせるとことで関数の役割が曖昧になることを回避するために作成した．
+関数\verb|error_split|は関数\verb|split|の分割数が\verb|max|より大きくなった際のエラー処理を行わせている．関数\verb|split|内でエラー処理を行わせない理由としては関数の役割が曖昧になることを回避するためである．
 %------------------------------------------------------------------%
 %------------------------------------------------------------------%
 \subsection{\texttt{testprint\_split}関数}
  \begin{description}
     \item[関数] \verb|void testprint_split(char *str)|
     \item[行数]  4章のソースコードの99行目から113行目に記述してある. 
-    \item[概要]　関数\verb|split|の内容をテストするための関数．
+    \item[概要]　関数\verb|split|の内容をテストして結果を表示するための関数である．
     \item[戻り値]　なし．
     \item[引数]  この引数は前述の関数\verb|split|の引数を引き継ぐためのものである．
     \item[使用例]
@@ -126,9 +126,9 @@
  \begin{description}
     \item[関数] \verb|int get_line(char *input)|
     \item[行数]  4章のソースコードの115行目から125行目に記述してある.
-    \item[概要]　引数として標準入力から与えられた文字列\verb|char *input|の値に応じて処理を行う．
-    \item[戻り値]　空文字もしくは改行のみの文字列が与えられた場合0を返し失敗を意味する．それ以外の場合は1を返し成功を意味する． 
-    \item[引数]  \verb|char *input|は標準入力から入力された文字列を与える．
+    \item[概要]　引数として標準入力から与えられた文字列を取得し，文字列\verb|char *input|に格納する．
+    \item[戻り値]　空文字もしくは改行のみの文字列が与えられた場合$0$を返し失敗を意味する．それ以外の場合は$1$を返し成功を意味する． 
+    \item[引数]  \verb|char *input|は標準入力から入力された文字列の先頭ポインタを与える．
     \item[使用例]
       \begin{verbatim}
 
@@ -141,8 +141,25 @@
    	    }
       \end{verbatim}
 \end{description}
-
+関数\verb|get_line|は，標準入力から1行分を読み込ませるための関数である．標準入力からの入力が空文字の場合は，エラー表示を行わせて失敗を意味する$1$を返している．なお，改行のみの入力の場合もエラーを返すようにしている．また，成功した際は，\verb|\n|を関数\verb|subst|を用いて，空文字へと置き換えている．この関数単体では，繰り返し入力ができないため，繰り返し入力させる際は使用例のように，\verb|while|文を用いることに注意されたい．
 %------------------------------------------------------------------%
+%------------------------------------------------------------------%
+\subsection{\texttt{testprint\_get\_line\_split}関数}
+% 参考：verb以外の場所でアンダーバーを使うには？
+ \begin{description}
+    \item[関数] \verb|void testprint_get_line_split(char *input)|
+    \item[行数]  4章のソースコードの115行目から125行目に記述してある.
+    \item[概要]　引数から与えられた文字列\verb|char *input|の値に応じてテストを入力が尽きるまで行う．
+    \item[戻り値]　なし． 
+    \item[引数]  \verb|char *input|は文字列配列の先頭アドレスを与える．
+    \item[使用例]
+      \begin{verbatim}
+
+        char input[LIMIT+1];
+        testprint_get_line_split(input);
+      \end{verbatim}
+\end{description}
+ 関数\verb|get_line|と関数\verb|split|を結合させて意図した動作をしているか確認するために実装した．\verb|while|文の条件判定により繰り返し入力を可能にしている．その中で，\verb|split|の動作を確認し，結果を表示させている．
 %------------------------------------------------------------------%
  %==================================================================%
  \section{感想}
@@ -159,7 +176,7 @@
      3	 * Author: 09430509
      4	 *
      5	 * Created on 2019/04/10
-     6	 * update on 2019/04/19
+     6	 * update on 2019/04/24
      7	 */
      8	
      9	#include <stdio.h>
@@ -173,7 +190,7 @@
     17	void error_split(int check);
     18	
     19	int get_line(char *input);
-    20	void testprint_get_line(char *input);
+    20	void testprint_get_line_split(char *input);
     21	
     22	static int maxsplit = 5;
     23	
@@ -182,7 +199,7 @@
     26	    char test2[] = ",,,";
     27	    char test3[] = ",oka,yama";
     28	    char test4[] = "o,ka,ya,,ma,a";
-    29	    //入力
+    29	    //入力用文字配列
     30	    char input[LIMIT+1];
     31	    
     32	    testprint_split(test1);
