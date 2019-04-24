@@ -127,9 +127,10 @@ int get_line(char *input){
 void testprint_get_line(char *input){
     int n = 0;
 
-    printf("input line:");
+    printf("please input line:");
+
     while (get_line(input)) {
-        printf("*** line %d:\n", ++n);
+        printf("*****test %d*****\n", ++n);
         testprint_split(input);
         printf("input line:");
     }
