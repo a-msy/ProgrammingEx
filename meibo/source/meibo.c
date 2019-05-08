@@ -39,6 +39,9 @@ void cmd_find(char *keyword);
 void cmd_sort(int youso);
 void exec_command(char cmd, char *param);
 
+/*profile*/
+void new_profile(char *str);
+
 struct date {
     int y;//year
     int m;//month
@@ -50,7 +53,7 @@ struct profile{
     char name[70];//schoolname
     struct date found;
     char add[70];//address
-    char others;//bikou
+    char *others;//bikou
 };
 
 
@@ -180,7 +183,7 @@ void parse_line(char *line){
         exec_command(line[1], &line[3]);
     }
     else{
-        testprint_get_line(line);
+        testprint_split(line);
     }
     return;
 }
@@ -253,5 +256,6 @@ void cmd_sort(int youso){
     fprintf(stderr, "sort-%d.\n",youso);
     return;
 }
-
-
+void new_profile(char *str){
+    subst(str,'\n','\0');
+}
