@@ -8,18 +8,21 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define LIMIT 1024
 #define maxsplit 5//5 ko ijyou wakeruto segmentation fault ni naru.
 #define luck -1
 #define over -2
+#define endp NULL
+#define base1 10
 
 /*subst*/
 int subst(char *str,char c1,char c2);
 
 /*split*/
 int split(char *str,char *ret[],char sep,int max);
-void testprint_split(char *str);
+void testprint_split(char *str,char sep);
 void error_split(int check);
 
 /*get_line*/
@@ -53,7 +56,7 @@ struct profile{
     char name[70];//schoolname
     struct date found;
     char add[70];//address
-    char *others;//bikou
+    char others[512];//備考
 };
 
 
@@ -63,20 +66,20 @@ int profile_data_nitems = 0;
 
 /*MAIN*/
 int main(void){
+    /*test
     char test1[] = "";//分割したい文字列
     char test2[] = ",,,";
     char test3[] = ",oka,yama";
     char test4[] = "o,ka,ya,,ma,a";
     char *ret[maxsplit];//分割後に入れる文字配列個数
     char input[LIMIT+1];
-    
-    /*test
     testprint_split(test1);
     testprint_split(test2);
     testprint_split(test3);
     testprint_split(test4);
     testprint_get_line(input);
      */
+
     char line[LIMIT + 1];
     while (get_line(line)) {
         parse_line(line);
@@ -116,9 +119,12 @@ int split (char *str,char *ret[],char sep,int max){
         }                                                                                                   
 
         *str = '\0';//必ず区切り文字のはずだからくぎる
-	str++;//インクリメントさせる  
+	    str++;//インクリメントさせる  
     }
-    if(count>max)count = over;
+
+    //if(count<max)count = luck;
+    //else if(count>max)count = over;
+
     error_split(count);
     return count;
 }
@@ -140,13 +146,12 @@ void error_split(int check){
     return;
 }
 
-void testprint_split(char *str){
+void testprint_split(char *str,char sep){
     int count;
     char *ret[maxsplit];
-    
     printf("test %s\n",str);
     
-    count=split(str,ret,',',maxsplit);
+    count=split(str,ret,sep,maxsplit);
     
     for(int i = 0; i < count; i++){
         printf("%d:%s\n",i+1, ret[i]);
@@ -172,7 +177,7 @@ void testprint_get_line(char *input){
     
     while (get_line(input)) {
         printf("*****test %d*****\n", ++n);
-        testprint_split(input);
+        testprint_split(input,',');
         printf("input line:");
     }
     return;
@@ -183,9 +188,8 @@ void parse_line(char *line){
         exec_command(line[1], &line[3]);
     }
     else{
-        testprint_split(line);
+        new_profile(line);
     }
-    return;
 }
 
 void exec_command(char cmd, char *param)
@@ -200,7 +204,7 @@ void exec_command(char cmd, char *param)
         break;
         
         case 'P':
-            cmd_print(atoi(param));
+            cmd_print(strtol(param,endp,base1));
         break;
         
         case 'R':
@@ -216,7 +220,7 @@ void exec_command(char cmd, char *param)
         break;
         
         case 'S':
-            cmd_sort(atoi(param));
+            cmd_sort(strtol(param,endp,base1));
         break;
 
         
@@ -224,7 +228,6 @@ void exec_command(char cmd, char *param)
             fprintf(stderr, "%%%c command is not defined.\n",cmd);
         break;
     }
-   return ;
  }
 
 void cmd_quit(){
@@ -257,9 +260,22 @@ void cmd_sort(int youso){
     return;
 }
 void new_profile(char *str){
-    char *ret1[maxsplit],*ret2[maxsplit];
-    int strsp,fsp;
-    subst(str,'\n','\0');
+    char *ret1[maxsplit],*ret2[maxsplit-2];
+    int subst1,ret1sp,ret2sp;
+    subst1 = subst(str,'\n','\0');
+
+    fprintf(stderr,"item_num:%d\n",profile_data_nitems);
     
-    strsp = split(str,);
+    ret1sp = split(str,ret1,',',maxsplit);//文字列用
+    profile_data_store[profile_data_nitems].id = strtol(ret1[0],endp,base1);
+    strcpy(profile_data_store[profile_data_nitems].name, ret1[1]);
+    strcpy(profile_data_store[profile_data_nitems].add, ret1[3]);
+    strcpy(profile_data_store[profile_data_nitems].others, ret1[4]);
+
+    ret2sp = split(ret1[2],ret2,'-',maxsplit-2);//設立日
+    profile_data_store[profile_data_nitems].found.y = strtol(ret2[0],endp,base1);
+    profile_data_store[profile_data_nitems].found.m = strtol(ret2[1],endp,base1);
+    profile_data_store[profile_data_nitems].found.d = strtol(ret2[2],endp,base1);
+
+    profile_data_nitems++;
 }
