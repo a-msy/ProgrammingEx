@@ -257,5 +257,9 @@ void cmd_sort(int youso){
     return;
 }
 void new_profile(char *str){
+    char *ret1[maxsplit],*ret2[maxsplit];
+    int strsp,fsp;
     subst(str,'\n','\0');
+    
+    strsp = split(str,);
 }
