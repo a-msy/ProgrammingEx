@@ -3,24 +3,61 @@
  * Author: 09430509
  *
  * Created on 2019/04/10
- * update on 2019/04/19
+ * update on 2019/05/08
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 #define LIMIT 1024
+#define maxsplit 5//5 ko ijyou wakeruto segmentation fault ni naru.
+#define luck -1
+#define over -2
 
+/*subst*/
 int subst(char *str,char c1,char c2);
 
+/*split*/
 int split(char *str,char *ret[],char sep,int max);
 void testprint_split(char *str);
 void error_split(int check);
 
+/*get_line*/
 int get_line(char *input);
 void testprint_get_line();
 
-static int maxsplit = 5;
+/*parse_line*/
+void parse_line(char *line);
 
+/*cmd*/
+void cmd_quit();
+void cmd_check();
+void cmd_print(int kensu);
+void cmd_read(char *filename);
+void cmd_write(char *filename);
+void cmd_find(char *keyword);
+void cmd_sort(int youso);
+void exec_command(char cmd, char *param);
+
+struct date {
+    int y;//year
+    int m;//month
+    int d;//day
+};
+
+struct profile{
+    int id;//id
+    char sname;//schoolname
+    struct date found;
+    char add;//address
+    char others;//bikou
+};
+
+
+/*GLOBAL*/
+struct profile profile_data_store[10000];
+
+/*MAIN*/
 int main(void){
     char test1[] = "";//分割したい文字列
     char test2[] = ",,,";
@@ -29,13 +66,17 @@ int main(void){
     char *ret[maxsplit];//分割後に入れる文字配列個数
     char input[LIMIT+1];
     
+    /*test
     testprint_split(test1);
     testprint_split(test2);
     testprint_split(test3);
     testprint_split(test4);
-
     testprint_get_line(input);
-    
+     */
+    char line[LIMIT + 1];
+    while (get_line(line)) {
+        parse_line(line);
+    }
     return 0;
 
 }
@@ -71,10 +112,10 @@ int split (char *str,char *ret[],char sep,int max){
         }                                                                                                   
 
         *str = '\0';//必ず区切り文字のはずだからくぎる
-	    str++;//インクリメントさせる  
+	str++;//インクリメントさせる  
     }
-    //if(count<max) count = -1;
-    if(count>max)count = -2;
+    //if(count<max) count = luck;
+    if(count>max)count = over;
     error_split(count);
     
     return count;
@@ -82,15 +123,16 @@ int split (char *str,char *ret[],char sep,int max){
 
 void error_split(int check){
     switch(check){
-        case -1:
+        case luck:
             printf("luck.\n");
             break;
         
-        case -2:
+        case over:
             printf("over.\n");
             break;
         
         default:
+            printf("No Problem.\n");
             break;
     }
     return;
@@ -113,22 +155,19 @@ void testprint_split(char *str){
 }
 
 int get_line(char *input){
-
     if (fgets(input, LIMIT + 1, stdin) == NULL || input[0] == '\n'){//何かしら入力させて、改行のみは認めない
         printf("error:NULL or input is \\n.\n");
         return 0; /* 失敗EOF */
     }
-
     subst(input, '\n', '\0');
     return 1; /*成功*/
-
 }
 
 void testprint_get_line(char *input){
     int n = 0;
 
     printf("please input line:");
-
+    
     while (get_line(input)) {
         printf("*****test %d*****\n", ++n);
         testprint_split(input);
@@ -136,3 +175,83 @@ void testprint_get_line(char *input){
     }
     return;
 }
+
+void parse_line(char *line){
+    if(line[0]=='%'){
+        exec_command(line[1], &line[3]);
+    }
+    else{
+        testprint_get_line(line);
+    }
+    return;
+}
+
+void exec_command(char cmd, char *param)
+ {
+    switch(cmd){
+        case 'Q':
+            cmd_quit();
+        break;
+        
+        case 'C':
+            cmd_check();
+        break;
+        
+        case 'P':
+            cmd_print(atoi(param));
+        break;
+        
+        case 'R':
+            cmd_read(param);
+        break;
+        
+        case 'W':
+            cmd_write(param);
+        break;
+        
+        case 'F':
+            cmd_find(param);
+        break;
+        
+        case 'S':
+            cmd_sort(atoi(param));
+        break;
+
+        
+        default:
+            fprintf(stderr, "%%%c command is not defined.\n",cmd);
+        break;
+    }
+   return ;
+ }
+
+void cmd_quit(){
+    fprintf(stderr, "END SYSTEM.\n");
+    exit(0);
+    return;
+}
+void cmd_check(){
+    fprintf(stderr, "check.\n");
+    return;
+}
+void cmd_print(int kensu){
+    fprintf(stderr, "print-%d.\n",kensu);
+    return;
+}
+void cmd_read(char *filename){
+    fprintf(stderr, "read-%s.\n",filename);
+    return;
+}
+void cmd_write(char *filename){
+    fprintf(stderr, "write-%s.\n",filename);
+    return;
+}
+void cmd_find(char *keyword){
+    fprintf(stderr, "find-%s.\n",keyword);
+    return;
+}
+void cmd_sort(int youso){
+    fprintf(stderr, "sort-%d.\n",youso);
+    return;
+}
+
