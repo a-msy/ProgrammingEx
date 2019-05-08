@@ -47,15 +47,16 @@ struct date {
 
 struct profile{
     int id;//id
-    char sname;//schoolname
+    char name[70];//schoolname
     struct date found;
-    char add;//address
+    char add[70];//address
     char others;//bikou
 };
 
 
 /*GLOBAL*/
 struct profile profile_data_store[10000];
+int profile_data_nitems = 0;
 
 /*MAIN*/
 int main(void){
@@ -114,10 +115,8 @@ int split (char *str,char *ret[],char sep,int max){
         *str = '\0';//必ず区切り文字のはずだからくぎる
 	str++;//インクリメントさせる  
     }
-    //if(count<max) count = luck;
     if(count>max)count = over;
     error_split(count);
-    
     return count;
 }
 
@@ -254,4 +253,5 @@ void cmd_sort(int youso){
     fprintf(stderr, "sort-%d.\n",youso);
     return;
 }
+
 
