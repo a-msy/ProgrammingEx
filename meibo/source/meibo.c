@@ -35,7 +35,7 @@ void parse_line(char *line);
 /*cmd*/
 void cmd_quit();
 void cmd_check();
-void cmd_print(int kensu);
+void cmd_print(int param);
 void cmd_read(char *filename);
 void cmd_write(char *filename);
 void cmd_find(char *keyword);
@@ -236,11 +236,24 @@ void cmd_quit(){
     return;
 }
 void cmd_check(){
-    fprintf(stderr, "check.\n");
+    fprintf(stderr, "check record num is ");
+    fprintf(stderr,"%d\n",profile_data_nitems);
     return;
 }
-void cmd_print(int kensu){
-    fprintf(stderr, "print-%d.\n",kensu);
+void cmd_print(int param){
+    fprintf(stderr, "******print record data******\n");
+    int i=0;
+    if(param == 0){
+        for(i=0;i<profile_data_nitems;i++){
+            printf("data : %d-----------------------------------\n",i+1);
+            fprintf(stderr,"id     :%d\n",profile_data_store[i].id);
+            fprintf(stderr,"name   :%s\n",profile_data_store[i].name);
+            fprintf(stderr,"date   :%d/%d/%d\n",profile_data_store[i].found.y,profile_data_store[i].found.m,profile_data_store[i].found.d);
+            fprintf(stderr,"adress :%s\n",profile_data_store[i].add);
+            fprintf(stderr,"memo   :%s\n",profile_data_store[i].others);
+            fprintf(stderr,"--------------------------------------------\n");
+        }
+    }
     return;
 }
 void cmd_read(char *filename){
@@ -261,10 +274,10 @@ void cmd_sort(int youso){
 }
 void new_profile(char *str){
     char *ret1[maxsplit],*ret2[maxsplit-2];
-    int subst1,ret1sp,ret2sp;
+    int subst1,ret1sp,ret2sp,i=0;
     subst1 = subst(str,'\n','\0');
 
-    fprintf(stderr,"item_num:%d\n",profile_data_nitems);
+    printf("item_num:%d\n",profile_data_nitems+1);
     
     ret1sp = split(str,ret1,',',maxsplit);//文字列用
     profile_data_store[profile_data_nitems].id = strtol(ret1[0],endp,base1);
@@ -276,6 +289,5 @@ void new_profile(char *str){
     profile_data_store[profile_data_nitems].found.y = strtol(ret2[0],endp,base1);
     profile_data_store[profile_data_nitems].found.m = strtol(ret2[1],endp,base1);
     profile_data_store[profile_data_nitems].found.d = strtol(ret2[2],endp,base1);
-
     profile_data_nitems++;
 }
