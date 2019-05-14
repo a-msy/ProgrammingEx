@@ -253,6 +253,9 @@ void cmd_print(int param){
             fprintf(stderr,"memo   :%s\n",profile_data_store[i].others);
             fprintf(stderr,"--------------------------------------------\n");
         }
+        if(i==0){
+            printf("no data.\n-----------------------------\n");
+        }
     }
     return;
 }
