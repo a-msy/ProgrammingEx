@@ -255,7 +255,7 @@ void cmd_print(struct profile *pro,int param){
         }
                 
         for(i = 0;i<param;i++){
-            printf("data : %d-----------------------------------\n",i);
+            printf("data : %5d -----------------------------------\n",i);
             fprintf(stderr,"id     :%d\n",(pro+i)->id);
             fprintf(stderr,"name   :%s\n",(pro+i)->name);
             fprintf(stderr,"date   :%d/%d/%d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
@@ -269,17 +269,18 @@ void cmd_print(struct profile *pro,int param){
         
         param *= -1;
         if( param > profile_data_nitems ){
-            param = profile_data_nitems;
+            printf("over number of record.\n");
+            return;
         }
-        pro += profile_data_nitems;
+        pro += profile_data_nitems-1;
                 
-        for(i ;i<param;i++){
-            printf("data : %d-----------------------------------\n",i);
-            fprintf(stderr,"id     :%d\n",(pro+i)->id);
-            fprintf(stderr,"name   :%s\n",(pro+i)->name);
-            fprintf(stderr,"date   :%d/%d/%d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
-            fprintf(stderr,"adress :%s\n",(pro+i)->add);
-            fprintf(stderr,"memo   :%s\n",(pro+i)->others);
+        for(i=0 ;i<param;i++){
+            printf("data : %d-----------------------------------\n",profile_data_nitems-i-1);
+            fprintf(stderr,"id     :%d\n",(pro-i)->id);
+            fprintf(stderr,"name   :%s\n",(pro-i)->name);
+            fprintf(stderr,"date   :%d/%d/%d\n",(pro-i)->found.y,(pro-i)->found.m,(pro-i)->found.d);
+            fprintf(stderr,"adress :%s\n",(pro-i)->add);
+            fprintf(stderr,"memo   :%s\n",(pro-i)->others);
             fprintf(stderr,"--------------------------------------------\n");
         }
         if(i==0){
