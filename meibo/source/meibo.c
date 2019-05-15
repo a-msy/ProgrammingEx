@@ -175,7 +175,7 @@ void parse_line(char *line){
         exec_command(line[1], &line[3]);
     }
     else{
-        new_profile(&profile_data_store[profile_data_nitems++],line);
+        new_profile(&profile_data_store[profile_data_nitems],line);
     }
 }
 
@@ -238,7 +238,7 @@ void cmd_print(struct profile *pro,int param){
     
     if(param == 0){
         for(i=0;i<profile_data_nitems;i++){
-            printf("data : %d-----------------------------------\n",i);
+            printf("data : %5d--------------------------------\n",i);
             fprintf(stderr,"id     :%d\n",(pro+i)->id);
             fprintf(stderr,"name   :%s\n",(pro+i)->name);
             fprintf(stderr,"date   :%d/%d/%d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
@@ -251,11 +251,12 @@ void cmd_print(struct profile *pro,int param){
     else if(param > 0){
         
         if( param > profile_data_nitems ){
-            param = profile_data_nitems;
+            printf("over number of record.\n");
+            return;
         }
                 
         for(i = 0;i<param;i++){
-            printf("data : %5d -----------------------------------\n",i);
+            printf("data : %5d --------------------------------\n",i);
             fprintf(stderr,"id     :%d\n",(pro+i)->id);
             fprintf(stderr,"name   :%s\n",(pro+i)->name);
             fprintf(stderr,"date   :%d/%d/%d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
@@ -272,15 +273,15 @@ void cmd_print(struct profile *pro,int param){
             printf("over number of record.\n");
             return;
         }
-        pro += profile_data_nitems-1;
+        pro += profile_data_nitems-param;
                 
         for(i=0 ;i<param;i++){
-            printf("data : %d-----------------------------------\n",profile_data_nitems-i-1);
-            fprintf(stderr,"id     :%d\n",(pro-i)->id);
-            fprintf(stderr,"name   :%s\n",(pro-i)->name);
-            fprintf(stderr,"date   :%d/%d/%d\n",(pro-i)->found.y,(pro-i)->found.m,(pro-i)->found.d);
-            fprintf(stderr,"adress :%s\n",(pro-i)->add);
-            fprintf(stderr,"memo   :%s\n",(pro-i)->others);
+            printf("data : %5d--------------------------------\n",profile_data_nitems-param+i);
+            fprintf(stderr,"id     :%d\n",(pro+i)->id);
+            fprintf(stderr,"name   :%s\n",(pro+i)->name);
+            fprintf(stderr,"date   :%d/%d/%d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
+            fprintf(stderr,"adress :%s\n",(pro+i)->add);
+            fprintf(stderr,"memo   :%s\n",(pro+i)->others);
             fprintf(stderr,"--------------------------------------------\n");
         }
         if(i==0){
@@ -321,9 +322,9 @@ struct profile *new_profile(struct profile *pro,char *str){
         return NULL;
     }
 
-    strncpy(pro->name, ret1[1],70);//
-    strncpy(pro->add, ret1[3],70);//
-    strncpy(pro->others, ret1[4],LIMIT);//
+    strncpy(pro->name, ret1[1],70);//名前のコピー
+    strncpy(pro->add, ret1[3],70);//住所
+    strncpy(pro->others, ret1[4],LIMIT);//備考
 
     if(split(ret1[2],ret2,'-',maxsplit-2)!=maxsplit-2){
         printf("Error:wrong format of date.(ex.1999-01-01)\n");
@@ -334,5 +335,6 @@ struct profile *new_profile(struct profile *pro,char *str){
     pro->found.d = strtol(ret2[2],endp,base1);
     
     printf("Add profile.\n");
+    profile_data_nitems++;
     return pro;
 }
