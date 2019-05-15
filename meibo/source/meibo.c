@@ -14,8 +14,22 @@
 #define maxsplit 5//5 ko ijyou wakeruto segmentation fault ni naru.
 #define luck -1
 #define over -2
-#define endp NULL
-#define base1 10
+#define endp NULL//strtol you pointer
+#define base1 10//10sinnsuu
+
+struct date {
+    int y;//year
+    int m;//month
+    int d;//day
+};
+
+struct profile{
+    int id;//id
+    char name[70];//schoolname
+    struct date found;
+    char add[70];//address
+    char others[LIMIT];//備考
+};
 
 /*subst*/
 int subst(char *str,char c1,char c2);
@@ -35,7 +49,7 @@ void parse_line(char *line);
 /*cmd*/
 void cmd_quit();
 void cmd_check();
-void cmd_print(int param);
+void cmd_print(struct profile *pro,int param);
 void cmd_read(char *filename);
 void cmd_write(char *filename);
 void cmd_find(char *keyword);
@@ -43,22 +57,7 @@ void cmd_sort(int youso);
 void exec_command(char cmd, char *param);
 
 /*profile*/
-void new_profile(char *str);
-
-struct date {
-    int y;//year
-    int m;//month
-    int d;//day
-};
-
-struct profile{
-    int id;//id
-    char name[70];//schoolname
-    struct date found;
-    char add[70];//address
-    char others[512];//備考
-};
-
+struct profile *new_profile(struct profile *pro,char *str);
 
 /*GLOBAL*/
 struct profile profile_data_store[10000];
@@ -66,19 +65,6 @@ int profile_data_nitems = 0;
 
 /*MAIN*/
 int main(void){
-    /*test
-    char test1[] = "";//分割したい文字列
-    char test2[] = ",,,";
-    char test3[] = ",oka,yama";
-    char test4[] = "o,ka,ya,,ma,a";
-    char *ret[maxsplit];//分割後に入れる文字配列個数
-    char input[LIMIT+1];
-    testprint_split(test1);
-    testprint_split(test2);
-    testprint_split(test3);
-    testprint_split(test4);
-    testprint_get_line(input);
-     */
 
     char line[LIMIT + 1];
     while (get_line(line)) {
@@ -108,6 +94,7 @@ int split (char *str,char *ret[],char sep,int max){
             break;//からもじなら抜ける
         }
        
+        if(count>max)break;
         ret[count++] = str;//strをいじればretも変わるように分割後の文字列にはポインタを入れる
 
         while( (*str != '\0') && (*str != sep) ){//区切り文字が見つかるまでポインタすすめる 
@@ -122,25 +109,33 @@ int split (char *str,char *ret[],char sep,int max){
 	    str++;//インクリメントさせる  
     }
 
-    //if(count<max)count = luck;
-    //else if(count>max)count = over;
-
+    if(count<max)count = luck;
+    else if(count>max)count = over;
     error_split(count);
     return count;
+}
+
+int get_line(char *input){
+    printf("\n>>>>>");
+    if (fgets(input, LIMIT + 1, stdin) == NULL){
+        printf("error:NULL\n");
+        return 0; /* 失敗EOF */
+    }
+    subst(input, '\n', '\0');
+    return 1; /*成功*/
 }
 
 void error_split(int check){
     switch(check){
         case luck:
-            printf("luck.\n");
+            printf("luck.");
             break;
         
         case over:
-            printf("over.\n");
+            printf("over.");
             break;
         
         default:
-            printf("No Problem.\n");
             break;
     }
     return;
@@ -161,14 +156,6 @@ void testprint_split(char *str,char sep){
     return;
 }
 
-int get_line(char *input){
-    if (fgets(input, LIMIT + 1, stdin) == NULL || input[0] == '\n'){//何かしら入力させて、改行のみは認めない
-        printf("error:NULL or input is \\n.\n");
-        return 0; /* 失敗EOF */
-    }
-    subst(input, '\n', '\0');
-    return 1; /*成功*/
-}
 
 void testprint_get_line(char *input){
     int n = 0;
@@ -188,7 +175,7 @@ void parse_line(char *line){
         exec_command(line[1], &line[3]);
     }
     else{
-        new_profile(line);
+        new_profile(&profile_data_store[profile_data_nitems++],line);
     }
 }
 
@@ -204,7 +191,7 @@ void exec_command(char cmd, char *param)
         break;
         
         case 'P':
-            cmd_print(strtol(param,endp,base1));
+            cmd_print(&profile_data_store[0],strtol(param,endp,base1));
         break;
         
         case 'R':
@@ -240,17 +227,59 @@ void cmd_check(){
     fprintf(stderr,"%d\n",profile_data_nitems);
     return;
 }
-void cmd_print(int param){
+void cmd_print(struct profile *pro,int param){
+    if(profile_data_nitems == 0){
+        printf("No record. No print.\n");
+        return ;
+    }
     fprintf(stderr, "******print record data******\n");
-    int i=0;
+    int i;
+    printf("param is %d.\n",param);
+    
     if(param == 0){
         for(i=0;i<profile_data_nitems;i++){
-            printf("data : %d-----------------------------------\n",i+1);
-            fprintf(stderr,"id     :%d\n",profile_data_store[i].id);
-            fprintf(stderr,"name   :%s\n",profile_data_store[i].name);
-            fprintf(stderr,"date   :%d/%d/%d\n",profile_data_store[i].found.y,profile_data_store[i].found.m,profile_data_store[i].found.d);
-            fprintf(stderr,"adress :%s\n",profile_data_store[i].add);
-            fprintf(stderr,"memo   :%s\n",profile_data_store[i].others);
+            printf("data : %d-----------------------------------\n",i);
+            fprintf(stderr,"id     :%d\n",(pro+i)->id);
+            fprintf(stderr,"name   :%s\n",(pro+i)->name);
+            fprintf(stderr,"date   :%d/%d/%d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
+            fprintf(stderr,"adress :%s\n",(pro+i)->add);
+            fprintf(stderr,"memo   :%s\n",(pro+i)->others);
+            fprintf(stderr,"--------------------------------------------\n");
+        }
+    }
+    
+    else if(param > 0){
+        
+        if( param > profile_data_nitems ){
+            param = profile_data_nitems;
+        }
+                
+        for(i = 0;i<param;i++){
+            printf("data : %d-----------------------------------\n",i);
+            fprintf(stderr,"id     :%d\n",(pro+i)->id);
+            fprintf(stderr,"name   :%s\n",(pro+i)->name);
+            fprintf(stderr,"date   :%d/%d/%d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
+            fprintf(stderr,"adress :%s\n",(pro+i)->add);
+            fprintf(stderr,"memo   :%s\n",(pro+i)->others);
+            fprintf(stderr,"--------------------------------------------\n");
+        }
+    }
+    
+    else if(param < 0){
+        
+        param *= -1;
+        if( param > profile_data_nitems ){
+            param = profile_data_nitems;
+        }
+        pro += profile_data_nitems;
+                
+        for(i ;i<param;i++){
+            printf("data : %d-----------------------------------\n",i);
+            fprintf(stderr,"id     :%d\n",(pro+i)->id);
+            fprintf(stderr,"name   :%s\n",(pro+i)->name);
+            fprintf(stderr,"date   :%d/%d/%d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
+            fprintf(stderr,"adress :%s\n",(pro+i)->add);
+            fprintf(stderr,"memo   :%s\n",(pro+i)->others);
             fprintf(stderr,"--------------------------------------------\n");
         }
     }
@@ -272,22 +301,34 @@ void cmd_sort(int youso){
     fprintf(stderr, "sort-%d.\n",youso);
     return;
 }
-void new_profile(char *str){
+struct profile *new_profile(struct profile *pro,char *str){
     char *ret1[maxsplit],*ret2[maxsplit-2];
-    int subst1,ret1sp,ret2sp,i=0;
-    subst1 = subst(str,'\n','\0');
 
-    printf("item_num:%d\n",profile_data_nitems+1);
+    printf("data_nitems:%d\n",profile_data_nitems);
     
-    ret1sp = split(str,ret1,',',maxsplit);//文字列用
-    profile_data_store[profile_data_nitems].id = strtol(ret1[0],endp,base1);
-    strcpy(profile_data_store[profile_data_nitems].name, ret1[1]);
-    strcpy(profile_data_store[profile_data_nitems].add, ret1[3]);
-    strcpy(profile_data_store[profile_data_nitems].others, ret1[4]);
+    if(split(str,ret1,',',maxsplit)!=maxsplit){
+        printf("Error:wrong format of input(ex.001,name,1999-01-01,address,other)\n");
+        return NULL;
+    }//文字列用
+    
+    pro->id = strtol(ret1[0],endp,base1);
+    if( pro->id == 0){
+        printf("Error:ID is NUMBER.\n");
+        return NULL;
+    }
 
-    ret2sp = split(ret1[2],ret2,'-',maxsplit-2);//設立日
-    profile_data_store[profile_data_nitems].found.y = strtol(ret2[0],endp,base1);
-    profile_data_store[profile_data_nitems].found.m = strtol(ret2[1],endp,base1);
-    profile_data_store[profile_data_nitems].found.d = strtol(ret2[2],endp,base1);
-    profile_data_nitems++;
+    strncpy(pro->name, ret1[1],70);//
+    strncpy(pro->add, ret1[3],70);//
+    strncpy(pro->others, ret1[4],LIMIT);//
+
+    if(split(ret1[2],ret2,'-',maxsplit-2)!=maxsplit-2){
+        printf("Error:wrong format of date.(ex.1999-01-01)\n");
+        return NULL;
+    }//設立日
+    pro->found.y = strtol(ret2[0],endp,base1);
+    pro->found.m = strtol(ret2[1],endp,base1);
+    pro->found.d = strtol(ret2[2],endp,base1);
+    
+    printf("Add profile.\n");
+    return pro;
 }
