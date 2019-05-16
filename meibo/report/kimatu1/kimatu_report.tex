@@ -2,6 +2,7 @@
 % ファイル先頭から\begin{document}までの内容（プレアンブル）については，
 % 教員からの指示がない限り， { } の中を書き換えるだけでよい．
 %動的メモリ確保について試問
+%https://www.tablesgenerator.com/
 
 % ToDo: 提出要領に従って，適切な余白を設定する
 \usepackage[top=25truemm,  bottom=30truemm,
@@ -83,7 +84,7 @@
           $10000$件のデータを格納できるようにする．
     \item 名簿データは構造体\verb|struct profile|および構造体\verb|struct date|を利用して，
           構造を持ったデータとしてプログラム中に定義して利用する．
-          実装すべきデータ構造は表\ref{tbl:structure_person}である．
+          実装すべきデータ構造は表\ref{tbl:structure_profile}である．
           表中の$n$~bytesとは，$n$バイトの\verb|char|型配列を意味する．
     \end{enumerate}
 \end{enumerate}
@@ -92,39 +93,33 @@
     \centering % この1行はbegin～endの中を中央寄せにする，というコマンド
     \caption{実装するコマンド}
     \label{tbl:commands}
-    \begin{tabular}{|l|l|l|}
-        \hline
-        コマンド & 解説 & パラメータ範囲\\
-        \hline
-        \verb|%C| & メモリ中のデータの件数を表示する & パラメータなし\\
-        \hline
-        \verb|%P -n| & メモリ中データを、\verb|n|に応じて表示させる & \verb|n|: -10000 ~ +10000 (0は全て,0未満はデータを後ろからn件正順に，1以上は指定件数分０件目から表示する．)\\
-        \hline
-        \verb|%Q| & 　システムを終了する & パラメータなし
-    \end{tabular}
-\end{table}
+\begin{tabular}{|l|l|l|}
+\hline
+コマンド   & 解説                  & パラメータ範囲                                                                                                                \\ \hline
+％C     & メモリ中のデータ件数を表示する     & パラメータなし                                                                                                                \\ \hline
+\%P -n & メモリ中データを，nに応じて表示させる & \begin{tabular}[c]{@{}l@{}}n:-10000$\sim$+10000(0は全て, \\ 0未満はデータを後ろから指定件数正順表示，\\ 1以上はデータを前から指定件数正順表示する.)\end{tabular} \\ \hline
+\%Q    & システムを終了する           & パラメータなし                                                                                                                \\ \hline
+\end{tabular}
+     \end{table}
 
-\begin{table}[t]
-\centering % この1行はbegin～endの中を中央寄せにする，というコマンド
+	\begin{table}[t]
+	\centering % この1行はbegin～endの中を中央寄せにする，というコマンド
     \caption{名簿データ}
-    \label{tbl:structure_person}
-    \begin{tabular}{|l|l|l|l|l|l|l|}
-        \hline
-        ID & 氏名 & 生年月日 & 性別 & 出身 & 身長 & 体重\\
-        \hline
-        $32$~bit整数 & $20$~bytes & \verb|struct date|& \verb|char| & $10$~bytes & $32$~bit整数 & $32$~bit整数\\
-        \hline
-    \end{tabular}
-\end{table}
+    \label{tbl:structure_profile}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+ID      & 学校名      & 設立日         & 住所     & 備考  \\ \hline
+32bit整数 & 70 bytes & struct date & 70byte & 任意長 \\ \hline
+\end{tabular}
+	\end{table}
 
 また，本レポートでは以下の考察課題について考察をおこなった．
 
 \begin{enumerate}
 \setlength{\parskip}{2pt}\setlength{\itemsep}{2pt}%この1行で箇条書きの行間を調整している
-    \item 不足機能についての考察をおこなった．特に，・・・（サンプルのため省略）
-    \item エラー処理についての考察をおこなった．例えば，IDに文字が入力された場合や，分割数が足りなかったり多すぎたりした場合．
-    \item 構造体 \verb|struct profile| がメモリ中を占めるバイト数について確認をおこなった．
-       　　　具体的には，\verb|sizeof|演算子を使用して・・・（サンプルのため中略）・・・確認をおこなった．
+    \item 追加したデータの削除に関する追加機能に関する考察．
+    \item IDに文字が入力された場合や，分割数が足りなかったり多すぎたりした場合のエラー処理に関する考察．
+    \item 構造体 \verb|struct profile| がメモリ中を占めるバイト数について確認をおこなった．具体的には，\verb|sizeof|演算子を使用して・・・（サンプルのため中略）・・・確認をおこなった．
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -155,7 +150,7 @@
 %--------------------------------------------------------------%
 
 ``宣言部''は必要な構造体をする部分である．
-このレポートでは概要で示した表\ref{tbl:structure_person}に基づいて，
+このレポートでは概要で示した表\ref{tbl:structure_profile}に基づいて，
 以下のように宣言する．
 
 {\fontsize{10pt}{11pt} \selectfont
@@ -166,17 +161,15 @@
       int d;
     };
 
-    struct person {
-      int code;
-      char name[20];
-      struct date bday;
-      char type;
-      char home[10];
-      int height;
-      int weight;
+    struct profile {
+      int id;
+      char name[70];
+      struct date found;
+      char add[70];
+      char others[LIMIT];
     };
 
-    struct person person_array[100];
+    struct profile profile_data_store[100];
 \end{verbatim}
 }
 %% 注：行送りの変更は"指定箇所を含む段落”に効果があらわれる．
@@ -184,10 +177,7 @@
 %%     その {...} の前後に空白行を入れ，段落を変えるようにすること．
 %%     なお，行先頭がコメントから始まる行は空白行とは扱われない．
 
-ここで，・・・については・・・としている．
-これによって，・・・とすることができる．
-
-（※サンプルのため省略）
+ここでは，名簿管理に必要なデータを定義している．\verb|struct date|においては，設立日の設定に必要な変数\verb|y|, \verb|m|，\verb|d|を定義した．順に，設立年，設立月，設立日を表している．\verb|struct profile|では，一つ当たりデータの構造を作るために利用している．\verb|int id|はID,\verb|char name|は学校名,\verb|struct date found|は設立日,\verb|char add|は住所,\verb|char others|は備考を設定している．これにより仕様に必要なデータを格納することが可能になっている．
 
 %--------------------------------------------------------------%
 \subsection{解析部} \label{sec:parse}

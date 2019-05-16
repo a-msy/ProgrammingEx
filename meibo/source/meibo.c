@@ -17,6 +17,21 @@
 #define endp NULL//strtol you pointer
 #define base1 10//10sinnsuu
 
+typedef enum{
+    null,
+    LUCK,
+    OVER,
+    NOTDEFINED,
+    NORECORD,
+    OVERNUMBERRECORD,
+    FORMATINPUT,
+    FORMATID,
+    FORMATDATE,
+    NUMITEM,
+    ERRORNUM
+
+} ERROR;
+
 struct date {
     int y;//year
     int m;//month
@@ -54,6 +69,7 @@ void cmd_read(char *filename);
 void cmd_write(char *filename);
 void cmd_find(char *keyword);
 void cmd_sort(int youso);
+void cmd_delete(int param);
 void exec_command(char cmd, char *param);
 
 /*profile*/
@@ -116,9 +132,9 @@ int split (char *str,char *ret[],char sep,int max){
 }
 
 int get_line(char *input){
-    printf("\n>>>>>");
+    fprintf(stderr,"\n>>>>>");
     if (fgets(input, LIMIT + 1, stdin) == NULL){
-        printf("error:NULL\n");
+        fprintf(stderr,"ERROR %d:NULL--getline()\n",null);
         return 0; /* 失敗EOF */
     }
     subst(input, '\n', '\0');
@@ -128,11 +144,11 @@ int get_line(char *input){
 void error_split(int check){
     switch(check){
         case luck:
-            printf("luck.");
+            fprintf(stderr,"ERROR %d:luck--split()\n",LUCK);
             break;
         
         case over:
-            printf("over.");
+            fprintf(stderr,"ERROR %d:over--split()\n",OVER);
             break;
         
         default:
@@ -144,15 +160,15 @@ void error_split(int check){
 void testprint_split(char *str,char sep){
     int count;
     char *ret[maxsplit];
-    printf("test %s\n",str);
+    fprintf(stderr,"test %s\n",str);
     
     count=split(str,ret,sep,maxsplit);
     
     for(int i = 0; i < count; i++){
-        printf("%d:%s\n",i+1, ret[i]);
+        fprintf(stderr,"%d:%s\n",i+1, ret[i]);
     }
     
-    printf("count is %d.\n\n",count);
+    fprintf(stderr,"count is %d.\n\n",count);
     return;
 }
 
@@ -160,12 +176,12 @@ void testprint_split(char *str,char sep){
 void testprint_get_line(char *input){
     int n = 0;
 
-    printf("please input line:");
+    fprintf(stderr,"please input line:");
     
     while (get_line(input)) {
-        printf("*****test %d*****\n", ++n);
+        fprintf(stderr,"*****test %d*****\n", ++n);
         testprint_split(input,',');
-        printf("input line:");
+        fprintf(stderr,"input line:");
     }
     return;
 }
@@ -205,6 +221,9 @@ void exec_command(char cmd, char *param)
         case 'F':
             cmd_find(param);
         break;
+
+        case 'D':
+            break;
         
         case 'S':
             cmd_sort(strtol(param,endp,base1));
@@ -212,7 +231,7 @@ void exec_command(char cmd, char *param)
 
         
         default:
-            fprintf(stderr, "%%%c command is not defined.\n",cmd);
+            fprintf(stderr, "ERROR %d:%%%c command is not defined.--execcommand()\n",NOTDEFINED,cmd);
         break;
     }
  }
@@ -229,16 +248,16 @@ void cmd_check(){
 }
 void cmd_print(struct profile *pro,int param){
     if(profile_data_nitems == 0){
-        printf("No record. No print.\n");
+        fprintf(stderr,"ERROR %d:No record. No print.--cmd_print()\n",NORECORD);
         return ;
     }
-    fprintf(stderr, "******print record data******\n");
     int i;
-    printf("param is %d.\n",param);
+    fprintf(stderr,"param is %d.\n",param);
     
-    if(param == 0){
+    if(param == 0){//０のとき
+    fprintf(stderr, "******print record data******\n");
         for(i=0;i<profile_data_nitems;i++){
-            printf("data : %5d--------------------------------\n",i);
+            fprintf(stderr,"data : %5d--------------------------------\n",i);
             fprintf(stderr,"id     :%d\n",(pro+i)->id);
             fprintf(stderr,"name   :%s\n",(pro+i)->name);
             fprintf(stderr,"date   :%d/%d/%d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
@@ -248,15 +267,16 @@ void cmd_print(struct profile *pro,int param){
         }
     }
     
-    else if(param > 0){
+    else if(param > 0){//正のとき
         
         if( param > profile_data_nitems ){
-            printf("over number of record.\n");
+            fprintf(stderr,"ERROR %d:over number of record.--cmd_print()\n",OVERNUMBERRECORD);
+            fprintf(stderr,"ERROR %d:number of item is %d\n",NUMITEM,profile_data_nitems);
             return;
         }
-                
+        fprintf(stderr, "******print record data******\n");
         for(i = 0;i<param;i++){
-            printf("data : %5d --------------------------------\n",i);
+            fprintf(stderr,"data : %5d --------------------------------\n",i);
             fprintf(stderr,"id     :%d\n",(pro+i)->id);
             fprintf(stderr,"name   :%s\n",(pro+i)->name);
             fprintf(stderr,"date   :%d/%d/%d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
@@ -266,26 +286,24 @@ void cmd_print(struct profile *pro,int param){
         }
     }
     
-    else if(param < 0){
+    else if(param < 0){//負の時
         
         param *= -1;
         if( param > profile_data_nitems ){
-            printf("over number of record.\n");
+            fprintf(stderr,"ERROR %d:over number of record.--cmd_print()\n",OVERNUMBERRECORD);
+            fprintf(stderr,"ERROR %d:number of item is %d\n",NUMITEM,profile_data_nitems);
             return;
         }
         pro += profile_data_nitems-param;
-                
+        fprintf(stderr, "******print record data******\n");
         for(i=0 ;i<param;i++){
-            printf("data : %5d--------------------------------\n",profile_data_nitems-param+i);
+            fprintf(stderr,"data : %5d--------------------------------\n",profile_data_nitems-param+i);
             fprintf(stderr,"id     :%d\n",(pro+i)->id);
             fprintf(stderr,"name   :%s\n",(pro+i)->name);
             fprintf(stderr,"date   :%d/%d/%d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
             fprintf(stderr,"adress :%s\n",(pro+i)->add);
             fprintf(stderr,"memo   :%s\n",(pro+i)->others);
             fprintf(stderr,"--------------------------------------------\n");
-        }
-        if(i==0){
-            printf("no data.\n-----------------------------\n");
         }
     }
     return;
@@ -309,16 +327,16 @@ void cmd_sort(int youso){
 struct profile *new_profile(struct profile *pro,char *str){
     char *ret1[maxsplit],*ret2[maxsplit-2];
 
-    printf("data_nitems:%d\n",profile_data_nitems);
+    fprintf(stderr,"data_nitems:%d\n",profile_data_nitems);
     
     if(split(str,ret1,',',maxsplit)!=maxsplit){
-        printf("Error:wrong format of input(ex.001,name,1999-01-01,address,other)\n");
+        fprintf(stderr,"ERROR %d:wrong format of input(ex.001,name,1999-01-01,address,other)--new_prifile()\n",FORMATINPUT);
         return NULL;
     }//文字列用
     
     pro->id = strtol(ret1[0],endp,base1);
     if( pro->id == 0){
-        printf("Error:ID is NUMBER.\n");
+        fprintf(stderr,"ERROR %d:ID is NUMBER.--new_profile()\n",FORMATID);
         return NULL;
     }
 
@@ -327,14 +345,14 @@ struct profile *new_profile(struct profile *pro,char *str){
     strncpy(pro->others, ret1[4],LIMIT);//備考
 
     if(split(ret1[2],ret2,'-',maxsplit-2)!=maxsplit-2){
-        printf("Error:wrong format of date.(ex.1999-01-01)\n");
+        fprintf(stderr,"ERROR %d:wrong format of date.(ex.1999-01-01)--new_profile()\n",FORMATDATE);
         return NULL;
     }//設立日
     pro->found.y = strtol(ret2[0],endp,base1);
     pro->found.m = strtol(ret2[1],endp,base1);
     pro->found.d = strtol(ret2[2],endp,base1);
     
-    printf("Add profile.\n");
+    fprintf(stderr,"Add profile.\n");
     profile_data_nitems++;
     return pro;
 }
