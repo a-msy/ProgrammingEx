@@ -8,6 +8,7 @@
 \usepackage[top=25truemm,  bottom=30truemm,
             left=25truemm, right=25truemm]{geometry}
 
+
 % ToDo: 提出要領に従って，適切なタイトル・サブタイトルを設定する
 \title{プログラミング演習1 \\
        期末レポート}
@@ -22,7 +23,7 @@
       締切日: 2019年05月29日 \\}  % 注：最後の\\は不要に見えるが必要．
 
 % ToDo: 図を入れる場合，以下の1行を有効にする
-%\usepackage{graphicx}
+\usepackage{graphicx}
 
 \begin{document}
 \maketitle
@@ -62,11 +63,10 @@
 
 % 波括弧の内部 {...} だけ文字サイズ等を設定する書き方の例
 % 以下の例はフォントサイズ：10pt 行送り：11pt
-    {\fontsize{10pt}{11pt} \selectfont
+    {\fontsize{8pt}{10pt} \selectfont
         \begin{verbatim}
-        5100046,The Bridge,1845-11-2,14 Seafield Road Longman Inverness,SEN Unit 2.0 Open
-        5100127,Bower Primary School,1908-1-19,Bowermadden Bower Caithness,01955 641225 Primary 25 2.6 Open
-        5100224,Canisbay Primary School,1928-7-5,Canisbay Wick,01955 611337 Primary 56 3.5 Open
+5100046,The Bridge,1845-11-2,14 Seafield Road Longman Inverness,SEN Unit 2.0 Open
+5100224,Canisbay Primary School,1928-7-5,Canisbay Wick,01955 611337 Primary 56 3.5 Open
         :
         \end{verbatim}
     }
@@ -93,6 +93,7 @@
     \centering % この1行はbegin～endの中を中央寄せにする，というコマンド
     \caption{実装するコマンド}
     \label{tbl:commands}
+\scalebox{0.8}{
 \begin{tabular}{|l|l|l|}
 \hline
 コマンド   & 解説                  & パラメータ範囲                                                                                                                \\ \hline
@@ -100,6 +101,7 @@
 \%P -n & メモリ中データを，nに応じて表示させる & \begin{tabular}[c]{@{}l@{}}n:-10000$\sim$+10000(0は全て, \\ 0未満はデータを後ろから指定件数正順表示，\\ 1以上はデータを前から指定件数正順表示する.)\end{tabular} \\ \hline
 \%Q    & システムを終了する           & パラメータなし                                                                                                                \\ \hline
 \end{tabular}
+}
      \end{table}
 
 	\begin{table}[t]
@@ -146,7 +148,8 @@ ID      & 学校名      & 設立日         & 住所     & 備考  \\ \hline
 
 
 %--------------------------------------------------------------%
-\subsection{宣言部} \label{sec:declare}
+\subsection{宣言部} 
+\label{sec:declare}
 %--------------------------------------------------------------%
 
 ``宣言部''は必要な構造体をする部分である．
@@ -177,16 +180,16 @@ ID      & 学校名      & 設立日         & 住所     & 備考  \\ \hline
 %%     その {...} の前後に空白行を入れ，段落を変えるようにすること．
 %%     なお，行先頭がコメントから始まる行は空白行とは扱われない．
 
-ここでは，名簿管理に必要なデータを定義している．\verb|struct date|においては，設立日の設定に必要な変数\verb|y|, \verb|m|，\verb|d|を定義した．順に，設立年，設立月，設立日を表している．\verb|struct profile|では，一つ当たりデータの構造を作るために利用している．\verb|int id|はID,\verb|char name|は学校名,\verb|struct date found|は設立日,\verb|char add|は住所,\verb|char others|は備考を設定している．これにより仕様に必要なデータを格納することが可能になっている．
+ここでは，名簿管理に必要なデータを定義している．\verb|struct date|においては，設立日の設定に必要な変数\verb|y|, \verb|m|，\verb|d|を定義した．順に，設立年，設立月，設立日を表している．\verb|struct profile|では，一つ当たりデータの構造を作るために利用している．\verb|int id|はID,\verb|char name|は学校名,\verb|struct| \verb|date found|は設立日,\verb|char add|は住所,\verb|char others|は備考を設定している．これにより仕様に必要なデータを格納することが可能になっている．
 
 %--------------------------------------------------------------%
 \subsection{解析部} \label{sec:parse}
 %--------------------------------------------------------------%
 
-``解析部''は・・・をおこなう箇所である．
-しかし，このままでは，・・・であるため，・・・である．
-そこで，段階的詳細化の考え方に基づいてさらなる詳細化をおこない，
-下記の(a)から(e)のように分割することにする．
+``解析部''は入力された文字列を判別し処理をおこなう箇所である．
+しかし，このままでは，仕様を実現するための方法が曖昧であるうえフローチャートも複雑になる懸念があるうえ，今回の仕様の実現には手間が多くかかりそうである．
+そこで，段階的詳細化の考え方に基づいてさらなる詳細化をおこなって，プロトタイプを作りながらボトムアップによる実装をすることにした．
+まず，下記の(a)から(e)のように分割することにする．
 
 \begin{enumerate}
 \setlength{\parskip}{2pt} \setlength{\itemsep}{2pt}
@@ -204,7 +207,7 @@ ID      & 学校名      & 設立日         & 住所     & 備考  \\ \hline
 （※サンプルのため省略）
 
 %--------------------------------------------------------------%
-\subsection{変換部} \label{exchange}
+\subsection{変換部} \label{sec:exchange}
 %--------------------------------------------------------------%
 
 ``変換部''は分割されたCSVデータを項目毎に型変換し，
@@ -227,7 +230,7 @@ ID      & 学校名      & 設立日         & 住所     & 備考  \\ \hline
 （※サンプルのため省略）
 
 %--------------------------------------------------------------%
-\subsection{各種コマンド実現部} \label{command}
+\subsection{各種コマンド実現部} \label{sec:command}
 %--------------------------------------------------------------%
 
 ``各種コマンド実現部''は・・・の実際の処理をおこなう部分である．
@@ -467,7 +470,8 @@ CSV形式のデータと \% で始まるコマンドを標準入力から受け�
 \subsection{不足機能についての考察}
 %--------------------------------------------------------------%
 
-(※サンプルのため省略)
+指定データの削除
+なんのコマンドがあるかを示すhelpコマンドの実装
 
 %--------------------------------------------------------------%
 \subsection{エラー処理についての考察}
