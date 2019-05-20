@@ -122,7 +122,7 @@ int split (char *str,char *ret[],char sep,int max){
 
     if(count<max)count = luck;
     else if(count>max)count = over;
-    error_split(count);
+    //error_split(count);
     return count;
 }
 
@@ -299,7 +299,7 @@ struct profile *new_profile(struct profile *pro,char *str){
         fprintf(stderr,"ERROR %d:wrong format of input(ex.001,name,1999-01-01,address,other)--new_prifile()\n",FORMATINPUT);
         return NULL;
     }//文字列用
-    
+
     pro->id = strtol(ret1[0],endp,base1);
     if( pro->id == 0){
         fprintf(stderr,"ERROR %d:ID is NUMBER.--new_profile()\n",FORMATID);

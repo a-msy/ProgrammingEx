@@ -17,7 +17,6 @@ unsigned long Fibo(int n)
     }
     return (f);             /*  fの値をリターン */
 }
-
 int main(void){
     srand((unsigned int) time(NULL));
     int balance=500;
@@ -68,7 +67,7 @@ int main(void){
             max = balance;
         }
         printf("now balance:%d\n",balance);
-        if(lose>=13 || balance<=200){
+        if(lose>=13 || balance<=300){
             printf("\nmax balance %d\n",max);
             printf("max_lose:%d\ntotal:%d\nmax_minas:%d\n%d kaime\n",max_lose,Fibo(max_lose),max_lose,max_lose_kai+1);
             printf("you not lucky．\n");
