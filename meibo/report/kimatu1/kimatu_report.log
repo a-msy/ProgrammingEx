@@ -1,16 +1,16 @@
-This is e-pTeX, Version 3.14159265-p3.8.0-180226-2.6 (utf8.sjis) (TeX Live 2018/W32TeX) (preloaded format=platex 2018.4.26)  20 MAY 2019 16:35
+This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2019.2.22)  22 MAY 2019 10:53
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
 **kimatu_report.tex
 (./kimatu_report.tex
-pLaTeX2e <2018-04-01>+1 (based on LaTeX2e <2018-04-01> patch level 3)
-Babel <3.19> and hyphenation patterns for 84 language(s) loaded.
-(d:/W32Tex/share/texmf-dist/tex/platex/base/jarticle.cls
-Document Class: jarticle 2018/02/04 v1.7h Standard pLaTeX class
+pLaTeX2e <2018-12-01> (based on LaTeX2e <2018-12-01>)
+(/opt/edu/texlive/2018/texmf-dist/tex/platex/base/jarticle.cls
+Document Class: jarticle 2018/10/25 v1.8a Standard pLaTeX class
 \c@@paper=\count83
-(d:/W32Tex/share/texmf-dist/tex/platex/base/jsize11.clo
-File: jsize11.clo 2018/02/04 v1.7h Standard pLaTeX file (size option)
+(/opt/edu/texlive/2018/texmf-dist/tex/platex/base/jsize11.clo
+File: jsize11.clo 2018/10/25 v1.8a Standard pLaTeX file (size option)
 )
 \c@part=\count84
 \c@section=\count85
@@ -30,21 +30,21 @@ LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
 \bibindent=\dimen120
 \heisei=\count92
 )
-(d:/W32Tex/share/texmf-dist/tex/latex/geometry/geometry.sty
-Package: geometry 2018/03/24 v5.7 Page Geometry
+(/opt/edu/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2018/04/16 v5.8 Page Geometry
 
-(d:/W32Tex/share/texmf-dist/tex/latex/graphics/keyval.sty
+(/opt/edu/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks15
 )
-(d:/W32Tex/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+(/opt/edu/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
 )
-(d:/W32Tex/share/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+(/opt/edu/texlive/2018/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-(d:/W32Tex/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+(/opt/edu/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count93
@@ -59,23 +59,22 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layouthoffset=\dimen127
 \Gm@layoutvoffset=\dimen128
 \Gm@dimlist=\toks16
-
-(d:/W32Tex/share/texmf-dist/tex/latex/geometry/geometry.cfg))
-(d:/W32Tex/share/texmf-dist/tex/latex/graphics/graphicx.sty
+)
+(/opt/edu/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-(d:/W32Tex/share/texmf-dist/tex/latex/graphics/graphics.sty
+(/opt/edu/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-(d:/W32Tex/share/texmf-dist/tex/latex/graphics/trig.sty
+(/opt/edu/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(d:/W32Tex/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+(/opt/edu/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: dvips.def on input line 99.
 
-(d:/W32Tex/share/texmf-dist/tex/latex/graphics-def/dvips.def
+(/opt/edu/texlive/2018/texmf-dist/tex/latex/graphics-def/dvips.def
 File: dvips.def 2017/06/20 v3.1d Graphics/color driver for dvips
 ))
 \Gin@req@height=\dimen129
@@ -147,29 +146,36 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 44.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 82.
-[1
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 100.
+
+(/opt/edu/texlive/2018/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 100.
+ [1
 
 ]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 151.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 148.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 151.
- [2] [3] [4] [5]
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 148.
+ [2] [3]
+[4] [5] [6]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10.95> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 473.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 462.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10.95> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 473.
- [6]
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 462.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 513.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 502.
  [7] [8] [9] (./kimatu_report.aux) ) 
 Here is how much of TeX's memory you used:
- 1178 strings out of 493281
- 15646 string characters out of 6146979
- 92910 words of memory out of 5000000
- 5139 multiletter control sequences out of 15000+600000
+ 1195 strings out of 494703
+ 16026 string characters out of 6180181
+ 89322 words of memory out of 5000000
+ 5083 multiletter control sequences out of 15000+600000
  16407 words of font info for 65 fonts, out of 8000000 for 9000
- 929 hyphenation exceptions out of 8191
- 25i,15n,20p,505b,396s stack positions out of 5000i,500n,10000p,500000b,80000s
+ 14 hyphenation exceptions out of 8191
+ 25i,14n,20p,505b,401s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on kimatu_report.dvi (9 pages, 31224 bytes).
+Output written on kimatu_report.dvi (9 pages, 31240 bytes).

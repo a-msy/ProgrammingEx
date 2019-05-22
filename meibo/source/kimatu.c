@@ -127,7 +127,6 @@ int split (char *str,char *ret[],char sep,int max){
 }
 
 int get_line(char *input){
-    fprintf(stderr,"\n>>>>>");
     if (fgets(input, LIMIT + 1, stdin) == NULL){
         return 0; /* 失敗EOF */
     }
@@ -196,19 +195,17 @@ void exec_command(char cmd, char *param)
 
         
         default:
-            fprintf(stderr, "ERROR %d:%%%c command is not defined.--execcommand()\n",NOTDEFINED,cmd);
+            fprintf(stderr, "Invalid command %%%c: ignored.\n",cmd);
         break;
     }
  }
 
 void cmd_quit(){
-    fprintf(stderr, "END SYSTEM.\n");
     exit(0);
     return;
 }
 void cmd_check(){
-    fprintf(stderr, "check record num is ");
-    fprintf(stderr,"%d\n",profile_data_nitems);
+    printf("%d profile(s)\n",profile_data_nitems);
     return;
 }
 void cmd_print(struct profile *pro,int param){
@@ -216,18 +213,16 @@ void cmd_print(struct profile *pro,int param){
         return ;
     }
     int i;
-    fprintf(stderr,"param is %d.\n",param);
     
     if(param == 0){//０のとき
-    fprintf(stderr, "******print record data******\n");
         for(i=0;i<profile_data_nitems;i++){
-            fprintf(stderr,"data : %5d--------------------------------\n",i);
-            fprintf(stderr,"id     :%d\n",(pro+i)->id);
-            fprintf(stderr,"name   :%s\n",(pro+i)->name);
-            fprintf(stderr,"date   :%04d/%02d/%02d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
-            fprintf(stderr,"adress :%s\n",(pro+i)->add);
-            fprintf(stderr,"memo   :%s\n",(pro+i)->others);
-            fprintf(stderr,"--------------------------------------------\n");
+            //fprintf(stderr,"data : %5d--------------------------------\n",i);
+            fprintf(stderr,"Id    : %d\n",(pro+i)->id);
+            fprintf(stderr,"Name  : %s\n",(pro+i)->name);
+            fprintf(stderr,"Birth : %04d-%02d-%02d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
+            fprintf(stderr,"Addr  : %s\n",(pro+i)->add);
+            fprintf(stderr,"Com.  : %s\n",(pro+i)->others);
+            //fprintf(stderr,"\n");
         }
     }
     
@@ -236,15 +231,14 @@ void cmd_print(struct profile *pro,int param){
         if( param > profile_data_nitems ){
             return;
         }
-        fprintf(stderr, "******print record data******\n");
         for(i = 0;i<param;i++){
-            fprintf(stderr,"data : %5d --------------------------------\n",i);
-            fprintf(stderr,"id     :%d\n",(pro+i)->id);
-            fprintf(stderr,"name   :%s\n",(pro+i)->name);
-            fprintf(stderr,"date   :%04d/%02d/%02d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
-            fprintf(stderr,"adress :%s\n",(pro+i)->add);
-            fprintf(stderr,"memo   :%s\n",(pro+i)->others);
-            fprintf(stderr,"--------------------------------------------\n");
+            //fprintf(stderr,"data : %5d --------------------------------\n",i);
+            fprintf(stderr,"Id    : %d\n",(pro+i)->id);
+            fprintf(stderr,"Name  : %s\n",(pro+i)->name);
+            fprintf(stderr,"Birth : %04d-%02d-%02d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
+            fprintf(stderr,"Addr  : %s\n",(pro+i)->add);
+            fprintf(stderr,"Com.  : %s\n",(pro+i)->others);
+            //fprintf(stderr,"\n");
         }
     }
     
@@ -255,57 +249,55 @@ void cmd_print(struct profile *pro,int param){
             return;
         }
         pro += profile_data_nitems-param;
-        fprintf(stderr, "******print record data******\n");
         for(i=0 ;i<param;i++){
-            fprintf(stderr,"data : %5d--------------------------------\n",profile_data_nitems-param+i);
-            fprintf(stderr,"id     :%d\n",(pro+i)->id);
-            fprintf(stderr,"name   :%s\n",(pro+i)->name);
-            fprintf(stderr,"date   :%04d/%02d/%02d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
-            fprintf(stderr,"adress :%s\n",(pro+i)->add);
-            fprintf(stderr,"memo   :%s\n",(pro+i)->others);
-            fprintf(stderr,"--------------------------------------------\n");
+            //fprintf(stderr,"data : %5d--------------------------------\n",profile_data_nitems-param+i);
+            fprintf(stderr,"Id    : %d\n",(pro+i)->id);
+            fprintf(stderr,"Name  : %s\n",(pro+i)->name);
+            fprintf(stderr,"Birth : %04d-%02d-%02d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
+            fprintf(stderr,"Addr  : %s\n",(pro+i)->add);
+            fprintf(stderr,"Com.  : %s\n",(pro+i)->others);
+            //fprintf(stderr,"\n");
         }
     }
     return;
 }
 void cmd_read(char *filename){
-    fprintf(stderr, "read-%s.\n",filename);
     return;
 }
 void cmd_write(char *filename){
-    fprintf(stderr, "write-%s.\n",filename);
     return;
 }
 void cmd_find(char *keyword){
-    fprintf(stderr, "find-%s.\n",keyword);
     return;
 }
 void cmd_sort(int youso){
-    fprintf(stderr, "sort-%d.\n",youso);
     return;
 }
 struct profile *new_profile(struct profile *pro,char *str){
     char *ret1[maxsplit],*ret2[maxsplit-2];
-
-    fprintf(stderr,"data_nitems:%d\n",profile_data_nitems);
     
     if(split(str,ret1,',',maxsplit)!=maxsplit){
         return NULL;
     }//文字列用
-
+    
     pro->id = strtol(ret1[0],endp,base1);
 
     strncpy(pro->name, ret1[1],70);//名前のコピー
-    strncpy(pro->add, ret1[3],70);//住所
-    pro->others = (char *)malloc(sizeof(char)*(strlen(ret1[4])+1));
-    strncpy(pro->others, ret1[4],LIMIT);//備考,MAX 1024bytes
-
+    
     if(split(ret1[2],ret2,'-',maxsplit-2)!=maxsplit-2){
+        return NULL;
     }//設立日
     pro->found.y = strtol(ret2[0],endp,base1);
     pro->found.m = strtol(ret2[1],endp,base1);
     pro->found.d = strtol(ret2[2],endp,base1);
     
-    fprintf(stderr,"Add profile.\n");
+    strncpy(pro->add, ret1[3],70);//住所
+    
+    pro->others = (char *)malloc(sizeof(char)*(strlen(ret1[4])+1));
+    strncpy(pro->others, ret1[4],LIMIT);//備考,MAX 1024bytes
+
+    
+    
+    
     return pro;
 }
