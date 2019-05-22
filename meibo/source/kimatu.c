@@ -4,6 +4,7 @@
  *
  * Created on 2019/04/10
  * update on 2019/05/08
+ * error syori na
  */
 
 #include <stdio.h>
@@ -122,14 +123,12 @@ int split (char *str,char *ret[],char sep,int max){
 
     if(count<max)count = luck;
     else if(count>max)count = over;
-    //error_split(count);
     return count;
 }
 
 int get_line(char *input){
     fprintf(stderr,"\n>>>>>");
     if (fgets(input, LIMIT + 1, stdin) == NULL){
-        fprintf(stderr,"ERROR %d:NULL--getline()\n",null);
         return 0; /* 失敗EOF */
     }
     subst(input, '\n', '\0');
@@ -157,7 +156,7 @@ void parse_line(char *line){
         exec_command(line[1], &line[3]);
     }
     else{
-        new_profile(&profile_data_store[profile_data_nitems],line);
+        new_profile(&profile_data_store[profile_data_nitems++],line);
     }
 }
 
@@ -214,7 +213,6 @@ void cmd_check(){
 }
 void cmd_print(struct profile *pro,int param){
     if(profile_data_nitems == 0){
-        fprintf(stderr,"ERROR %d:No record. No print.--cmd_print()\n",NORECORD);
         return ;
     }
     int i;
@@ -226,7 +224,7 @@ void cmd_print(struct profile *pro,int param){
             fprintf(stderr,"data : %5d--------------------------------\n",i);
             fprintf(stderr,"id     :%d\n",(pro+i)->id);
             fprintf(stderr,"name   :%s\n",(pro+i)->name);
-            fprintf(stderr,"date   :%d/%d/%d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
+            fprintf(stderr,"date   :%04d/%02d/%02d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
             fprintf(stderr,"adress :%s\n",(pro+i)->add);
             fprintf(stderr,"memo   :%s\n",(pro+i)->others);
             fprintf(stderr,"--------------------------------------------\n");
@@ -236,8 +234,6 @@ void cmd_print(struct profile *pro,int param){
     else if(param > 0){//正のとき
         
         if( param > profile_data_nitems ){
-            fprintf(stderr,"ERROR %d:over number of record.--cmd_print()\n",OVERNUMBERRECORD);
-            fprintf(stderr,"ERROR %d:number of item is %d\n",NUMITEM,profile_data_nitems);
             return;
         }
         fprintf(stderr, "******print record data******\n");
@@ -245,7 +241,7 @@ void cmd_print(struct profile *pro,int param){
             fprintf(stderr,"data : %5d --------------------------------\n",i);
             fprintf(stderr,"id     :%d\n",(pro+i)->id);
             fprintf(stderr,"name   :%s\n",(pro+i)->name);
-            fprintf(stderr,"date   :%d/%d/%d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
+            fprintf(stderr,"date   :%04d/%02d/%02d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
             fprintf(stderr,"adress :%s\n",(pro+i)->add);
             fprintf(stderr,"memo   :%s\n",(pro+i)->others);
             fprintf(stderr,"--------------------------------------------\n");
@@ -256,8 +252,6 @@ void cmd_print(struct profile *pro,int param){
         
         param *= -1;
         if( param > profile_data_nitems ){
-            fprintf(stderr,"ERROR %d:over number of record.--cmd_print()\n",OVERNUMBERRECORD);
-            fprintf(stderr,"ERROR %d:number of item is %d\n",NUMITEM,profile_data_nitems);
             return;
         }
         pro += profile_data_nitems-param;
@@ -266,7 +260,7 @@ void cmd_print(struct profile *pro,int param){
             fprintf(stderr,"data : %5d--------------------------------\n",profile_data_nitems-param+i);
             fprintf(stderr,"id     :%d\n",(pro+i)->id);
             fprintf(stderr,"name   :%s\n",(pro+i)->name);
-            fprintf(stderr,"date   :%d/%d/%d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
+            fprintf(stderr,"date   :%04d/%02d/%02d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
             fprintf(stderr,"adress :%s\n",(pro+i)->add);
             fprintf(stderr,"memo   :%s\n",(pro+i)->others);
             fprintf(stderr,"--------------------------------------------\n");
@@ -296,15 +290,10 @@ struct profile *new_profile(struct profile *pro,char *str){
     fprintf(stderr,"data_nitems:%d\n",profile_data_nitems);
     
     if(split(str,ret1,',',maxsplit)!=maxsplit){
-        fprintf(stderr,"ERROR %d:wrong format of input(ex.001,name,1999-01-01,address,other)--new_prifile()\n",FORMATINPUT);
         return NULL;
     }//文字列用
 
     pro->id = strtol(ret1[0],endp,base1);
-    if( pro->id == 0){
-        fprintf(stderr,"ERROR %d:ID is NUMBER.--new_profile()\n",FORMATID);
-        return NULL;
-    }
 
     strncpy(pro->name, ret1[1],70);//名前のコピー
     strncpy(pro->add, ret1[3],70);//住所
@@ -312,14 +301,11 @@ struct profile *new_profile(struct profile *pro,char *str){
     strncpy(pro->others, ret1[4],LIMIT);//備考,MAX 1024bytes
 
     if(split(ret1[2],ret2,'-',maxsplit-2)!=maxsplit-2){
-        fprintf(stderr,"ERROR %d:wrong format of date.(ex.1999-01-01)--new_profile()\n",FORMATDATE);
-        return NULL;
     }//設立日
     pro->found.y = strtol(ret2[0],endp,base1);
     pro->found.m = strtol(ret2[1],endp,base1);
     pro->found.d = strtol(ret2[2],endp,base1);
     
     fprintf(stderr,"Add profile.\n");
-    profile_data_nitems++;
     return pro;
 }
