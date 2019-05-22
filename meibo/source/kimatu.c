@@ -137,11 +137,11 @@ int get_line(char *input){
 void error_split(int check){
     switch(check){
         case luck:
-            fprintf(stderr,"ERROR %d:luck--split()\n",LUCK);
+            //printf("ERROR %d:luck--split()\n",LUCK);
             break;
         
         case over:
-            fprintf(stderr,"ERROR %d:over--split()\n",OVER);
+            //printf("ERROR %d:over--split()\n",OVER);
             break;
         
         default:
@@ -195,7 +195,7 @@ void exec_command(char cmd, char *param)
 
         
         default:
-            fprintf(stderr, "Invalid command %%%c: ignored.\n",cmd);
+            printf( "Invalid command %%%c: ignored.\n",cmd);
         break;
     }
  }
@@ -216,29 +216,29 @@ void cmd_print(struct profile *pro,int param){
     
     if(param == 0){//０のとき
         for(i=0;i<profile_data_nitems;i++){
-            //fprintf(stderr,"data : %5d--------------------------------\n",i);
-            fprintf(stderr,"Id    : %d\n",(pro+i)->id);
-            fprintf(stderr,"Name  : %s\n",(pro+i)->name);
-            fprintf(stderr,"Birth : %04d-%02d-%02d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
-            fprintf(stderr,"Addr  : %s\n",(pro+i)->add);
-            fprintf(stderr,"Com.  : %s\n",(pro+i)->others);
-            //fprintf(stderr,"\n");
+            //printf("data : %5d--------------------------------\n",i);
+            printf("Id    : %d\n",(pro+i)->id);
+            printf("Name  : %s\n",(pro+i)->name);
+            printf("Birth : %04d-%02d-%02d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
+            printf("Addr  : %s\n",(pro+i)->add);
+            printf("Com.  : %s\n",(pro+i)->others);
+            printf("\n");
         }
     }
     
     else if(param > 0){//正のとき
         
         if( param > profile_data_nitems ){
-            return;
+            param=profile_data_nitems;
         }
         for(i = 0;i<param;i++){
-            //fprintf(stderr,"data : %5d --------------------------------\n",i);
-            fprintf(stderr,"Id    : %d\n",(pro+i)->id);
-            fprintf(stderr,"Name  : %s\n",(pro+i)->name);
-            fprintf(stderr,"Birth : %04d-%02d-%02d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
-            fprintf(stderr,"Addr  : %s\n",(pro+i)->add);
-            fprintf(stderr,"Com.  : %s\n",(pro+i)->others);
-            //fprintf(stderr,"\n");
+            //printf("data : %5d --------------------------------\n",i);
+            printf("Id    : %d\n",(pro+i)->id);
+            printf("Name  : %s\n",(pro+i)->name);
+            printf("Birth : %04d-%02d-%02d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
+            printf("Addr  : %s\n",(pro+i)->add);
+            printf("Com.  : %s\n",(pro+i)->others);
+            printf("\n");
         }
     }
     
@@ -246,17 +246,17 @@ void cmd_print(struct profile *pro,int param){
         
         param *= -1;
         if( param > profile_data_nitems ){
-            return;
+            param=profile_data_nitems;
         }
         pro += profile_data_nitems-param;
         for(i=0 ;i<param;i++){
-            //fprintf(stderr,"data : %5d--------------------------------\n",profile_data_nitems-param+i);
-            fprintf(stderr,"Id    : %d\n",(pro+i)->id);
-            fprintf(stderr,"Name  : %s\n",(pro+i)->name);
-            fprintf(stderr,"Birth : %04d-%02d-%02d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
-            fprintf(stderr,"Addr  : %s\n",(pro+i)->add);
-            fprintf(stderr,"Com.  : %s\n",(pro+i)->others);
-            //fprintf(stderr,"\n");
+            //printf("data : %5d--------------------------------\n",profile_data_nitems-param+i);
+            printf("Id    : %d\n",(pro+i)->id);
+            printf("Name  : %s\n",(pro+i)->name);
+            printf("Birth : %04d-%02d-%02d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
+            printf("Addr  : %s\n",(pro+i)->add);
+            printf("Com.  : %s\n",(pro+i)->others);
+            printf("\n");
         }
     }
     return;
@@ -295,9 +295,6 @@ struct profile *new_profile(struct profile *pro,char *str){
     
     pro->others = (char *)malloc(sizeof(char)*(strlen(ret1[4])+1));
     strncpy(pro->others, ret1[4],LIMIT);//備考,MAX 1024bytes
-
-    
-    
     
     return pro;
 }
