@@ -176,7 +176,7 @@ void exec_command(char cmd, char *param)
 
         
         default:
-            printf( "Invalid command %%%c: ignored.\n",cmd);
+            fprintf(stderr,"Invalid command %c: ignored.\n", cmd);
         break;
     }
  }
