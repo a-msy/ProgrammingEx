@@ -120,9 +120,6 @@ int split (char *str,char *ret[],char sep,int max){
         *str = '\0';//必ず区切り文字のはずだからくぎる
 	    str++;//インクリメントさせる  
     }
-
-    if(count<max)count = luck;
-    else if(count>max)count = over;
     return count;
 }
 
@@ -132,22 +129,6 @@ int get_line(char *input){
     }
     subst(input, '\n', '\0');
     return 1; /*成功*/
-}
-
-void error_split(int check){
-    switch(check){
-        case luck:
-            //printf("ERROR %d:luck--split()\n",LUCK);
-            break;
-        
-        case over:
-            //printf("ERROR %d:over--split()\n",OVER);
-            break;
-        
-        default:
-            break;
-    }
-    return;
 }
 
 void parse_line(char *line){
@@ -216,7 +197,6 @@ void cmd_print(struct profile *pro,int param){
     
     if(param == 0){//０のとき
         for(i=0;i<profile_data_nitems;i++){
-            //printf("data : %5d--------------------------------\n",i);
             printf("Id    : %d\n",(pro+i)->id);
             printf("Name  : %s\n",(pro+i)->name);
             printf("Birth : %04d-%02d-%02d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
@@ -232,7 +212,6 @@ void cmd_print(struct profile *pro,int param){
             param=profile_data_nitems;
         }
         for(i = 0;i<param;i++){
-            //printf("data : %5d --------------------------------\n",i);
             printf("Id    : %d\n",(pro+i)->id);
             printf("Name  : %s\n",(pro+i)->name);
             printf("Birth : %04d-%02d-%02d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
@@ -250,7 +229,6 @@ void cmd_print(struct profile *pro,int param){
         }
         pro += profile_data_nitems-param;
         for(i=0 ;i<param;i++){
-            //printf("data : %5d--------------------------------\n",profile_data_nitems-param+i);
             printf("Id    : %d\n",(pro+i)->id);
             printf("Name  : %s\n",(pro+i)->name);
             printf("Birth : %04d-%02d-%02d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
@@ -283,6 +261,7 @@ struct profile *new_profile(struct profile *pro,char *str){
     pro->id = strtol(ret1[0],endp,base1);
 
     strncpy(pro->name, ret1[1],70);//名前のコピー
+    pro->name[70]='\0';
     
     if(split(ret1[2],ret2,'-',maxsplit-2)!=maxsplit-2){
         return NULL;
@@ -292,9 +271,10 @@ struct profile *new_profile(struct profile *pro,char *str){
     pro->found.d = strtol(ret2[2],endp,base1);
     
     strncpy(pro->add, ret1[3],70);//住所
+    pro->add[70]='\0';
     
     pro->others = (char *)malloc(sizeof(char)*(strlen(ret1[4])+1));
-    strncpy(pro->others, ret1[4],LIMIT);//備考,MAX 1024bytes
+    strcpy(pro->others, ret1[4]);//備考,MAX 1024bytes
     
     return pro;
 }
