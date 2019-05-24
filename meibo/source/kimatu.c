@@ -18,18 +18,6 @@
 #define endp NULL//strtol 用ポインタ
 #define base1 10//10進数
 
-typedef enum{
-    null,//
-    LUCK,OVER,//
-    NOTDEFINED,//
-    NORECORD,//
-    OVERNUMBERRECORD,//
-    FORMATINPUT,FORMATID,FORMATDATE,//
-    NUMITEM,//
-    ERRORNUM//
-
-} ERROR;
-
 struct date {
     int y;//year
     int m;//month
@@ -83,7 +71,6 @@ int main(void){
         parse_line(line);
     }
     return 0;
-
 }
 
 int subst(char *str,char c1,char c2){
@@ -120,6 +107,7 @@ int split (char *str,char *ret[],char sep,int max){
         *str = '\0';//必ず区切り文字のはずだからくぎる
 	    str++;//インクリメントさせる  
     }
+    //error:カウント数が大きいもしくは、規定カウント数以下の場合エラー
     return count;
 }
 
@@ -191,6 +179,7 @@ void cmd_check(){
 }
 void cmd_print(struct profile *pro,int param){
     if(profile_data_nitems == 0){
+        //print:データがないことを示す
         return ;
     }
     int i;
@@ -210,6 +199,9 @@ void cmd_print(struct profile *pro,int param){
         
         if( param > profile_data_nitems ){
             param=profile_data_nitems;
+            /*error:すでに配列に入ってる要素よりも大きい場合は全件表示するよりも、
+            データ数オーバーにするほうが良いのでは？
+            負の時も同様*/
         }
         for(i = 0;i<param;i++){
             printf("Id    : %d\n",(pro+i)->id);
@@ -258,6 +250,7 @@ struct profile *new_profile(struct profile *pro,char *str){
         return NULL;
     }//文字列用
     
+    //error:idが数字ではないときは形式が違うからエラーにしたい
     pro->id = strtol(ret1[0],endp,base1);
 
     strncpy(pro->name, ret1[1],70);//名前のコピー
