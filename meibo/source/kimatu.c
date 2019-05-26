@@ -1,12 +1,3 @@
-/* 
- * File:   meibo.c
- * Author: 09430509
- *
- * Created on 2019/04/10
- * update on 2019/05/08
- * error syori na
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -49,11 +40,6 @@ void parse_line(char *line);
 void cmd_quit();
 void cmd_check();
 void cmd_print(struct profile *pro,int param);
-void cmd_read(char *filename);
-void cmd_write(char *filename);
-void cmd_find(char *keyword);
-void cmd_sort(int youso);
-void cmd_delete(int param);
 void exec_command(char cmd, char *param);
 
 /*profile*/
@@ -67,7 +53,7 @@ int profile_data_nitems = 0;
 int main(void){
 
     char line[LIMIT + 1];
-    while (get_line(line)) {
+    while (get_line(line)) {//nullでない限り続ける
         parse_line(line);
     }
     return 0;
@@ -76,7 +62,7 @@ int main(void){
 int subst(char *str,char c1,char c2){
     int count = 0;
     while(*str != '\0'){
-        if(*str == c1){
+        if(*str == c1){//指定文字なら変換
             *str = c2;
             count++;
         }
@@ -94,18 +80,23 @@ int split (char *str,char *ret[],char sep,int max){
         }
        
         if(count>max)break;
-        ret[count++] = str;//strをいじればretも変わるように分割後の文字列にはポインタを入れる
+        ret[count++] = str;
+        //strをいじればretも変わるように分割後の文字列にはポインタを入れる
 
-        while( (*str != '\0') && (*str != sep) ){//区切り文字が見つかるまでポインタすすめる 
+        while( (*str != '\0') && (*str != sep) ){
+            //区切り文字が見つかるまでポインタすすめる 
             str++;
         }
         
         if(*str == '\0') {
-            break;//区切り文字がなかったら抜ける＝文字列はそのまま
+            break;
+            //区切り文字がなかったら抜ける＝文字列はそのまま
         }                                                                                                   
 
-        *str = '\0';//必ず区切り文字のはずだからくぎる
-	    str++;//インクリメントさせる  
+        *str = '\0';
+        //必ず区切り文字のはずだからくぎる
+	    str++;
+        //インクリメントさせる  
     }
     //error:カウント数が大きいもしくは、規定カウント数以下の場合エラー
     return count;
@@ -122,9 +113,11 @@ int get_line(char *input){
 void parse_line(char *line){
     if(line[0]=='%'){
         exec_command(line[1], &line[3]);
+        //[0]->% [1]->P [2]->空白 [3]->2など
     }
     else{
         new_profile(&profile_data_store[profile_data_nitems++],line);
+        //error:データが不正でもインクリメントされている
     }
 }
 
@@ -143,28 +136,9 @@ void exec_command(char cmd, char *param)
             cmd_print(&profile_data_store[0],strtol(param,endp,base1));
         break;
         
-        case 'R':
-            cmd_read(param);
-        break;
-        
-        case 'W':
-            cmd_write(param);
-        break;
-        
-        case 'F':
-            cmd_find(param);
-        break;
-
-        case 'D':
-            break;
-        
-        case 'S':
-            cmd_sort(strtol(param,endp,base1));
-        break;
-
-        
         default:
             fprintf(stderr,"Invalid command %c: ignored.\n", cmd);
+            //定義されていないコマンド
         break;
     }
  }
@@ -179,7 +153,7 @@ void cmd_check(){
 }
 void cmd_print(struct profile *pro,int param){
     if(profile_data_nitems == 0){
-        //print:データがないことを示す
+        //error:データがないことを示す
         return ;
     }
     int i;
@@ -200,7 +174,7 @@ void cmd_print(struct profile *pro,int param){
         if( param > profile_data_nitems ){
             param=profile_data_nitems;
             /*error:すでに配列に入ってる要素よりも大きい場合は全件表示するよりも、
-            データ数オーバーにするほうが良いのでは？
+            データ数オーバーでエラーにするほうが良いのでは？
             負の時も同様*/
         }
         for(i = 0;i<param;i++){
@@ -231,18 +205,6 @@ void cmd_print(struct profile *pro,int param){
     }
     return;
 }
-void cmd_read(char *filename){
-    return;
-}
-void cmd_write(char *filename){
-    return;
-}
-void cmd_find(char *keyword){
-    return;
-}
-void cmd_sort(int youso){
-    return;
-}
 struct profile *new_profile(struct profile *pro,char *str){
     char *ret1[maxsplit],*ret2[maxsplit-2];
     
@@ -267,7 +229,7 @@ struct profile *new_profile(struct profile *pro,char *str){
     pro->add[70]='\0';
     
     pro->others = (char *)malloc(sizeof(char)*(strlen(ret1[4])+1));
-    strcpy(pro->others, ret1[4]);//備考,MAX 1024bytes
+    strcpy(pro->others, ret1[4]);//備考
     
-    return pro;
+    return pro;//構造体proを返す
 }
