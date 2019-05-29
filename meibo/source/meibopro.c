@@ -56,6 +56,7 @@ int get_line(char *input);
 /*parse_line*/
 void parse_line(char *line);
 
+void printdata(struct profile *pro, int i);
 /*cmd*/
 void cmd_quit();
 void cmd_check();
@@ -122,12 +123,12 @@ int split (char *str,char *ret[],char sep,int max){
 
     if(count<max)count = luck;
     else if(count>max)count = over;
-    //error_split(count);
+    error_split(count);
     return count;
 }
 
 int get_line(char *input){
-    fprintf(stderr,"\n>>>>>");
+    fprintf(stdout,"\n>>>>>");
     if (fgets(input, LIMIT + 1, stdin) == NULL){
         fprintf(stderr,"ERROR %d:NULL--getline()\n",null);
         return 0; /* 失敗EOF */
@@ -203,13 +204,13 @@ void exec_command(char cmd, char *param)
  }
 
 void cmd_quit(){
-    fprintf(stderr, "END SYSTEM.\n");
+    fprintf(stdout, "END SYSTEM.\n");
     exit(0);
     return;
 }
 void cmd_check(){
-    fprintf(stderr, "check record num is ");
-    fprintf(stderr,"%d\n",profile_data_nitems);
+    fprintf(stdout, "check record num is ");
+    fprintf(stdout,"%d\n",profile_data_nitems);
     return;
 }
 void cmd_print(struct profile *pro,int param){
@@ -218,18 +219,12 @@ void cmd_print(struct profile *pro,int param){
         return ;
     }
     int i;
-    fprintf(stderr,"param is %d.\n",param);
+    fprintf(stdout,"param is %d.\n",param);
     
     if(param == 0){//０のとき
-    fprintf(stderr, "******print record data******\n");
+    fprintf(stdout, "******print record data******\n");
         for(i=0;i<profile_data_nitems;i++){
-            fprintf(stderr,"data : %5d--------------------------------\n",i);
-            fprintf(stderr,"id     :%d\n",(pro+i)->id);
-            fprintf(stderr,"name   :%s\n",(pro+i)->name);
-            fprintf(stderr,"date   :%d/%d/%d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
-            fprintf(stderr,"adress :%s\n",(pro+i)->add);
-            fprintf(stderr,"memo   :%s\n",(pro+i)->others);
-            fprintf(stderr,"--------------------------------------------\n");
+            printdata(pro+i,i);
         }
     }
     
@@ -240,15 +235,9 @@ void cmd_print(struct profile *pro,int param){
             fprintf(stderr,"ERROR %d:number of item is %d\n",NUMITEM,profile_data_nitems);
             return;
         }
-        fprintf(stderr, "******print record data******\n");
+        fprintf(stdout, "******print record data******\n");
         for(i = 0;i<param;i++){
-            fprintf(stderr,"data : %5d --------------------------------\n",i);
-            fprintf(stderr,"id     :%d\n",(pro+i)->id);
-            fprintf(stderr,"name   :%s\n",(pro+i)->name);
-            fprintf(stderr,"date   :%d/%d/%d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
-            fprintf(stderr,"adress :%s\n",(pro+i)->add);
-            fprintf(stderr,"memo   :%s\n",(pro+i)->others);
-            fprintf(stderr,"--------------------------------------------\n");
+            printdata(pro+i,i);
         }
     }
     
@@ -261,39 +250,44 @@ void cmd_print(struct profile *pro,int param){
             return;
         }
         pro += profile_data_nitems-param;
-        fprintf(stderr, "******print record data******\n");
+        fprintf(stdout, "******print record data******\n");
         for(i=0 ;i<param;i++){
-            fprintf(stderr,"data : %5d--------------------------------\n",profile_data_nitems-param+i);
-            fprintf(stderr,"id     :%d\n",(pro+i)->id);
-            fprintf(stderr,"name   :%s\n",(pro+i)->name);
-            fprintf(stderr,"date   :%d/%d/%d\n",(pro+i)->found.y,(pro+i)->found.m,(pro+i)->found.d);
-            fprintf(stderr,"adress :%s\n",(pro+i)->add);
-            fprintf(stderr,"memo   :%s\n",(pro+i)->others);
-            fprintf(stderr,"--------------------------------------------\n");
+            printdata(pro+i,profile_data_nitems-param+i);
         }
     }
     return;
 }
+
+void printdata(struct profile *pro, int i){
+    fprintf(stderr,"data : %5d--------------------------------\n",i);
+            fprintf(stderr,"id     :%d\n",pro->id);
+            fprintf(stderr,"name   :%s\n",pro->name);
+            fprintf(stderr,"date   :%04d/%02d/%02d\n",pro->found.y,pro->found.m,pro->found.d);
+            fprintf(stderr,"adress :%s\n",pro->add);
+            fprintf(stderr,"memo   :%s\n",pro->others);
+            fprintf(stderr,"--------------------------------------------\n");
+}
+
 void cmd_read(char *filename){
-    fprintf(stderr, "read-%s.\n",filename);
+    fprintf(stdout, "read-%s.\n",filename);
     return;
 }
 void cmd_write(char *filename){
-    fprintf(stderr, "write-%s.\n",filename);
+    fprintf(stdout, "write-%s.\n",filename);
     return;
 }
 void cmd_find(char *keyword){
-    fprintf(stderr, "find-%s.\n",keyword);
+    fprintf(stdout, "find-%s.\n",keyword);
     return;
 }
 void cmd_sort(int youso){
-    fprintf(stderr, "sort-%d.\n",youso);
+    fprintf(stdout, "sort-%d.\n",youso);
     return;
 }
 struct profile *new_profile(struct profile *pro,char *str){
     char *ret1[maxsplit],*ret2[maxsplit-2];
 
-    fprintf(stderr,"data_nitems:%d\n",profile_data_nitems);
+    fprintf(stdout,"data_nitems:%d\n",profile_data_nitems);
     
     if(split(str,ret1,',',maxsplit)!=maxsplit){
         fprintf(stderr,"ERROR %d:wrong format of input(ex.001,name,1999-01-01,address,other)--new_prifile()\n",FORMATINPUT);
@@ -319,7 +313,7 @@ struct profile *new_profile(struct profile *pro,char *str){
     pro->found.m = strtol(ret2[1],endp,base1);
     pro->found.d = strtol(ret2[2],endp,base1);
     
-    fprintf(stderr,"Add profile.\n");
+    fprintf(stdout,"Add profile.\n");
     profile_data_nitems++;
     return pro;
 }
