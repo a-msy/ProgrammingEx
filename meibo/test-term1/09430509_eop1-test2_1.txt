@@ -1,8 +1,8 @@
-5527821,Pirniehall Primary School,1884-6-26,West Pilton Crescent Edinburgh,0131 3325256 0131 5387093 Primary 184 11.7 Open
-5230721,Kemnay Primary School,1930-12-10,Grove Road Kemnay Inverurie Aberdeenshire,01467 642259 01467 643981 Primary 220 10.7 Open
-8525447,Craighead School,1981-7-27,Whistleberry Road Hamilton,01698 285678 01698 459137 Special 193 49.3 Open
-5225620,Dunecht School,1976-12-2,Dunecht Westhill Aberdeenshire,01330 860243 01330 860908 Primary 55 3.9 Open
-5523427,Drumbrae Primary School,1934-10-16,Ardshiel Avenue Edinburgh,0131 3395071 0131 339 2512 Primary 187 10.6 Open
+5217423,King Edward School,1817-6-2,King Edward Banff,01261 821254 01261 821350 Primary 26 2.3 Open
+5345626,Madderty Primary School,1934-12-28,Madderty Crieff,01764 683215 01764 683729 Primary 55 3.4 Open
+8621829,Bargarran Primary School,1890-7-3,Barrhill Road Erskine,0141 8122530 0141 8128350 Primary 302 13.0 Open
+8238030,Kyle Academy,1977-10-12,7 Overmills Road Ayr,01292 262234/5 01292 611123 Secondary 781 61.8 Open
+8521824,St John's Primary School,1824-9-25,Dixon Street Hamilton,01698 283401 01698 207489 Primary 345 20.8 Integrated SEN Unit Open
 %P 4
 %P 5
 %P 6

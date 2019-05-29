@@ -1,8 +1,8 @@
-5234123,Scotstown School,1802-5-12,Scotstown Road Bridge Of Don Aberdeen,01224 703331 01224 820289 Primary 219 15.3 Integrated SEN Unit Open
-5540321,Riccarton Primary School,1834-6-2,59 Curriehill Road Currie,0131 4492087 0131 4495772 Primary 177 11.0 Open
-8212724,Blacklands Primary School,1994-2-25,David's Crescent Kilwinning,01294 552626 01294 552626 Primary 161 7.0 Open
-8234523,Glenburn Primary School,1803-4-24,Sherwood Road Prestwick,01292 477918 01292 477918 Primary 379 17.5 Open
-5546532,Lasswade High School Centre,1807-2-15,Eskdale Drive Bonnyrigg,0131 6637171 0131 6636634 Secondary 1286 94.5 Integrated SEN Unit Open
+5543428,Gorebridge Primary School,1829-5-1,80 Hunterfield Road Gorebridge,01875 820529 01875 823102 Primary 338 20.4 Open
+5220920,Strichen School,1893-1-16,North Street Strichen Fraserburgh Aberdeenshire,01771 637250 01771 637849 Primary 126 6.4 Open
+8501629,Victoria Primary School,1936-10-15,79 Aitchison Street Airdrie,01236 763113 01236 765371 Primary 178 8.6 Open
+5202523,New Elgin Primary School,1949-1-17,Bezack Street New Elgin Moray,01343 547587 01343 552308 Primary 315 18.4 Open
+8426325,St Philip's Primary School,1860-3-18,157 Drumlochy Road Glasgow,0141 7744545 0141 774 4642 Primary 110 7.0 Open
 %P 0
 %P -2
 %P -3

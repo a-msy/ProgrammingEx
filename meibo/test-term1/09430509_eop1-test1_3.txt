@@ -1,8 +1,8 @@
-5145724,Gergask Primary School,1902-1-20,Laggan Bridge Newtonmore Inverness-shire,01528 544272 01528 544272 Primary 29 2.4 Open
-8435138,King's Park Secondary School,1824-3-3,14 Fetlar Drive Simshill Glasgow,0141 582 0150 0141 582 0151 Secondary 1208 81.9 Open
-8533121,Wester Overton Primary School,1953-5-16,Ashkirk Road Strathaven,01357 521870 01357 529123 Primary 393 17.0 Open
-8426929,St Rose Of Lima Primary School,1932-5-4,291 Mossvale Road Glasgow,0141 7747209 0141 774 0270 Primary 262 12.0 Open
-8102325,Dalmally Primary School,1828-9-25,Glenview Dalmally Argyll,01838 200359 01838 200254 Primary 54 3.2 Open
+8342032,Turnbull High School,1972-11-15,St Mary's Road Bishopbriggs Glasgow,0141 7729101 0141 7623671 Secondary 856 65.2 Open
+5501628,Parkhead Primary School,1976-11-2,Harburn Road West Calder,01506 871404 01506 871404 Primary 320 17.0 Open
+5348021,Pitcairn Primary School,1874-4-21,Bridgeton Brae Almondbank Perth,01738 583309 01738 582148 Primary 112 5.5 Open
+5406730,Glenrothes High School,1952-7-3,Napier Road Glenrothes,01592 415541 01592 415554 Secondary 906 74.4 Integrated SEN Unit Open
+5724325,Gargunnock Primary School,1903-11-22,Station Road Gargunnock By Stirling,01786 860291 01786 860567 Primary 105 6.0 Open
 %P 0
 %P 2
 %P 3

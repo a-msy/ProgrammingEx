@@ -1,8 +1,8 @@
-5542928,Woodburn Primary School,1862-4-5,10 Salters Road Dalkeith,0131 6632556 0131 6634867 Primary 390 19.0 Open
-5915929,Crossmichael School,1872-1-12,Crossmichael Castle Douglas,01556 670282 01556 670282 Primary 57 3.7 Open
-5237521,Abbotswell School,1942-9-11,Faulds Gate Aberdeen,01224 872714 01224 876270 Primary 242 17.0 Open
-5532736,Forrester High School,1976-11-16,212 Broomhouse Road Edinburgh,0131 3349262 0131 4677134 Secondary 755 55.7 Open
-5130123,Acharacle Primary School,1807-8-20,Acharacle Argyll,01967 431645 01967 431645 Primary 52 5.1 Open
+5946921,Glenzier School,1957-6-11,Canonbie Dumfriesshire,01387 371319 01387 371207 Primary 28 2.2 Open
+8420025,St Aloysius' Primary School,1911-5-21,12 Carron Crescent Springburn Glasgow,0141 5588468 Primary 205 11.8 Open
+8624828,Ferguslie Primary School,1992-1-10,Crawfurd Drive Paisley,0141 8893646 0141 8497121 Primary 166 11.2 Open
+8456720,Bankhead Primary School,1958-11-9,Bankhead Road Rutherglen,0141 6476967 0141 6130043 Primary 309 15.0 Open
+8240140,Barshare Unit,1804-8-11,Barshare Primary School Dalgleish Avenue Cumnock,01290 422212 01290 422212 SEN Unit 12 3.0 Open
 %P 0
 %P 6
 %P -6
