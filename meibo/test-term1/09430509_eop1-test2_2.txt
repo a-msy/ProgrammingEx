@@ -1,0 +1,9 @@
+8303320,Luss Primary School,1954-1-7,Luss By Alexandria,01436 860244 01436 860216 Primary 27 3.0 Open
+8105626,Kilninver Primary School,1902-5-15,Kilninver Oban Argyll,01852 316236 01852 316228 Primary 37 2.8 Open
+8549834,Biggar High School,1873-3-28,John's Loan Biggar,01899 220144 01899 221265 Secondary 673 58.2 Open
+5280338,Gordonstoun School,1821-3-10,Elgin Moray,01343 837837 01343 837808 Secondary 449 64.8 Open
+8104026,Inveraray Primary School,1878-2-11,Inveraray Argyll,01499 302218 01499 302514 Primary 76 3.2 Open
+%P -4
+%P -5
+%P -6
+%Q

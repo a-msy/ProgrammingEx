@@ -1,0 +1,84 @@
+Id    : 8105626							Id    : 8105626
+Name  : Kilninver Primary School				Name  : Kilninver Primary School
+Birth : 1902-05-15						Birth : 1902-05-15
+Addr  : Kilninver Oban Argyll					Addr  : Kilninver Oban Argyll
+Com.  : 01852 316236 01852 316228 Primary 37 2.8 Open		Com.  : 01852 316236 01852 316228 Primary 37 2.8 Open
+
+Id    : 8549834							Id    : 8549834
+Name  : Biggar High School					Name  : Biggar High School
+Birth : 1873-03-28						Birth : 1873-03-28
+Addr  : John's Loan Biggar					Addr  : John's Loan Biggar
+Com.  : 01899 220144 01899 221265 Secondary 673 58.2 Open	Com.  : 01899 220144 01899 221265 Secondary 673 58.2 Open
+
+Id    : 5280338							Id    : 5280338
+Name  : Gordonstoun School					Name  : Gordonstoun School
+Birth : 1821-03-10						Birth : 1821-03-10
+Addr  : Elgin Moray						Addr  : Elgin Moray
+Com.  : 01343 837837 01343 837808 Secondary 449 64.8 Open	Com.  : 01343 837837 01343 837808 Secondary 449 64.8 Open
+
+Id    : 8104026							Id    : 8104026
+Name  : Inveraray Primary School				Name  : Inveraray Primary School
+Birth : 1878-02-11						Birth : 1878-02-11
+Addr  : Inveraray Argyll					Addr  : Inveraray Argyll
+Com.  : 01499 302218 01499 302514 Primary 76 3.2 Open		Com.  : 01499 302218 01499 302514 Primary 76 3.2 Open
+
+Id    : 8303320							Id    : 8303320
+Name  : Luss Primary School					Name  : Luss Primary School
+Birth : 1954-01-07						Birth : 1954-01-07
+Addr  : Luss By Alexandria					Addr  : Luss By Alexandria
+Com.  : 01436 860244 01436 860216 Primary 27 3.0 Open		Com.  : 01436 860244 01436 860216 Primary 27 3.0 Open
+
+Id    : 8105626							Id    : 8105626
+Name  : Kilninver Primary School				Name  : Kilninver Primary School
+Birth : 1902-05-15						Birth : 1902-05-15
+Addr  : Kilninver Oban Argyll					Addr  : Kilninver Oban Argyll
+Com.  : 01852 316236 01852 316228 Primary 37 2.8 Open		Com.  : 01852 316236 01852 316228 Primary 37 2.8 Open
+
+Id    : 8549834							Id    : 8549834
+Name  : Biggar High School					Name  : Biggar High School
+Birth : 1873-03-28						Birth : 1873-03-28
+Addr  : John's Loan Biggar					Addr  : John's Loan Biggar
+Com.  : 01899 220144 01899 221265 Secondary 673 58.2 Open	Com.  : 01899 220144 01899 221265 Secondary 673 58.2 Open
+
+Id    : 5280338							Id    : 5280338
+Name  : Gordonstoun School					Name  : Gordonstoun School
+Birth : 1821-03-10						Birth : 1821-03-10
+Addr  : Elgin Moray						Addr  : Elgin Moray
+Com.  : 01343 837837 01343 837808 Secondary 449 64.8 Open	Com.  : 01343 837837 01343 837808 Secondary 449 64.8 Open
+
+Id    : 8104026							Id    : 8104026
+Name  : Inveraray Primary School				Name  : Inveraray Primary School
+Birth : 1878-02-11						Birth : 1878-02-11
+Addr  : Inveraray Argyll					Addr  : Inveraray Argyll
+Com.  : 01499 302218 01499 302514 Primary 76 3.2 Open		Com.  : 01499 302218 01499 302514 Primary 76 3.2 Open
+
+Id    : 8303320							Id    : 8303320
+Name  : Luss Primary School					Name  : Luss Primary School
+Birth : 1954-01-07						Birth : 1954-01-07
+Addr  : Luss By Alexandria					Addr  : Luss By Alexandria
+Com.  : 01436 860244 01436 860216 Primary 27 3.0 Open		Com.  : 01436 860244 01436 860216 Primary 27 3.0 Open
+
+Id    : 8105626							Id    : 8105626
+Name  : Kilninver Primary School				Name  : Kilninver Primary School
+Birth : 1902-05-15						Birth : 1902-05-15
+Addr  : Kilninver Oban Argyll					Addr  : Kilninver Oban Argyll
+Com.  : 01852 316236 01852 316228 Primary 37 2.8 Open		Com.  : 01852 316236 01852 316228 Primary 37 2.8 Open
+
+Id    : 8549834							Id    : 8549834
+Name  : Biggar High School					Name  : Biggar High School
+Birth : 1873-03-28						Birth : 1873-03-28
+Addr  : John's Loan Biggar					Addr  : John's Loan Biggar
+Com.  : 01899 220144 01899 221265 Secondary 673 58.2 Open	Com.  : 01899 220144 01899 221265 Secondary 673 58.2 Open
+
+Id    : 5280338							Id    : 5280338
+Name  : Gordonstoun School					Name  : Gordonstoun School
+Birth : 1821-03-10						Birth : 1821-03-10
+Addr  : Elgin Moray						Addr  : Elgin Moray
+Com.  : 01343 837837 01343 837808 Secondary 449 64.8 Open	Com.  : 01343 837837 01343 837808 Secondary 449 64.8 Open
+
+Id    : 8104026							Id    : 8104026
+Name  : Inveraray Primary School				Name  : Inveraray Primary School
+Birth : 1878-02-11						Birth : 1878-02-11
+Addr  : Inveraray Argyll					Addr  : Inveraray Argyll
+Com.  : 01499 302218 01499 302514 Primary 76 3.2 Open		Com.  : 01499 302218 01499 302514 Primary 76 3.2 Open
+

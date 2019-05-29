@@ -1,0 +1,10 @@
+5321026,Tealing Primary School,1997-10-25,Tealing Angus,01382 380210 Primary 49 3.6 Open
+5343224,Errol Primary School,1912-6-23,Station Road Errol Perthshire,01821 642264 01821 642899 Primary 96 6.0 Open
+8513325,St Brendan's Primary School,1947-4-22,45 Barons Road Motherwell,01698 265877 01698 265 877 Primary 174 9.0 Open
+5218527,Peterhead Central School,1904-5-20,St Peter Street Peterhead,01779 472211 01779 476453 Primary 212 12.3 Integrated SEN Unit Open
+5935121,Ae School,1876-11-24,Ae Village Dumfries,0138 7860229 01387 860229 Primary 23 2.0 Open
+%C
+%Q
+8681139,Cedars School of Excellence,1967-11-3,Lothian Road Greenock,01475 631074 Primary 20 3.1 Secondary 11 2.6 Open
+%C
+%Q

@@ -1,0 +1,9 @@
+5145724,Gergask Primary School,1902-1-20,Laggan Bridge Newtonmore Inverness-shire,01528 544272 01528 544272 Primary 29 2.4 Open
+8435138,King's Park Secondary School,1824-3-3,14 Fetlar Drive Simshill Glasgow,0141 582 0150 0141 582 0151 Secondary 1208 81.9 Open
+8533121,Wester Overton Primary School,1953-5-16,Ashkirk Road Strathaven,01357 521870 01357 529123 Primary 393 17.0 Open
+8426929,St Rose Of Lima Primary School,1932-5-4,291 Mossvale Road Glasgow,0141 7747209 0141 774 0270 Primary 262 12.0 Open
+8102325,Dalmally Primary School,1828-9-25,Glenview Dalmally Argyll,01838 200359 01838 200254 Primary 54 3.2 Open
+%P 0
+%P 2
+%P 3
+%Q

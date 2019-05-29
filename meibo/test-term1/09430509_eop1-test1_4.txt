@@ -1,0 +1,9 @@
+5234123,Scotstown School,1802-5-12,Scotstown Road Bridge Of Don Aberdeen,01224 703331 01224 820289 Primary 219 15.3 Integrated SEN Unit Open
+5540321,Riccarton Primary School,1834-6-2,59 Curriehill Road Currie,0131 4492087 0131 4495772 Primary 177 11.0 Open
+8212724,Blacklands Primary School,1994-2-25,David's Crescent Kilwinning,01294 552626 01294 552626 Primary 161 7.0 Open
+8234523,Glenburn Primary School,1803-4-24,Sherwood Road Prestwick,01292 477918 01292 477918 Primary 379 17.5 Open
+5546532,Lasswade High School Centre,1807-2-15,Eskdale Drive Bonnyrigg,0131 6637171 0131 6636634 Secondary 1286 94.5 Integrated SEN Unit Open
+%P 0
+%P -2
+%P -3
+%Q

@@ -1,0 +1,9 @@
+8515026,St Columba's Primary School,1943-6-14,Old Edinburgh Road Uddingston Glasgow,01698 813804 01698 811289 Primary 294 12.0 Open
+5427541,East Fife Support Centre,1904-7-14,Kirkgate Annexe Lovers Lane Cupar,01334 656923 01334 412386 SEN Unit 3.0 Open
+8644438,Gourock High School,1876-8-20,Fletcher Avenue Gourock,01475 715000 01475 715001 Secondary 692 53.2 Open
+5780942,Snowdon School,1810-11-20,31 Spittal Street Stirling,01786 473449 01786 470383 Special 16 4.1 Open
+5550831,Musselburgh Grammar School,1802-9-3,86 Inveresk Road Musselburgh East Lothian,0131 6654278 0131 6532152 Secondary 1329 101.6 Open
+%C
+8681139,Cedars School of Excellence,1967-11-3,Lothian Road Greenock,01475 631074 Primary 20 3.1 Secondary 11 2.6 Open
+%C
+%Q

@@ -1,0 +1,60 @@
+Id    : 5145724							Id    : 5145724
+Name  : Gergask Primary School					Name  : Gergask Primary School
+Birth : 1902-01-20						Birth : 1902-01-20
+Addr  : Laggan Bridge Newtonmore Inverness-shire		Addr  : Laggan Bridge Newtonmore Inverness-shire
+Com.  : 01528 544272 01528 544272 Primary 29 2.4 Open		Com.  : 01528 544272 01528 544272 Primary 29 2.4 Open
+
+Id    : 8435138							Id    : 8435138
+Name  : King's Park Secondary School				Name  : King's Park Secondary School
+Birth : 1824-03-03						Birth : 1824-03-03
+Addr  : 14 Fetlar Drive Simshill Glasgow			Addr  : 14 Fetlar Drive Simshill Glasgow
+Com.  : 0141 582 0150 0141 582 0151 Secondary 1208 81.9 Open	Com.  : 0141 582 0150 0141 582 0151 Secondary 1208 81.9 Open
+
+Id    : 8533121							Id    : 8533121
+Name  : Wester Overton Primary School				Name  : Wester Overton Primary School
+Birth : 1953-05-16						Birth : 1953-05-16
+Addr  : Ashkirk Road Strathaven					Addr  : Ashkirk Road Strathaven
+Com.  : 01357 521870 01357 529123 Primary 393 17.0 Open		Com.  : 01357 521870 01357 529123 Primary 393 17.0 Open
+
+Id    : 8426929							Id    : 8426929
+Name  : St Rose Of Lima Primary School				Name  : St Rose Of Lima Primary School
+Birth : 1932-05-04						Birth : 1932-05-04
+Addr  : 291 Mossvale Road Glasgow				Addr  : 291 Mossvale Road Glasgow
+Com.  : 0141 7747209 0141 774 0270 Primary 262 12.0 Open	Com.  : 0141 7747209 0141 774 0270 Primary 262 12.0 Open
+
+Id    : 8102325							Id    : 8102325
+Name  : Dalmally Primary School					Name  : Dalmally Primary School
+Birth : 1828-09-25						Birth : 1828-09-25
+Addr  : Glenview Dalmally Argyll				Addr  : Glenview Dalmally Argyll
+Com.  : 01838 200359 01838 200254 Primary 54 3.2 Open		Com.  : 01838 200359 01838 200254 Primary 54 3.2 Open
+
+Id    : 5145724							Id    : 5145724
+Name  : Gergask Primary School					Name  : Gergask Primary School
+Birth : 1902-01-20						Birth : 1902-01-20
+Addr  : Laggan Bridge Newtonmore Inverness-shire		Addr  : Laggan Bridge Newtonmore Inverness-shire
+Com.  : 01528 544272 01528 544272 Primary 29 2.4 Open		Com.  : 01528 544272 01528 544272 Primary 29 2.4 Open
+
+Id    : 8435138							Id    : 8435138
+Name  : King's Park Secondary School				Name  : King's Park Secondary School
+Birth : 1824-03-03						Birth : 1824-03-03
+Addr  : 14 Fetlar Drive Simshill Glasgow			Addr  : 14 Fetlar Drive Simshill Glasgow
+Com.  : 0141 582 0150 0141 582 0151 Secondary 1208 81.9 Open	Com.  : 0141 582 0150 0141 582 0151 Secondary 1208 81.9 Open
+
+Id    : 5145724							Id    : 5145724
+Name  : Gergask Primary School					Name  : Gergask Primary School
+Birth : 1902-01-20						Birth : 1902-01-20
+Addr  : Laggan Bridge Newtonmore Inverness-shire		Addr  : Laggan Bridge Newtonmore Inverness-shire
+Com.  : 01528 544272 01528 544272 Primary 29 2.4 Open		Com.  : 01528 544272 01528 544272 Primary 29 2.4 Open
+
+Id    : 8435138							Id    : 8435138
+Name  : King's Park Secondary School				Name  : King's Park Secondary School
+Birth : 1824-03-03						Birth : 1824-03-03
+Addr  : 14 Fetlar Drive Simshill Glasgow			Addr  : 14 Fetlar Drive Simshill Glasgow
+Com.  : 0141 582 0150 0141 582 0151 Secondary 1208 81.9 Open	Com.  : 0141 582 0150 0141 582 0151 Secondary 1208 81.9 Open
+
+Id    : 8533121							Id    : 8533121
+Name  : Wester Overton Primary School				Name  : Wester Overton Primary School
+Birth : 1953-05-16						Birth : 1953-05-16
+Addr  : Ashkirk Road Strathaven					Addr  : Ashkirk Road Strathaven
+Com.  : 01357 521870 01357 529123 Primary 393 17.0 Open		Com.  : 01357 521870 01357 529123 Primary 393 17.0 Open
+

@@ -1,0 +1,84 @@
+Id    : 5527821							Id    : 5527821
+Name  : Pirniehall Primary School				Name  : Pirniehall Primary School
+Birth : 1884-06-26						Birth : 1884-06-26
+Addr  : West Pilton Crescent Edinburgh				Addr  : West Pilton Crescent Edinburgh
+Com.  : 0131 3325256 0131 5387093 Primary 184 11.7 Open		Com.  : 0131 3325256 0131 5387093 Primary 184 11.7 Open
+
+Id    : 5230721							Id    : 5230721
+Name  : Kemnay Primary School					Name  : Kemnay Primary School
+Birth : 1930-12-10						Birth : 1930-12-10
+Addr  : Grove Road Kemnay Inverurie Aberdeenshire		Addr  : Grove Road Kemnay Inverurie Aberdeenshire
+Com.  : 01467 642259 01467 643981 Primary 220 10.7 Open		Com.  : 01467 642259 01467 643981 Primary 220 10.7 Open
+
+Id    : 8525447							Id    : 8525447
+Name  : Craighead School					Name  : Craighead School
+Birth : 1981-07-27						Birth : 1981-07-27
+Addr  : Whistleberry Road Hamilton				Addr  : Whistleberry Road Hamilton
+Com.  : 01698 285678 01698 459137 Special 193 49.3 Open		Com.  : 01698 285678 01698 459137 Special 193 49.3 Open
+
+Id    : 5225620							Id    : 5225620
+Name  : Dunecht School						Name  : Dunecht School
+Birth : 1976-12-02						Birth : 1976-12-02
+Addr  : Dunecht Westhill Aberdeenshire				Addr  : Dunecht Westhill Aberdeenshire
+Com.  : 01330 860243 01330 860908 Primary 55 3.9 Open		Com.  : 01330 860243 01330 860908 Primary 55 3.9 Open
+
+Id    : 5527821							Id    : 5527821
+Name  : Pirniehall Primary School				Name  : Pirniehall Primary School
+Birth : 1884-06-26						Birth : 1884-06-26
+Addr  : West Pilton Crescent Edinburgh				Addr  : West Pilton Crescent Edinburgh
+Com.  : 0131 3325256 0131 5387093 Primary 184 11.7 Open		Com.  : 0131 3325256 0131 5387093 Primary 184 11.7 Open
+
+Id    : 5230721							Id    : 5230721
+Name  : Kemnay Primary School					Name  : Kemnay Primary School
+Birth : 1930-12-10						Birth : 1930-12-10
+Addr  : Grove Road Kemnay Inverurie Aberdeenshire		Addr  : Grove Road Kemnay Inverurie Aberdeenshire
+Com.  : 01467 642259 01467 643981 Primary 220 10.7 Open		Com.  : 01467 642259 01467 643981 Primary 220 10.7 Open
+
+Id    : 8525447							Id    : 8525447
+Name  : Craighead School					Name  : Craighead School
+Birth : 1981-07-27						Birth : 1981-07-27
+Addr  : Whistleberry Road Hamilton				Addr  : Whistleberry Road Hamilton
+Com.  : 01698 285678 01698 459137 Special 193 49.3 Open		Com.  : 01698 285678 01698 459137 Special 193 49.3 Open
+
+Id    : 5225620							Id    : 5225620
+Name  : Dunecht School						Name  : Dunecht School
+Birth : 1976-12-02						Birth : 1976-12-02
+Addr  : Dunecht Westhill Aberdeenshire				Addr  : Dunecht Westhill Aberdeenshire
+Com.  : 01330 860243 01330 860908 Primary 55 3.9 Open		Com.  : 01330 860243 01330 860908 Primary 55 3.9 Open
+
+Id    : 5523427							Id    : 5523427
+Name  : Drumbrae Primary School					Name  : Drumbrae Primary School
+Birth : 1934-10-16						Birth : 1934-10-16
+Addr  : Ardshiel Avenue Edinburgh				Addr  : Ardshiel Avenue Edinburgh
+Com.  : 0131 3395071 0131 339 2512 Primary 187 10.6 Open	Com.  : 0131 3395071 0131 339 2512 Primary 187 10.6 Open
+
+Id    : 5527821							Id    : 5527821
+Name  : Pirniehall Primary School				Name  : Pirniehall Primary School
+Birth : 1884-06-26						Birth : 1884-06-26
+Addr  : West Pilton Crescent Edinburgh				Addr  : West Pilton Crescent Edinburgh
+Com.  : 0131 3325256 0131 5387093 Primary 184 11.7 Open		Com.  : 0131 3325256 0131 5387093 Primary 184 11.7 Open
+
+Id    : 5230721							Id    : 5230721
+Name  : Kemnay Primary School					Name  : Kemnay Primary School
+Birth : 1930-12-10						Birth : 1930-12-10
+Addr  : Grove Road Kemnay Inverurie Aberdeenshire		Addr  : Grove Road Kemnay Inverurie Aberdeenshire
+Com.  : 01467 642259 01467 643981 Primary 220 10.7 Open		Com.  : 01467 642259 01467 643981 Primary 220 10.7 Open
+
+Id    : 8525447							Id    : 8525447
+Name  : Craighead School					Name  : Craighead School
+Birth : 1981-07-27						Birth : 1981-07-27
+Addr  : Whistleberry Road Hamilton				Addr  : Whistleberry Road Hamilton
+Com.  : 01698 285678 01698 459137 Special 193 49.3 Open		Com.  : 01698 285678 01698 459137 Special 193 49.3 Open
+
+Id    : 5225620							Id    : 5225620
+Name  : Dunecht School						Name  : Dunecht School
+Birth : 1976-12-02						Birth : 1976-12-02
+Addr  : Dunecht Westhill Aberdeenshire				Addr  : Dunecht Westhill Aberdeenshire
+Com.  : 01330 860243 01330 860908 Primary 55 3.9 Open		Com.  : 01330 860243 01330 860908 Primary 55 3.9 Open
+
+Id    : 5523427							Id    : 5523427
+Name  : Drumbrae Primary School					Name  : Drumbrae Primary School
+Birth : 1934-10-16						Birth : 1934-10-16
+Addr  : Ardshiel Avenue Edinburgh				Addr  : Ardshiel Avenue Edinburgh
+Com.  : 0131 3395071 0131 339 2512 Primary 187 10.6 Open	Com.  : 0131 3395071 0131 339 2512 Primary 187 10.6 Open
+
