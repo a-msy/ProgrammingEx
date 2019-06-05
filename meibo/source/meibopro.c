@@ -51,7 +51,7 @@ int split(char *str,char *ret[],char sep,int max);
 void error_split(int check);
 
 /*get_line*/
-int get_line(char *input);
+int get_line(FILE *fp,char *input);
 
 /*parse_line*/
 void parse_line(char *line);
@@ -79,7 +79,7 @@ int profile_data_nitems = 0;
 int main(void){
 
     char line[LIMIT + 1];
-    while (get_line(line)) {
+    while (get_line(stdin,line)) {
         parse_line(line);
     }
     return 0;
@@ -127,13 +127,15 @@ int split (char *str,char *ret[],char sep,int max){
     return count;
 }
 
-int get_line(char *input){
-    fprintf(stdout,"\n>>>>>");
-    if (fgets(input, LIMIT + 1, stdin) == NULL){
+int get_line(FILE *fp, char *input){
+    fprintf(stderr,"\n>>>>>");
+    
+    if (fgets(input, LIMIT + 1, fp) == NULL){
         fprintf(stderr,"ERROR %d:NULL--getline()\n",null);
         return 0; /* 失敗EOF */
     }
     subst(input, '\n', '\0');
+    
     return 1; /*成功*/
 }
 
@@ -269,11 +271,19 @@ void printdata(struct profile *pro, int i){
 }
 
 void cmd_read(char *filename){
-    fprintf(stdout, "read-%s.\n",filename);
+    char line[LIMIT+1];
+    FILE *fp;
+    
+    fp = fopen(filename,"r");
+    while(get_line(fp,line)){
+        parse_line(line);
+    }
+    fclose(fp);
     return;
 }
 void cmd_write(char *filename){
-    fprintf(stdout, "write-%s.\n",filename);
+    int item_num;
+    FILE *fp;
     return;
 }
 void cmd_find(char *keyword){
@@ -287,7 +297,7 @@ void cmd_sort(int youso){
 struct profile *new_profile(struct profile *pro,char *str){
     char *ret1[maxsplit],*ret2[maxsplit-2];
 
-    fprintf(stdout,"data_nitems:%d\n",profile_data_nitems);
+    
     
     if(split(str,ret1,',',maxsplit)!=maxsplit){
         fprintf(stderr,"ERROR %d:wrong format of input(ex.001,name,1999-01-01,address,other)--new_prifile()\n",FORMATINPUT);
@@ -303,7 +313,7 @@ struct profile *new_profile(struct profile *pro,char *str){
     strncpy(pro->name, ret1[1],70);//名前のコピー
     strncpy(pro->add, ret1[3],70);//住所
     pro->others = (char *)malloc(sizeof(char)*(strlen(ret1[4])+1));
-    strncpy(pro->others, ret1[4],LIMIT);//備考,MAX 1024bytes
+    strcpy(pro->others, ret1[4]);//備考,MAX 1024bytes
 
     if(split(ret1[2],ret2,'-',maxsplit-2)!=maxsplit-2){
         fprintf(stderr,"ERROR %d:wrong format of date.(ex.1999-01-01)--new_profile()\n",FORMATDATE);
@@ -314,6 +324,7 @@ struct profile *new_profile(struct profile *pro,char *str){
     pro->found.d = strtol(ret2[2],endp,base1);
     
     fprintf(stdout,"Add profile.\n");
+    fprintf(stdout,"data_nitems:%d\n",profile_data_nitems);
     profile_data_nitems++;
     return pro;
 }
