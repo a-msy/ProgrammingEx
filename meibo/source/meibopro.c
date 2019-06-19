@@ -3,7 +3,7 @@
  * Author: 09430509
  *
  * Created on 2019/04/10
- * update on 2019/05/08
+ * update on 2019/06/19
  */
 
 #include <stdio.h>
@@ -25,7 +25,8 @@ typedef enum{
     OVERNUMBERRECORD,//
     FORMATINPUT,FORMATID,FORMATDATE,//
     NUMITEM,//
-    ERRORNUM//
+    ERRORNUM,//
+    NOFILENAME
 
 } ERROR;
 
@@ -157,6 +158,7 @@ void error_split(int check){
 
 void parse_line(char *line){
     if(line[0]=='%'){
+        printf("%s\n",&line[3]);
         exec_command(line[1], &line[3]);
     }
     else{
@@ -274,7 +276,16 @@ void cmd_read(char *filename){
     char line[LIMIT+1];
     FILE *fp;
     
-    fp = fopen(filename,"r");
+    printf("%s\n",filename);
+    /*
+    if(filename==NULL){
+        fprintf(stderr,"please input filename---cmd_read()\n",NOFILENAME);
+    }
+    */
+    if(fp = fopen(filename,"r")==NULL){
+        fprintf(stderr,"file open error!!\n");
+        exit(0);
+    }
     while(get_line(fp,line)){
         parse_line(line);
     }
@@ -284,6 +295,12 @@ void cmd_read(char *filename){
 void cmd_write(char *filename){
     int item_num;
     FILE *fp;
+    
+    if(fp = fopen(filename,"w")==NULL){
+        fprintf(stderr,"file open error!!\n");
+        exit(0);
+    }
+    
     return;
 }
 void cmd_find(char *keyword){

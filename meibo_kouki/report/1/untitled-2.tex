@@ -1,0 +1,319 @@
+\documentclass[a4j,11pt]{jarticle}
+% ファイル先頭から\begin{document}までの内容（プレアンブル）については，
+% 教員からの指示がない限り， { } の中を書き換えるだけでよい．
+
+% ToDo: 提出要領に従って，適切な余白を設定する
+\usepackage[top=25truemm,  bottom=30truemm,
+            left=25truemm, right=25truemm]{geometry}
+
+% ToDo: 提出要領に従って，適切なタイトル・サブタイトルを設定する
+\title{プログラミング演習1 \\
+       中間レポート}
+
+% ToDo: 自分自身の氏名と学生番号に書き換える
+\author{氏名: 今田　将也 (Imada, Masaya) \\
+        学生番号: 09430509}
+
+% ToDo: 教員の指示に従って適切に書き換える
+\date{出題日: 2019年04月10日 \\
+      提出日: 2019年04月24日 \\
+      締切日: 2019年05月08日 \\}  % 注：最後の\\は不要に見えるが必要．
+
+% ToDo: 図を入れる場合，以下の1行を有効にする
+%\usepackage{graphicx}
+
+\begin{document}
+\maketitle
+% 目次つきの表紙ページにする場合はコメントを外す
+%{\footnotesize \tableofcontents \newpage}
+
+%==================================================================%
+\section{はじめに}
+プログラミング演習１での名簿管理プログラムの作成課題に取り組むにあたり, 必要な関数を作成した. 
+
+%==================================================================%
+\section{作成した関数の説明}
+
+%------------------------------------------------------------------%
+%------------------------------------------------------------------%
+\subsection{\texttt{subst}関数}
+% 参考：sectionの中では verb が使えない．そんな時は？
+ \begin{description}
+    \item[関数] \verb|int subst(char *str,char c1,char c2)|
+    \item[行数]  4章のソースコードの43行目から53行目に記述してある.
+    \item[概要]　引数として与えられた文字列\verb|str|の特定の文字を別の文字に置き換え， 置き換えた文字数をカウントする.
+    \item[戻り値]整数型で引数\verb|str|の置き換えた文字数を返す.
+    \item[引数]  \verb|char *str|は置き換えたい元の文字列を与える. \verb|char c1|は置き換え対象の文字を与える. \verb|char c2|は置き換え後の文字を与える.
+    \item[使用例]
+      \begin{verbatim}
+
+      int a = 0;
+      printf("before:%s\ncount:%d\n",test,a);
+      a=subst(''test'','t','f');
+      printf("after:%s\ncount:%d\n",test,a);
+      \end{verbatim}
+	
+  \end{description}
+関数\verb|subst|の作成にあたっては，扱う引数が文字列と文字とがあることに注意しなければならない．文字列の場合には引数として\verb|str|の最初の文字をポインタとして与えている
+．\\4章の26行目からのwhile文の判定式は，\verb|*str|のみでも問題はないが，後に見返す際に少しでもわかりやすくするためにあえて空文字を指定した．\\関数の役割を区別するために\verb|subst|関数には結果を画面に表示する機能はつけていない．
+%------------------------------------------------------------------%
+%------------------------------------------------------------------%
+\subsection{\texttt{split}関数}
+ \begin{description}
+    \item[関数] \verb|int split(char *str,char *ret[],char sep, int max)|
+    \item[行数]  4章のソースコードの55行目から81行目に記述してある.
+    \item[概要]　引数として与えられた文字列\verb|str|を指定された文字\verb|sep|で文字列\verb|str|の終わりまで順に区切っていく．
+    \item[戻り値]　整数型で引数\verb|str|を分割した回数を返す.
+    \item[引数]  \verb|char *str|は分割したい元の文字列を与える. \verb|char *ret[]|は分割後の文字列を保存する. \verb|char sep|は区切る対象の文字を与える．\verb|int max|は区切る最大の回数を与える. 
+    \item[使用例]
+      \begin{verbatim}
+
+          printf("test %s\n",str);
+          count=split(str,ret,',',max);
+          for(int i = 0; i < count; i++){;
+              printf("%d:%s\n",i+1, ret[i]);
+          }
+          printf("count is %d.\n\n",count);
+      \end{verbatim}
+\end{description}
+関数\verb|split|の内容としては，分割したい文字列のポインタアドレスを分割した文字列を保存する\verb|ret|に格納している．そうすることで，元の文字列\verb|str|をコピーしなくとも分割後の文字列を保存することが可能になっている．
+
+%------------------------------------------------------------------%
+%------------------------------------------------------------------%
+\subsection{\texttt{error\_split}関数}
+ \begin{description}
+    \item[関数] \verb|void error_split(int check)|
+    \item[行数]  4章のソースコードの83行目から97行目に記述してある.
+    \item[概要]　引数として与えられた整数値\verb|int check|の値に応じてエラー処理を行う．
+    \item[戻り値]　なし．
+    \item[引数]  \verb|int check|はエラー処理を行わせたい値を与える．
+    \item[使用例]
+      \begin{verbatim}
+
+          if(count > max)count = -2;
+          error_split(count);
+      \end{verbatim}
+\end{description}
+関数\verb|error_split|は関数\verb|split|の分割数が\verb|max|より大きくなった際のエラー処理を行わせている．関数\verb|split|内でエラー処理を行わせない理由としては関数の役割が曖昧になることを回避するためである．
+%------------------------------------------------------------------%
+%------------------------------------------------------------------%
+\subsection{\texttt{testprint\_split}関数}
+ \begin{description}
+    \item[関数] \verb|void testprint_split(char *str)|
+    \item[行数]  4章のソースコードの99行目から113行目に記述してある. 
+    \item[概要]　関数\verb|split|の内容をテストして結果を表示するための関数である．
+    \item[戻り値]　なし．
+    \item[引数]  この引数は前述の関数\verb|split|の引数を引き継ぐためのものである．
+    \item[使用例]
+      \begin{verbatim}
+
+    	    char test1[] = "";//分割したい文字列
+    	    char test2[] = ",,,";
+    	    char test3[] = ",oka,yama";
+    	    char test4[] = "o,ka,ya,,ma,a";
+    	    
+    	    testprint_split(test1);
+    	    testprint_split(test2);
+    	    testprint_split(test3);
+    	    testprint_split(test4);
+      \end{verbatim}
+\end{description}
+関数\verb|testprint_split|は関数\verb|split|が正しく目的通りに動作しているかのテストを目的として作成した．\verb|split|内では関数\verb|error_split|同様に関数の役割を区別するために，画面表示機能を持たせてた本関数に分離した．引数を変えるだけでよいため，テストしたい文字列ごとに関数\verb|split|を適用させ，分割後の文字列を表示することを繰り返し記述する必要がなくなる．関数内に分割後の文字列\verb|ret|を定義した．また，最大分割数をグローバル変数\verb|static int maxsplit =5|として別に定義している．
+%------------------------------------------------------------------%
+%------------------------------------------------------------------%
+\subsection{\texttt{get\_line}関数}
+% 参考：verb以外の場所でアンダーバーを使うには？
+ \begin{description}
+    \item[関数] \verb|int get_line(char *input)|
+    \item[行数]  4章のソースコードの115行目から125行目に記述してある.
+    \item[概要]　引数として標準入力から与えられた文字列を取得し，文字列\verb|char *input|に格納する．
+    \item[戻り値]　空文字もしくは改行のみの文字列が与えられた場合$0$を返し失敗を意味する．それ以外の場合は$1$を返し成功を意味する． 
+    \item[引数]  \verb|char *input|は標準入力から入力された文字列の先頭ポインタを与える．
+    \item[使用例]
+      \begin{verbatim}
+
+        int i=0;
+        printf("please input line:");
+   	    while (get_line(input)) {
+   	        printf("******test %d*****\n", ++i);
+   	        testprint_split(input);
+   	        printf("input line:");
+   	    }
+      \end{verbatim}
+\end{description}
+関数\verb|get_line|は，標準入力から1行分を読み込ませるための関数である．標準入力からの入力が空文字の場合は，エラー表示を行わせて失敗を意味する$1$を返している．なお，改行のみの入力の場合もエラーを返すようにしている．また，成功した際は，\verb|\n|を関数\verb|subst|を用いて，空文字へと置き換えている．この関数単体では，繰り返し入力ができないため，繰り返し入力させる際は使用例のように，\verb|while|文を用いることに注意されたい．
+%------------------------------------------------------------------%
+%------------------------------------------------------------------%
+\subsection{\texttt{testprint\_get\_line\_split}関数}
+% 参考：verb以外の場所でアンダーバーを使うには？
+ \begin{description}
+    \item[関数] \verb|void testprint_get_line_split(char *input)|
+    \item[行数]  4章のソースコードの115行目から125行目に記述してある.
+    \item[概要]　引数から与えられた文字列\verb|char *input|の値に応じてテストを入力が尽きるまで行う．
+    \item[戻り値]　なし． 
+    \item[引数]  \verb|char *input|は文字列配列の先頭アドレスを与える．
+    \item[使用例]
+      \begin{verbatim}
+
+        char input[LIMIT+1];
+        testprint_get_line_split(input);
+      \end{verbatim}
+\end{description}
+ 関数\verb|get_line|と関数\verb|split|を結合させて意図した動作をしているか確認するために実装した．\verb|while|文の条件判定により繰り返し入力を可能にしている．その中で，\verb|split|の動作を確認し，結果を表示させている．
+%------------------------------------------------------------------%
+ %==================================================================%
+ \section{感想}
+ 今回作成した関数\verb|split|は，ポインタにポインタのアドレスを紐づけて文字列を丸々メモリにコピーするような手間が省けるようにしたり，本来必要ではないが，後に変更しやすいよう関数に役割を持たせるために関数を分割するということを意識して取り組めたように思う．ポインタは理解を深められていないところが多いため改めて学習に励みたい．今後の課題としては，関数\verb|get_line|の入力をファイルからの入力に対応させていくことがあげられる．名簿管理プログラムの完成に向けて努力していきたい．
+%==================================================================%
+\section{作成したプログラム} \label{sec:sourcecode}
+%% プログラムのソースコードは verbatim 環境の中に書く．
+%% ここでは，追加で波括弧の内部 {...} だけ文字サイズ等を設定している．
+%% 以下の例はフォントサイズ：10pt 行送り：11pt
+{\fontsize{10pt}{11pt} \selectfont
+\begin{verbatim}
+     1	/* 
+     2	 * File:   meibo.c
+     3	 * Author: 09430509
+     4	 *
+     5	 * Created on 2019/04/10
+     6	 * update on 2019/04/24
+     7	 */
+     8	
+     9	#include <stdio.h>
+    10	
+    11	#define LIMIT 1024
+    12	
+    13	int subst(char *str,char c1,char c2);
+    14	
+    15	int split(char *str,char *ret[],char sep,int max);
+    16	void testprint_split(char *str);
+    17	void error_split(int check);
+    18	
+    19	int get_line(char *input);
+    20	void testprint_get_line_split(char *input);
+    21	
+    22	static int maxsplit = 5;
+    23	
+    24	int main(void){
+    25	    char test1[] = "";//分割したい文字列
+    26	    char test2[] = ",,,";
+    27	    char test3[] = ",oka,yama";
+    28	    char test4[] = "o,ka,ya,,ma,a";
+    29	    //入力用文字配列
+    30	    char input[LIMIT+1];
+    31	    
+    32	    testprint_split(test1);
+    33	    testprint_split(test2);
+    34	    testprint_split(test3);
+    35	    testprint_split(test4);
+    36	
+    37	    testprint_get_line(input);
+    38	    
+    39	    return 0;
+    40	
+    41	}
+    42	
+    43	int subst(char *str,char c1,char c2){
+    44	    int count = 0;
+    45	    while(*str != '\0'){
+    46	        if(*str == c1){
+    47	            *str = c2;
+    48	            count++;
+    49	        }
+    50	        str++;
+    51	    }
+    52	    return count;
+    53	}
+    54	
+    55	int split (char *str,char *ret[],char sep,int max){
+    56	    int count = 0;//分割数
+    57	
+    58	    while (1) {
+    59	        if(*str == '\0') {
+    60	            break;//からもじなら抜ける
+    61	        }
+    62	       
+    63	        ret[count++] = str;//strをいじればretも変わるように分割後の文字列にはポインタを入れる
+    64	
+    65	        while( (*str != '\0') && (*str != sep) ){//区切り文字が見つかるまでポインタすすめる 
+    66	            str++;
+    67	        }
+    68	        
+    69	        if(*str == '\0') {
+    70	            break;//区切り文字がなかったら抜ける＝文字列はそのまま
+    71	        }                                                                                                   
+    72	
+    73	        *str = '\0';//必ず区切り文字のはずだからくぎる
+    74		    str++;//インクリメントさせる  
+    75	    }
+    76	    //if(count<max) count = -1;
+    77	    if(count>max)count = -2;
+    78	    error_split(count);
+    79	    
+    80	    return count;
+    81	}
+    82	
+    83	void error_split(int check){
+    84	    switch(check){
+    85	        case -1:
+    86	            printf("luck.\n");
+    87	            break;
+    88	        
+    89	        case -2:
+    90	            printf("over.\n");
+    91	            break;
+    92	        
+    93	        default:
+    94	            break;
+    95	    }
+    96	    return;
+    97	}
+    98	
+    99	void testprint_split(char *str){
+   100	    int count;
+   101	    char *ret[maxsplit];
+   102	    
+   103	    printf("test %s\n",str);
+   104	    
+   105	    count=split(str,ret,',',maxsplit);
+   106	    
+   107	    for(int i = 0; i < count; i++){
+   108	        printf("%d:%s\n",i+1, ret[i]);
+   109	    }
+   110	    
+   111	    printf("count is %d.\n\n",count);
+   112	    return;
+   113	}
+   114	
+   115	int get_line(char *input){
+   116	
+   117	    if (fgets(input, LIMIT + 1, stdin) == NULL || input[0] == '\n'){//何かしら入力させて、改行のみは認めない
+   118	        printf("error:NULL or input is \\n.\n");
+   119	        return 0; /* 失敗orEOF */
+   120	    }
+   121	
+   122	    subst(input, '\n', '\0');
+   123	    return 1; /*成功*/
+   124	
+   125	}
+   126	
+   127	void testprint_get_line_split(char *input){
+   128	    int i = 0;
+   129	
+   130	    printf("please input line:");
+   131	    while (get_line(input)) {
+   132	        printf("******test %d*****\n", ++i);
+   133	        testprint_split(input);
+   134	        printf("input line:");
+   135	    }
+   136	    return;
+   137	}
+
+\end{verbatim}
+}  % <-- !!IMPORTANT!! This line is end of {\fontsize...}
+%% 注：行送りの変更は"指定箇所を含む段落”に効果があらわれる．
+%%     fontsizeコマンドを用いて，行送りを変える場合は，
+%%     その {...} の前後に空白行を入れ，段落を変えるようにすること．
+%%     なお，行先頭がコメントから始まる行は空白行とは扱われない．
+
+\end{document}

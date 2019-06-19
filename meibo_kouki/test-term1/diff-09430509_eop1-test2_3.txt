@@ -1,0 +1,294 @@
+Id    : 5946921							Id    : 5946921
+Name  : Glenzier School						Name  : Glenzier School
+Birth : 1957-06-11						Birth : 1957-06-11
+Addr  : Canonbie Dumfriesshire					Addr  : Canonbie Dumfriesshire
+Com.  : 01387 371319 01387 371207 Primary 28 2.2 Open		Com.  : 01387 371319 01387 371207 Primary 28 2.2 Open
+
+Id    : 8420025							Id    : 8420025
+Name  : St Aloysius' Primary School				Name  : St Aloysius' Primary School
+Birth : 1911-05-21						Birth : 1911-05-21
+Addr  : 12 Carron Crescent Springburn Glasgow			Addr  : 12 Carron Crescent Springburn Glasgow
+Com.  : 0141 5588468 Primary 205 11.8 Open			Com.  : 0141 5588468 Primary 205 11.8 Open
+
+Id    : 8624828							Id    : 8624828
+Name  : Ferguslie Primary School				Name  : Ferguslie Primary School
+Birth : 1992-01-10						Birth : 1992-01-10
+Addr  : Crawfurd Drive Paisley					Addr  : Crawfurd Drive Paisley
+Com.  : 0141 8893646 0141 8497121 Primary 166 11.2 Open		Com.  : 0141 8893646 0141 8497121 Primary 166 11.2 Open
+
+Id    : 8456720							Id    : 8456720
+Name  : Bankhead Primary School					Name  : Bankhead Primary School
+Birth : 1958-11-09						Birth : 1958-11-09
+Addr  : Bankhead Road Rutherglen				Addr  : Bankhead Road Rutherglen
+Com.  : 0141 6476967 0141 6130043 Primary 309 15.0 Open		Com.  : 0141 6476967 0141 6130043 Primary 309 15.0 Open
+
+Id    : 8240140							Id    : 8240140
+Name  : Barshare Unit						Name  : Barshare Unit
+Birth : 1804-08-11						Birth : 1804-08-11
+Addr  : Barshare Primary School Dalgleish Avenue Cumnock	Addr  : Barshare Primary School Dalgleish Avenue Cumnock
+Com.  : 01290 422212 01290 422212 SEN Unit 12 3.0 Open		Com.  : 01290 422212 01290 422212 SEN Unit 12 3.0 Open
+
+Id    : 5946921							Id    : 5946921
+Name  : Glenzier School						Name  : Glenzier School
+Birth : 1957-06-11						Birth : 1957-06-11
+Addr  : Canonbie Dumfriesshire					Addr  : Canonbie Dumfriesshire
+Com.  : 01387 371319 01387 371207 Primary 28 2.2 Open		Com.  : 01387 371319 01387 371207 Primary 28 2.2 Open
+
+Id    : 8420025							Id    : 8420025
+Name  : St Aloysius' Primary School				Name  : St Aloysius' Primary School
+Birth : 1911-05-21						Birth : 1911-05-21
+Addr  : 12 Carron Crescent Springburn Glasgow			Addr  : 12 Carron Crescent Springburn Glasgow
+Com.  : 0141 5588468 Primary 205 11.8 Open			Com.  : 0141 5588468 Primary 205 11.8 Open
+
+Id    : 8624828							Id    : 8624828
+Name  : Ferguslie Primary School				Name  : Ferguslie Primary School
+Birth : 1992-01-10						Birth : 1992-01-10
+Addr  : Crawfurd Drive Paisley					Addr  : Crawfurd Drive Paisley
+Com.  : 0141 8893646 0141 8497121 Primary 166 11.2 Open		Com.  : 0141 8893646 0141 8497121 Primary 166 11.2 Open
+
+Id    : 8456720							Id    : 8456720
+Name  : Bankhead Primary School					Name  : Bankhead Primary School
+Birth : 1958-11-09						Birth : 1958-11-09
+Addr  : Bankhead Road Rutherglen				Addr  : Bankhead Road Rutherglen
+Com.  : 0141 6476967 0141 6130043 Primary 309 15.0 Open		Com.  : 0141 6476967 0141 6130043 Primary 309 15.0 Open
+
+Id    : 8240140							Id    : 8240140
+Name  : Barshare Unit						Name  : Barshare Unit
+Birth : 1804-08-11						Birth : 1804-08-11
+Addr  : Barshare Primary School Dalgleish Avenue Cumnock	Addr  : Barshare Primary School Dalgleish Avenue Cumnock
+Com.  : 01290 422212 01290 422212 SEN Unit 12 3.0 Open		Com.  : 01290 422212 01290 422212 SEN Unit 12 3.0 Open
+
+Id    : 5946921							Id    : 5946921
+Name  : Glenzier School						Name  : Glenzier School
+Birth : 1957-06-11						Birth : 1957-06-11
+Addr  : Canonbie Dumfriesshire					Addr  : Canonbie Dumfriesshire
+Com.  : 01387 371319 01387 371207 Primary 28 2.2 Open		Com.  : 01387 371319 01387 371207 Primary 28 2.2 Open
+
+Id    : 8420025							Id    : 8420025
+Name  : St Aloysius' Primary School				Name  : St Aloysius' Primary School
+Birth : 1911-05-21						Birth : 1911-05-21
+Addr  : 12 Carron Crescent Springburn Glasgow			Addr  : 12 Carron Crescent Springburn Glasgow
+Com.  : 0141 5588468 Primary 205 11.8 Open			Com.  : 0141 5588468 Primary 205 11.8 Open
+
+Id    : 8624828							Id    : 8624828
+Name  : Ferguslie Primary School				Name  : Ferguslie Primary School
+Birth : 1992-01-10						Birth : 1992-01-10
+Addr  : Crawfurd Drive Paisley					Addr  : Crawfurd Drive Paisley
+Com.  : 0141 8893646 0141 8497121 Primary 166 11.2 Open		Com.  : 0141 8893646 0141 8497121 Primary 166 11.2 Open
+
+Id    : 8456720							Id    : 8456720
+Name  : Bankhead Primary School					Name  : Bankhead Primary School
+Birth : 1958-11-09						Birth : 1958-11-09
+Addr  : Bankhead Road Rutherglen				Addr  : Bankhead Road Rutherglen
+Com.  : 0141 6476967 0141 6130043 Primary 309 15.0 Open		Com.  : 0141 6476967 0141 6130043 Primary 309 15.0 Open
+
+Id    : 8240140							Id    : 8240140
+Name  : Barshare Unit						Name  : Barshare Unit
+Birth : 1804-08-11						Birth : 1804-08-11
+Addr  : Barshare Primary School Dalgleish Avenue Cumnock	Addr  : Barshare Primary School Dalgleish Avenue Cumnock
+Com.  : 01290 422212 01290 422212 SEN Unit 12 3.0 Open		Com.  : 01290 422212 01290 422212 SEN Unit 12 3.0 Open
+
+Id    : 5946921							Id    : 5946921
+Name  : Glenzier School						Name  : Glenzier School
+Birth : 1957-06-11						Birth : 1957-06-11
+Addr  : Canonbie Dumfriesshire					Addr  : Canonbie Dumfriesshire
+Com.  : 01387 371319 01387 371207 Primary 28 2.2 Open		Com.  : 01387 371319 01387 371207 Primary 28 2.2 Open
+
+Id    : 8420025							Id    : 8420025
+Name  : St Aloysius' Primary School				Name  : St Aloysius' Primary School
+Birth : 1911-05-21						Birth : 1911-05-21
+Addr  : 12 Carron Crescent Springburn Glasgow			Addr  : 12 Carron Crescent Springburn Glasgow
+Com.  : 0141 5588468 Primary 205 11.8 Open			Com.  : 0141 5588468 Primary 205 11.8 Open
+
+Id    : 8624828							Id    : 8624828
+Name  : Ferguslie Primary School				Name  : Ferguslie Primary School
+Birth : 1992-01-10						Birth : 1992-01-10
+Addr  : Crawfurd Drive Paisley					Addr  : Crawfurd Drive Paisley
+Com.  : 0141 8893646 0141 8497121 Primary 166 11.2 Open		Com.  : 0141 8893646 0141 8497121 Primary 166 11.2 Open
+
+Id    : 8456720							Id    : 8456720
+Name  : Bankhead Primary School					Name  : Bankhead Primary School
+Birth : 1958-11-09						Birth : 1958-11-09
+Addr  : Bankhead Road Rutherglen				Addr  : Bankhead Road Rutherglen
+Com.  : 0141 6476967 0141 6130043 Primary 309 15.0 Open		Com.  : 0141 6476967 0141 6130043 Primary 309 15.0 Open
+
+Id    : 8240140							Id    : 8240140
+Name  : Barshare Unit						Name  : Barshare Unit
+Birth : 1804-08-11						Birth : 1804-08-11
+Addr  : Barshare Primary School Dalgleish Avenue Cumnock	Addr  : Barshare Primary School Dalgleish Avenue Cumnock
+Com.  : 01290 422212 01290 422212 SEN Unit 12 3.0 Open		Com.  : 01290 422212 01290 422212 SEN Unit 12 3.0 Open
+
+Id    : 5946921							Id    : 5946921
+Name  : Glenzier School						Name  : Glenzier School
+Birth : 1957-06-11						Birth : 1957-06-11
+Addr  : Canonbie Dumfriesshire					Addr  : Canonbie Dumfriesshire
+Com.  : 01387 371319 01387 371207 Primary 28 2.2 Open		Com.  : 01387 371319 01387 371207 Primary 28 2.2 Open
+
+Id    : 8420025							Id    : 8420025
+Name  : St Aloysius' Primary School				Name  : St Aloysius' Primary School
+Birth : 1911-05-21						Birth : 1911-05-21
+Addr  : 12 Carron Crescent Springburn Glasgow			Addr  : 12 Carron Crescent Springburn Glasgow
+Com.  : 0141 5588468 Primary 205 11.8 Open			Com.  : 0141 5588468 Primary 205 11.8 Open
+
+Id    : 8624828							Id    : 8624828
+Name  : Ferguslie Primary School				Name  : Ferguslie Primary School
+Birth : 1992-01-10						Birth : 1992-01-10
+Addr  : Crawfurd Drive Paisley					Addr  : Crawfurd Drive Paisley
+Com.  : 0141 8893646 0141 8497121 Primary 166 11.2 Open		Com.  : 0141 8893646 0141 8497121 Primary 166 11.2 Open
+
+Id    : 8456720							Id    : 8456720
+Name  : Bankhead Primary School					Name  : Bankhead Primary School
+Birth : 1958-11-09						Birth : 1958-11-09
+Addr  : Bankhead Road Rutherglen				Addr  : Bankhead Road Rutherglen
+Com.  : 0141 6476967 0141 6130043 Primary 309 15.0 Open		Com.  : 0141 6476967 0141 6130043 Primary 309 15.0 Open
+
+Id    : 8240140							Id    : 8240140
+Name  : Barshare Unit						Name  : Barshare Unit
+Birth : 1804-08-11						Birth : 1804-08-11
+Addr  : Barshare Primary School Dalgleish Avenue Cumnock	Addr  : Barshare Primary School Dalgleish Avenue Cumnock
+Com.  : 01290 422212 01290 422212 SEN Unit 12 3.0 Open		Com.  : 01290 422212 01290 422212 SEN Unit 12 3.0 Open
+
+Id    : 8681139							Id    : 8681139
+Name  : Cedars School of Excellence				Name  : Cedars School of Excellence
+Birth : 1967-11-03						Birth : 1967-11-03
+Addr  : Lothian Road Greenock					Addr  : Lothian Road Greenock
+Com.  : 01475 631074 Primary 20 3.1 Secondary 11 2.6 Open	Com.  : 01475 631074 Primary 20 3.1 Secondary 11 2.6 Open
+
+Id    : 5946921							Id    : 5946921
+Name  : Glenzier School						Name  : Glenzier School
+Birth : 1957-06-11						Birth : 1957-06-11
+Addr  : Canonbie Dumfriesshire					Addr  : Canonbie Dumfriesshire
+Com.  : 01387 371319 01387 371207 Primary 28 2.2 Open		Com.  : 01387 371319 01387 371207 Primary 28 2.2 Open
+
+Id    : 8420025							Id    : 8420025
+Name  : St Aloysius' Primary School				Name  : St Aloysius' Primary School
+Birth : 1911-05-21						Birth : 1911-05-21
+Addr  : 12 Carron Crescent Springburn Glasgow			Addr  : 12 Carron Crescent Springburn Glasgow
+Com.  : 0141 5588468 Primary 205 11.8 Open			Com.  : 0141 5588468 Primary 205 11.8 Open
+
+Id    : 8624828							Id    : 8624828
+Name  : Ferguslie Primary School				Name  : Ferguslie Primary School
+Birth : 1992-01-10						Birth : 1992-01-10
+Addr  : Crawfurd Drive Paisley					Addr  : Crawfurd Drive Paisley
+Com.  : 0141 8893646 0141 8497121 Primary 166 11.2 Open		Com.  : 0141 8893646 0141 8497121 Primary 166 11.2 Open
+
+Id    : 8456720							Id    : 8456720
+Name  : Bankhead Primary School					Name  : Bankhead Primary School
+Birth : 1958-11-09						Birth : 1958-11-09
+Addr  : Bankhead Road Rutherglen				Addr  : Bankhead Road Rutherglen
+Com.  : 0141 6476967 0141 6130043 Primary 309 15.0 Open		Com.  : 0141 6476967 0141 6130043 Primary 309 15.0 Open
+
+Id    : 8240140							Id    : 8240140
+Name  : Barshare Unit						Name  : Barshare Unit
+Birth : 1804-08-11						Birth : 1804-08-11
+Addr  : Barshare Primary School Dalgleish Avenue Cumnock	Addr  : Barshare Primary School Dalgleish Avenue Cumnock
+Com.  : 01290 422212 01290 422212 SEN Unit 12 3.0 Open		Com.  : 01290 422212 01290 422212 SEN Unit 12 3.0 Open
+
+Id    : 8681139							Id    : 8681139
+Name  : Cedars School of Excellence				Name  : Cedars School of Excellence
+Birth : 1967-11-03						Birth : 1967-11-03
+Addr  : Lothian Road Greenock					Addr  : Lothian Road Greenock
+Com.  : 01475 631074 Primary 20 3.1 Secondary 11 2.6 Open	Com.  : 01475 631074 Primary 20 3.1 Secondary 11 2.6 Open
+
+Id    : 8420025							Id    : 8420025
+Name  : St Aloysius' Primary School				Name  : St Aloysius' Primary School
+Birth : 1911-05-21						Birth : 1911-05-21
+Addr  : 12 Carron Crescent Springburn Glasgow			Addr  : 12 Carron Crescent Springburn Glasgow
+Com.  : 0141 5588468 Primary 205 11.8 Open			Com.  : 0141 5588468 Primary 205 11.8 Open
+
+Id    : 8624828							Id    : 8624828
+Name  : Ferguslie Primary School				Name  : Ferguslie Primary School
+Birth : 1992-01-10						Birth : 1992-01-10
+Addr  : Crawfurd Drive Paisley					Addr  : Crawfurd Drive Paisley
+Com.  : 0141 8893646 0141 8497121 Primary 166 11.2 Open		Com.  : 0141 8893646 0141 8497121 Primary 166 11.2 Open
+
+Id    : 8456720							Id    : 8456720
+Name  : Bankhead Primary School					Name  : Bankhead Primary School
+Birth : 1958-11-09						Birth : 1958-11-09
+Addr  : Bankhead Road Rutherglen				Addr  : Bankhead Road Rutherglen
+Com.  : 0141 6476967 0141 6130043 Primary 309 15.0 Open		Com.  : 0141 6476967 0141 6130043 Primary 309 15.0 Open
+
+Id    : 8240140							Id    : 8240140
+Name  : Barshare Unit						Name  : Barshare Unit
+Birth : 1804-08-11						Birth : 1804-08-11
+Addr  : Barshare Primary School Dalgleish Avenue Cumnock	Addr  : Barshare Primary School Dalgleish Avenue Cumnock
+Com.  : 01290 422212 01290 422212 SEN Unit 12 3.0 Open		Com.  : 01290 422212 01290 422212 SEN Unit 12 3.0 Open
+
+Id    : 8681139							Id    : 8681139
+Name  : Cedars School of Excellence				Name  : Cedars School of Excellence
+Birth : 1967-11-03						Birth : 1967-11-03
+Addr  : Lothian Road Greenock					Addr  : Lothian Road Greenock
+Com.  : 01475 631074 Primary 20 3.1 Secondary 11 2.6 Open	Com.  : 01475 631074 Primary 20 3.1 Secondary 11 2.6 Open
+
+Id    : 5946921							Id    : 5946921
+Name  : Glenzier School						Name  : Glenzier School
+Birth : 1957-06-11						Birth : 1957-06-11
+Addr  : Canonbie Dumfriesshire					Addr  : Canonbie Dumfriesshire
+Com.  : 01387 371319 01387 371207 Primary 28 2.2 Open		Com.  : 01387 371319 01387 371207 Primary 28 2.2 Open
+
+Id    : 8420025							Id    : 8420025
+Name  : St Aloysius' Primary School				Name  : St Aloysius' Primary School
+Birth : 1911-05-21						Birth : 1911-05-21
+Addr  : 12 Carron Crescent Springburn Glasgow			Addr  : 12 Carron Crescent Springburn Glasgow
+Com.  : 0141 5588468 Primary 205 11.8 Open			Com.  : 0141 5588468 Primary 205 11.8 Open
+
+Id    : 8624828							Id    : 8624828
+Name  : Ferguslie Primary School				Name  : Ferguslie Primary School
+Birth : 1992-01-10						Birth : 1992-01-10
+Addr  : Crawfurd Drive Paisley					Addr  : Crawfurd Drive Paisley
+Com.  : 0141 8893646 0141 8497121 Primary 166 11.2 Open		Com.  : 0141 8893646 0141 8497121 Primary 166 11.2 Open
+
+Id    : 8456720							Id    : 8456720
+Name  : Bankhead Primary School					Name  : Bankhead Primary School
+Birth : 1958-11-09						Birth : 1958-11-09
+Addr  : Bankhead Road Rutherglen				Addr  : Bankhead Road Rutherglen
+Com.  : 0141 6476967 0141 6130043 Primary 309 15.0 Open		Com.  : 0141 6476967 0141 6130043 Primary 309 15.0 Open
+
+Id    : 8240140							Id    : 8240140
+Name  : Barshare Unit						Name  : Barshare Unit
+Birth : 1804-08-11						Birth : 1804-08-11
+Addr  : Barshare Primary School Dalgleish Avenue Cumnock	Addr  : Barshare Primary School Dalgleish Avenue Cumnock
+Com.  : 01290 422212 01290 422212 SEN Unit 12 3.0 Open		Com.  : 01290 422212 01290 422212 SEN Unit 12 3.0 Open
+
+Id    : 8681139							Id    : 8681139
+Name  : Cedars School of Excellence				Name  : Cedars School of Excellence
+Birth : 1967-11-03						Birth : 1967-11-03
+Addr  : Lothian Road Greenock					Addr  : Lothian Road Greenock
+Com.  : 01475 631074 Primary 20 3.1 Secondary 11 2.6 Open	Com.  : 01475 631074 Primary 20 3.1 Secondary 11 2.6 Open
+
+Id    : 5946921							Id    : 5946921
+Name  : Glenzier School						Name  : Glenzier School
+Birth : 1957-06-11						Birth : 1957-06-11
+Addr  : Canonbie Dumfriesshire					Addr  : Canonbie Dumfriesshire
+Com.  : 01387 371319 01387 371207 Primary 28 2.2 Open		Com.  : 01387 371319 01387 371207 Primary 28 2.2 Open
+
+Id    : 8420025							Id    : 8420025
+Name  : St Aloysius' Primary School				Name  : St Aloysius' Primary School
+Birth : 1911-05-21						Birth : 1911-05-21
+Addr  : 12 Carron Crescent Springburn Glasgow			Addr  : 12 Carron Crescent Springburn Glasgow
+Com.  : 0141 5588468 Primary 205 11.8 Open			Com.  : 0141 5588468 Primary 205 11.8 Open
+
+Id    : 8624828							Id    : 8624828
+Name  : Ferguslie Primary School				Name  : Ferguslie Primary School
+Birth : 1992-01-10						Birth : 1992-01-10
+Addr  : Crawfurd Drive Paisley					Addr  : Crawfurd Drive Paisley
+Com.  : 0141 8893646 0141 8497121 Primary 166 11.2 Open		Com.  : 0141 8893646 0141 8497121 Primary 166 11.2 Open
+
+Id    : 8456720							Id    : 8456720
+Name  : Bankhead Primary School					Name  : Bankhead Primary School
+Birth : 1958-11-09						Birth : 1958-11-09
+Addr  : Bankhead Road Rutherglen				Addr  : Bankhead Road Rutherglen
+Com.  : 0141 6476967 0141 6130043 Primary 309 15.0 Open		Com.  : 0141 6476967 0141 6130043 Primary 309 15.0 Open
+
+Id    : 8240140							Id    : 8240140
+Name  : Barshare Unit						Name  : Barshare Unit
+Birth : 1804-08-11						Birth : 1804-08-11
+Addr  : Barshare Primary School Dalgleish Avenue Cumnock	Addr  : Barshare Primary School Dalgleish Avenue Cumnock
+Com.  : 01290 422212 01290 422212 SEN Unit 12 3.0 Open		Com.  : 01290 422212 01290 422212 SEN Unit 12 3.0 Open
+
+Id    : 8681139							Id    : 8681139
+Name  : Cedars School of Excellence				Name  : Cedars School of Excellence
+Birth : 1967-11-03						Birth : 1967-11-03
+Addr  : Lothian Road Greenock					Addr  : Lothian Road Greenock
+Com.  : 01475 631074 Primary 20 3.1 Secondary 11 2.6 Open	Com.  : 01475 631074 Primary 20 3.1 Secondary 11 2.6 Open
+

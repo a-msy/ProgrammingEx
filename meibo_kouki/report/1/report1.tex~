@@ -1,0 +1,42 @@
+\documentclass[a4j,11pt]{jarticle}
+% ファイル先頭から\begin{document}までの内容（プレアンブル）については，
+% 教員からの指示がない限り， { } の中を書き換えるだけでよい．
+
+% ToDo: 提出要領に従って，適切な余白を設定する
+\usepackage[top=25truemm,  bottom=30truemm,
+            left=25truemm, right=25truemm]{geometry}
+
+% ToDo: 提出要領に従って，適切なタイトル・サブタイトルを設定する
+\title{プログラミング演習1レポート \\
+       演習課題: subst関数の作成}
+
+% ToDo: 自分自身の氏名と学生番号に書き換える
+\author{氏名: 今田　将也 (Imada, Masaya) \\
+        学生番号: 09430509}
+
+% ToDo: 教員の指示に従って適切に書き換える
+\date{出題日: 2019年04月10日 \\
+      提出日: 2019年04月日 \\
+      締切日: 2019年04月17日 \\}  % 注：最後の\\は不要に見えるが必要．
+
+% ToDo: 図を入れる場合，以下の1行を有効にする
+%\usepackage{graphicx}
+
+\begin{document}
+\maketitle
+% 目次つきの表紙ページにする場合はコメントを外す
+%{\footnotesize \tableofcontents \newpage}
+
+%% 本文は以下に書く（\begin{document}～\end{document}が本文である）
+%% 課題に応じて適切な章立てを構成すること
+\section{はじめに}
+プログラミング演習１での名簿管理プログラムの作成課題に取り組むにあたり、必要なsubst関数を作成した。
+\section{作成した関数の説明}
+\subsection{subst関数}
+\section{感想}
+\section{作成したプログラム}
+\begin{verbatim}
+\end{verbatim}
+%% 本文はここより上に書く（\begin{document}～\end{document}が本文である）
+\end{document}
+

@@ -1,0 +1,9 @@
+8342032,Turnbull High School,1972-11-15,St Mary's Road Bishopbriggs Glasgow,0141 7729101 0141 7623671 Secondary 856 65.2 Open
+5501628,Parkhead Primary School,1976-11-2,Harburn Road West Calder,01506 871404 01506 871404 Primary 320 17.0 Open
+5348021,Pitcairn Primary School,1874-4-21,Bridgeton Brae Almondbank Perth,01738 583309 01738 582148 Primary 112 5.5 Open
+5406730,Glenrothes High School,1952-7-3,Napier Road Glenrothes,01592 415541 01592 415554 Secondary 906 74.4 Integrated SEN Unit Open
+5724325,Gargunnock Primary School,1903-11-22,Station Road Gargunnock By Stirling,01786 860291 01786 860567 Primary 105 6.0 Open
+%P 0
+%P 2
+%P 3
+%Q

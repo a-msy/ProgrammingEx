@@ -1,0 +1,9 @@
+5217423,King Edward School,1817-6-2,King Edward Banff,01261 821254 01261 821350 Primary 26 2.3 Open
+5345626,Madderty Primary School,1934-12-28,Madderty Crieff,01764 683215 01764 683729 Primary 55 3.4 Open
+8621829,Bargarran Primary School,1890-7-3,Barrhill Road Erskine,0141 8122530 0141 8128350 Primary 302 13.0 Open
+8238030,Kyle Academy,1977-10-12,7 Overmills Road Ayr,01292 262234/5 01292 611123 Secondary 781 61.8 Open
+8521824,St John's Primary School,1824-9-25,Dixon Street Hamilton,01698 283401 01698 207489 Primary 345 20.8 Integrated SEN Unit Open
+%P 4
+%P 5
+%P 6
+%Q

@@ -1,0 +1,10 @@
+5511623,Meldrum Primary School,1824-8-5,Westwood Park Deans Livingston,01506 410440 01506 462099 Primary 363 18.0 Open
+8431124,Willowbank Primary School,1824-12-22,Willowbank Crescent Woodlands Road Glasgow,0141 3326281 Primary 70 7.0 Open
+5527821,Pirniehall Primary School,1884-6-26,West Pilton Crescent Edinburgh,0131 3325256 0131 5387093 Primary 184 11.7 Open
+5532639,Firrhill High School,1897-11-4,9 Oxgangs Road North Firrhill Edinburgh,0131 4414501 0131 4411036 Secondary 1112 87.1 Open
+5235529,Glashieburn School,1808-8-28,Jesmond Drive Bridge Of Don Aberdeen,01224 704476 01224 707668 Primary 350 18.8 Open
+%C
+%Q
+8681139,Cedars School of Excellence,1967-11-3,Lothian Road Greenock,01475 631074 Primary 20 3.1 Secondary 11 2.6 Open
+%C
+%Q

@@ -1,0 +1,60 @@
+Id    : 5543428							Id    : 5543428
+Name  : Gorebridge Primary School				Name  : Gorebridge Primary School
+Birth : 1829-05-01						Birth : 1829-05-01
+Addr  : 80 Hunterfield Road Gorebridge				Addr  : 80 Hunterfield Road Gorebridge
+Com.  : 01875 820529 01875 823102 Primary 338 20.4 Open		Com.  : 01875 820529 01875 823102 Primary 338 20.4 Open
+
+Id    : 5220920							Id    : 5220920
+Name  : Strichen School						Name  : Strichen School
+Birth : 1893-01-16						Birth : 1893-01-16
+Addr  : North Street Strichen Fraserburgh Aberdeenshire		Addr  : North Street Strichen Fraserburgh Aberdeenshire
+Com.  : 01771 637250 01771 637849 Primary 126 6.4 Open		Com.  : 01771 637250 01771 637849 Primary 126 6.4 Open
+
+Id    : 8501629							Id    : 8501629
+Name  : Victoria Primary School					Name  : Victoria Primary School
+Birth : 1936-10-15						Birth : 1936-10-15
+Addr  : 79 Aitchison Street Airdrie				Addr  : 79 Aitchison Street Airdrie
+Com.  : 01236 763113 01236 765371 Primary 178 8.6 Open		Com.  : 01236 763113 01236 765371 Primary 178 8.6 Open
+
+Id    : 5202523							Id    : 5202523
+Name  : New Elgin Primary School				Name  : New Elgin Primary School
+Birth : 1949-01-17						Birth : 1949-01-17
+Addr  : Bezack Street New Elgin Moray				Addr  : Bezack Street New Elgin Moray
+Com.  : 01343 547587 01343 552308 Primary 315 18.4 Open		Com.  : 01343 547587 01343 552308 Primary 315 18.4 Open
+
+Id    : 8426325							Id    : 8426325
+Name  : St Philip's Primary School				Name  : St Philip's Primary School
+Birth : 1860-03-18						Birth : 1860-03-18
+Addr  : 157 Drumlochy Road Glasgow				Addr  : 157 Drumlochy Road Glasgow
+Com.  : 0141 7744545 0141 774 4642 Primary 110 7.0 Open		Com.  : 0141 7744545 0141 774 4642 Primary 110 7.0 Open
+
+Id    : 5202523							Id    : 5202523
+Name  : New Elgin Primary School				Name  : New Elgin Primary School
+Birth : 1949-01-17						Birth : 1949-01-17
+Addr  : Bezack Street New Elgin Moray				Addr  : Bezack Street New Elgin Moray
+Com.  : 01343 547587 01343 552308 Primary 315 18.4 Open		Com.  : 01343 547587 01343 552308 Primary 315 18.4 Open
+
+Id    : 8426325							Id    : 8426325
+Name  : St Philip's Primary School				Name  : St Philip's Primary School
+Birth : 1860-03-18						Birth : 1860-03-18
+Addr  : 157 Drumlochy Road Glasgow				Addr  : 157 Drumlochy Road Glasgow
+Com.  : 0141 7744545 0141 774 4642 Primary 110 7.0 Open		Com.  : 0141 7744545 0141 774 4642 Primary 110 7.0 Open
+
+Id    : 8501629							Id    : 8501629
+Name  : Victoria Primary School					Name  : Victoria Primary School
+Birth : 1936-10-15						Birth : 1936-10-15
+Addr  : 79 Aitchison Street Airdrie				Addr  : 79 Aitchison Street Airdrie
+Com.  : 01236 763113 01236 765371 Primary 178 8.6 Open		Com.  : 01236 763113 01236 765371 Primary 178 8.6 Open
+
+Id    : 5202523							Id    : 5202523
+Name  : New Elgin Primary School				Name  : New Elgin Primary School
+Birth : 1949-01-17						Birth : 1949-01-17
+Addr  : Bezack Street New Elgin Moray				Addr  : Bezack Street New Elgin Moray
+Com.  : 01343 547587 01343 552308 Primary 315 18.4 Open		Com.  : 01343 547587 01343 552308 Primary 315 18.4 Open
+
+Id    : 8426325							Id    : 8426325
+Name  : St Philip's Primary School				Name  : St Philip's Primary School
+Birth : 1860-03-18						Birth : 1860-03-18
+Addr  : 157 Drumlochy Road Glasgow				Addr  : 157 Drumlochy Road Glasgow
+Com.  : 0141 7744545 0141 774 4642 Primary 110 7.0 Open		Com.  : 0141 7744545 0141 774 4642 Primary 110 7.0 Open
+

@@ -1,0 +1,6 @@
+111,The Bridge,1845-11-2,Okayama,SEN Unit 2.0 Open
+222,Bower School,1908-1-19,Kagawa,01955 641225 Primary 25 2.6 Open
+333,Canisbay School,1928-7-5,Tokyo,01955 611337 Primary 56 3.5 Open
+%C
+%P 2
+%Q

@@ -1,0 +1,9 @@
+8200726,Whiting Bay Primary School,1886-7-9,Whiting Bay Brodick Isle Of Arran,01770 700260 01770 700260 Primary 69 4.6 Open
+5119030,Gairloch High School,1973-5-5,Achtercairn Gairloch,01445 712275 01445 712318 Secondary 226 25.2 Integrated SEN Unit Open
+5141923,Teanassie Primary School,1844-2-18,By Beauly,01463 782581 01463 783286 Primary 60 3.4 Open
+5405025,Markinch Primary School,1957-11-7,Betson Street Markinch Glenrothes,01592 415295 Primary 239 13.9 Open
+5221722,Pitfour School,1911-9-18,Newlands Road Mintlaw Peterhead Aberdeenshire,01771 622855 01771 623512 Primary 94 6.9 Open
+%P -4
+%P -5
+%P -6
+%Q

@@ -1,0 +1,16 @@
+5946921,Glenzier School,1957-6-11,Canonbie Dumfriesshire,01387 371319 01387 371207 Primary 28 2.2 Open
+8420025,St Aloysius' Primary School,1911-5-21,12 Carron Crescent Springburn Glasgow,0141 5588468 Primary 205 11.8 Open
+8624828,Ferguslie Primary School,1992-1-10,Crawfurd Drive Paisley,0141 8893646 0141 8497121 Primary 166 11.2 Open
+8456720,Bankhead Primary School,1958-11-9,Bankhead Road Rutherglen,0141 6476967 0141 6130043 Primary 309 15.0 Open
+8240140,Barshare Unit,1804-8-11,Barshare Primary School Dalgleish Avenue Cumnock,01290 422212 01290 422212 SEN Unit 12 3.0 Open
+%P 0
+%P 6
+%P -6
+8681139,Cedars School of Excellence,1967-11-3,Lothian Road Greenock,01475 631074 Primary 20 3.1 Secondary 11 2.6 Open
+%P 5
+%P 6
+%P 7
+%P -5
+%P -6
+%P -7
+%Q
