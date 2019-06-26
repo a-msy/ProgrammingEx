@@ -402,7 +402,7 @@ struct profile *new_profile(struct profile *pro,char *str){
     char *ret1[maxsplit],*ret2[maxsplit-2];
     if(profile_data_nitems>10000){
         fprintf(stderr,"ERROR %d:Can't add record--new_profile()\n",OVERNITEMS);
-        return;
+        return NULL;
     }
     if(split(str,ret1,',',maxsplit)!=maxsplit){
         fprintf(stderr,"ERROR %d:wrong format of input(ex.001,name,1999-01-01,address,other)--new_profile()\n",FORMATINPUT);
