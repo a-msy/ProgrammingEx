@@ -386,10 +386,10 @@ void cmd_sort(int youso){
     /*youso>0 syoujyunn, youso<0 koujyunn*/
     int i,j,check=0;
     
-    for(i=0;i<=profile_data_nitems;i++){
-        for(j=i+1;j<profile_data_nitems;j++){
-            if(compare_profile(&profile_data_store[i],&profile_data_store[j],youso) > 0){
-                swap_struct(&profile_data_store[i],&profile_data_store[j]);
+    for(i=0;i<profile_data_nitems;i++){
+        for(j=0;j<profile_data_nitems;j++){
+            if(compare_profile(&profile_data_store[j],&profile_data_store[j+1],youso) > 0){
+                swap_struct(&profile_data_store[j],&profile_data_store[j+1]);
                 check++;
             }
         }
