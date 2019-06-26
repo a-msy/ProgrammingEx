@@ -387,7 +387,7 @@ void cmd_sort(int youso){
     int i,j,check=0;
     
     for(i=0;i<profile_data_nitems;i++){
-        for(j=0;j<profile_data_nitems;j++){
+        for(j=0;j<profile_data_nitems-1;j++){
             if(compare_profile(&profile_data_store[j],&profile_data_store[j+1],youso) > 0){
                 swap_struct(&profile_data_store[j],&profile_data_store[j+1]);
                 check++;
