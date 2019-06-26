@@ -70,6 +70,9 @@ void cmd_print(struct profile *pro,int param);
 void cmd_read(char *filename);
 void cmd_write(char *filename);
 void cmd_find(char *keyword);
+void swap_struct(struct profile *i, struct profile *j);
+int compare_profile(struct profile *p1, struct profile *p2, int column);
+int compare_date(struct date *d1, struct date *d2);
 void cmd_sort(int youso);
 void cmd_delete(int param);
 void exec_command(char cmd, char *param);
@@ -271,13 +274,13 @@ void cmd_print(struct profile *pro,int param){
 }
 
 void printdata(struct profile *pro, int i){
-    fprintf(stderr,"data : %5d--------------------------------\n",i+1);
-            fprintf(stdout,"Id    : %d\n",pro->id);
-            fprintf(stdout,"Name  : %s\n",pro->name);
-            fprintf(stdout,"Birth : %04d-%02d-%02d\n",pro->found.y,pro->found.m,pro->found.d);
-            fprintf(stdout,"Addr  : %s\n",pro->add);
-            fprintf(stdout,"Com.  : %s\n\n",pro->others);
-            fprintf(stderr,"--------------------------------------------\n");
+    fprintf(stderr,"data  : %5d ------------------------------\n",i+1);
+    fprintf(stdout,"Id    : %d\n",pro->id);
+    fprintf(stdout,"Name  : %s\n",pro->name);
+    fprintf(stdout,"Birth : %04d-%02d-%02d\n",pro->found.y,pro->found.m,pro->found.d);
+    fprintf(stdout,"Addr  : %s\n",pro->add);
+    fprintf(stdout,"Com.  : %s\n\n",pro->others);
+    fprintf(stderr,"--------------------------------------------\n");
 }
 
 void cmd_read(char *filename){
@@ -320,7 +323,7 @@ char *date_to_string(char buf[],struct date *date){
     return buf;
 }
 void cmd_find(char *keyword){
-    int i;
+    int i,check=0;
     struct profile *p;
     char found_str[11];
     
@@ -335,23 +338,74 @@ void cmd_find(char *keyword){
                 strcmp(found_str,keyword)==0
             ){
                 printdata(p,i);
-                
-        }   
+                check=1;
+        }
     }
+    
+    if(check==0){
+        fprintf(stderr,"No match data.\n");
+    }
+    
     return;
 }
+void swap_struct(struct profile *i, struct profile *j){
+    struct profile temp;
+    
+    temp = *j;
+    *j = *i;
+    *i = temp;
+    
+    return;
+}
+
+int compare_profile(struct profile *p1, struct profile *p2, int youso)
+{
+    if(youso < 0)youso*=-1;
+  switch (youso) {
+    case 1:
+      return (p1->id) - (p2->id);
+    case 2:
+      return strcmp(p1->name,p2->name); /* name */
+    case 3:
+      return compare_date(&p1->found,&p2->found); /*found*/
+    case 4:
+      return strcmp(p1->add, p2->add); /* home */
+    case 5:
+      return strcmp(p1->others, p2->others); /* comment */
+    }
+}
+
+int compare_date(struct date *d1, struct date *d2)
+{
+  if (d1->y != d2->y) return d1->y - d2->y;
+  if (d1->m != d2->m) return d1->m - d2->m;
+  return (d1->d) - (d2->d);
+}
+
 void cmd_sort(int youso){
-    fprintf(stderr, "sort-%d.\n",youso);
-    return;
+    /*youso>0 syoujyunn, youso<0 koujyunn*/
+    int i,j,check=0;
+    
+    for(i=0;i<=profile_data_nitems;i++){
+        for(j=i+1;j<profile_data_nitems;j++){
+            if(compare_profile(&profile_data_store[i],&profile_data_store[j],youso) > 0){
+                swap_struct(&profile_data_store[i],&profile_data_store[j]);
+                check++;
+            }
+        }
+    }
+    printf("%d swap.\n",check);
+    return;/*sort kurousitane*/
 }
+
 struct profile *new_profile(struct profile *pro,char *str){
     char *ret1[maxsplit],*ret2[maxsplit-2];
-    if(profile_data_nitems>=10000){
+    if(profile_data_nitems>10000){
         fprintf(stderr,"ERROR %d:Can't add record--new_profile()\n",OVERNITEMS);
         return;
     }
     if(split(str,ret1,',',maxsplit)!=maxsplit){
-        fprintf(stderr,"ERROR %d:wrong format of input(ex.001,name,1999-01-01,address,other)--new_prifile()\n",FORMATINPUT);
+        fprintf(stderr,"ERROR %d:wrong format of input(ex.001,name,1999-01-01,address,other)--new_profile()\n",FORMATINPUT);
         return NULL;
     }//文字列用
 
