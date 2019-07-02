@@ -1,8 +1,7 @@
 \documentclass[a4j,11pt]{jarticle}
 % ファイル先頭から\begin{document}までの内容（プレアンブル）については，
 % 教員からの指示がない限り， { } の中を書き換えるだけでよい．
-%動的メモリ確保について試問
-%https://www.tablesgenerator.com/
+
 
 % ToDo: 提出要領に従って，適切な余白を設定する
 \usepackage[top=25truemm,  bottom=30truemm,
@@ -98,6 +97,11 @@
 \verb|%C| & メモリ中のデータ件数を表示する & パラメータなし \\ \hline
 \verb|%P| & メモリ中データを，$n$に応じて表示させる & \begin{tabular}[c]{@{}l@{}}n:-10000$\sim$10000\\ ($0$:全件表示\\ $n$\textgreater{}$0$:前から指定件数正順表示\\ $n$\textless{}$0$:後ろから指定件数正順表示)\end{tabular} \\ \hline
 \verb|%Q| & システムを終了する & パラメータなし \\ \hline
+\verb|%R| filename& filenameファイルからcsvデータを読みこむ & filename\\ \hline
+\verb|%W| filename& メモリ中のデータをfilenameファイルに書き出す & filename\\ \hline
+\verb|%F| word& システムを終了する & word\\ \hline
+\verb|%S n| & システムを終了する & n:1~5pdf \\ \hline
+
 \end{tabular}
 \end{table}
 	\begin{table}[t]
