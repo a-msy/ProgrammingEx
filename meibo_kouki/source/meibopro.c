@@ -30,7 +30,8 @@ typedef enum{
     NUMITEM,//
     ERRORNUM,//
     NOFILEOPEN,
-    OVERNITEMS//
+    OVERNITEMS,//
+    PARAMERROR,
 
 } ERROR;
 
@@ -74,6 +75,8 @@ void swap_struct(struct profile *i, struct profile *j);
 int compare_profile(struct profile *p1, struct profile *p2, int column);
 int compare_date(struct date *d1, struct date *d2);
 void cmd_sort(int youso);
+int partition (int left, int right,int youso);
+void quick_sort(int left, int right,int youso);
 void cmd_delete(int param);
 void exec_command(char cmd, char *param);
 
@@ -84,6 +87,7 @@ char *date_to_string(char buf[],struct date *date);
 /*GLOBAL*/
 struct profile profile_data_store[10000];
 int profile_data_nitems = 0;
+int quick_count = 0;
 
 /*MAIN*/
 int main(void){
@@ -364,14 +368,27 @@ int compare_profile(struct profile *p1, struct profile *p2, int youso)
   switch (youso) {
     case 1:
       return (p1->id) - (p2->id);
+      break;
+
     case 2:
       return strcmp(p1->name,p2->name); /* name */
+      break;
+      
     case 3:
       return compare_date(&p1->found,&p2->found); /*found*/
+      break;
+
     case 4:
       return strcmp(p1->add, p2->add); /* home */
+      break;
+
     case 5:
       return strcmp(p1->others, p2->others); /* comment */
+      break;
+    
+    default:
+        return 0;
+        break;
     }
 }
 
@@ -384,8 +401,14 @@ int compare_date(struct date *d1, struct date *d2)
 
 void cmd_sort(int youso){
     /*youso>0 syoujyunn, youso<0 koujyunn*/
-    int i,j,check=0;
-    
+    int i,j;
+    //int check=0;
+
+    if(youso>5||youso<1){
+        fprintf(stderr,"ERROR %d:sort param is 1 to 5.---cmd_sort()\n",PARAMERROR);
+        return;
+    }
+/**
     for(i=0;i<profile_data_nitems;i++){
         for(j=0;j<profile_data_nitems-1;j++){
             if(compare_profile(&profile_data_store[j],&profile_data_store[j+1],youso) > 0){
@@ -394,8 +417,42 @@ void cmd_sort(int youso){
             }
         }
     }
-    printf("%d swap.\n",check);
+    fprintf(stderr,"%d swap.\n",check);
+**/
+    quick_sort(0,profile_data_nitems-1,youso);
+    fprintf(stderr,"count:%d\n",quick_count);
+    quick_count=0;
+
     return;/*sort kurousitane*/
+}
+
+int partition (int left, int right,int youso) {
+  int i, j, pivot,count=0;
+  i = left;
+  j = right+1;
+  pivot = left;   // 先頭要素をpivotとする
+
+  do {
+    do { i++; } while (compare_profile(&profile_data_store[i],&profile_data_store[pivot],youso) < 0);
+    do { j--; } while (compare_profile(&profile_data_store[pivot],&profile_data_store[j],youso) < 0);
+    // pivotより小さいものを左へ、大きいものを右へ
+    if (i < j) { swap_struct(&profile_data_store[i],&profile_data_store[j]);quick_count++; }
+  } while (i < j);
+
+  swap_struct(&profile_data_store[pivot],&profile_data_store[j]);   //pivotを更新
+  quick_count++;
+  return j;
+}
+
+void quick_sort(int left, int right,int youso){
+    int pivot;
+
+  if (left < right) {
+    pivot = partition(left, right, youso);
+    quick_sort(left, pivot-1, youso);   // pivotを境に再帰的にクイックソート
+    quick_sort(pivot+1, right, youso);
+  }
+  return;
 }
 
 struct profile *new_profile(struct profile *pro,char *str){
