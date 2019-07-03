@@ -3,7 +3,7 @@
  * Author: 09430509
  *
  * Created on 2019/04/10
- * update on 2019/05/08
+ * update on 2019/07/03
  */
 
 #include <stdio.h>
@@ -419,40 +419,51 @@ void cmd_sort(int youso){
     }
     fprintf(stderr,"%d swap.\n",check);
 **/
+    if(profile_data_nitems<=0){
+        return;
+    }
+
     quick_sort(0,profile_data_nitems-1,youso);
-    fprintf(stderr,"count:%d\n",quick_count);
+    fprintf(stderr,"quicksort end.===count:%d\n",quick_count);
     quick_count=0;
 
     return;/*sort kurousitane*/
 }
 
-int partition (int left, int right,int youso) {
-  int i, j, pivot,count=0;
-  i = left;
-  j = right+1;
-  pivot = left;   // 先頭要素をpivotとする
-
-  do {
-    do { i++; } while (compare_profile(&profile_data_store[i],&profile_data_store[pivot],youso) < 0);
-    do { j--; } while (compare_profile(&profile_data_store[pivot],&profile_data_store[j],youso) < 0);
-    // pivotより小さいものを左へ、大きいものを右へ
-    if (i < j) { swap_struct(&profile_data_store[i],&profile_data_store[j]);quick_count++; }
-  } while (i < j);
-
-  swap_struct(&profile_data_store[pivot],&profile_data_store[j]);   //pivotを更新
-  quick_count++;
-  return j;
+void quick_sort(int left, int right,int youso){
+    int i,j,pivot;
+    
+    i=left; 
+    j=right;
+    pivot=right;
+    
+    while(1){
+        while (compare_profile(&profile_data_store[i],&profile_data_store[pivot],youso) < 0){
+            i++;
+        }
+        
+        while (compare_profile(&profile_data_store[pivot],&profile_data_store[j],youso) < 0){
+            j++;
+        }
+        if(i>=j)break;
+        
+        swap_struct(&profile_data_store[i],&profile_data_store[j]);
+        quick_count++;
+        i++;
+        j--;
+    }
+    
+    if (left < i - 1){               /* 基準値の左に 2 以上要素があれば */
+        quick_sort(left, i-1,youso);/* 左の配列をソートする */
+    }
+    if (j + 1 <  right){              /* 基準値の右に 2 以上要素があれば */
+        quick_sort(j+1, right,youso);/* 右の配列をソートする */
+    }
+    return;
 }
 
-void quick_sort(int left, int right,int youso){
-    int pivot;
-
-  if (left < right) {
-    pivot = partition(left, right, youso);
-    quick_sort(left, pivot-1, youso);   // pivotを境に再帰的にクイックソート
-    quick_sort(pivot+1, right, youso);
-  }
-  return;
+void cmd_delete(int param){
+    
 }
 
 struct profile *new_profile(struct profile *pro,char *str){
