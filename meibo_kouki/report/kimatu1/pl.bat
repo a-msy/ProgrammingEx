@@ -1,1 +1,0 @@
-ptex2pdf -l -ot $synctexoption $%2 

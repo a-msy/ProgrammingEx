@@ -18,21 +18,11 @@
 #define base1 10//10進数
 
 typedef enum{
-    null,//
-    LUCK,
-    OVER,//
-    NOTDEFINED,//
-    NORECORD,//
-    OVERNUMBERRECORD,//
-    FORMATINPUT,
-    FORMATID,
-    FORMATDATE,//
-    NUMITEM,//
-    ERRORNUM,//
-    NOFILEOPEN,
-    OVERNITEMS,//
-    PARAMERROR,
-
+    null,LUCK,OVER,NOTDEFINED,
+    NORECORD,OVERNUMBERRECORD,
+    FORMATINPUT,FORMATID,FORMATDATE,
+    NUMITEM,ERRORNUM,NOFILEOPEN,
+    OVERNITEMS,PARAMERROR,
 } ERROR;
 
 struct date {
@@ -210,6 +200,7 @@ void exec_command(char cmd, char *param)
         break;
 
         case 'D':
+        cmd_delete(strtol(param,endp,base1));
             break;
         
         case 'S':
@@ -441,12 +432,10 @@ void quick_sort(int left, int right,int youso){
         while (compare_profile(&profile_data_store[i],&profile_data_store[pivot],youso) < 0){
             i++;
         }
-        
         while (compare_profile(&profile_data_store[pivot],&profile_data_store[j],youso) < 0){
             j++;
         }
         if(i>=j)break;
-        
         swap_struct(&profile_data_store[i],&profile_data_store[j]);
         quick_count++;
         i++;
@@ -463,12 +452,22 @@ void quick_sort(int left, int right,int youso){
 }
 
 void cmd_delete(int param){
-    
+    int i;
+    if( param > profile_data_nitems||param <=0){
+            fprintf(stderr,"ERROR %d:error param.--cmd_delete()\n",OVERNUMBERRECORD);
+            fprintf(stderr,"ERROR %d:number of item is %d\n",NUMITEM,profile_data_nitems);
+            return;
+    }
+    for(i=param-1;i<profile_data_nitems-1;i++){
+        profile_data_store[i]=profile_data_store[i+1];
+    }
+    profile_data_nitems-=1;
+    return;
 }
 
 struct profile *new_profile(struct profile *pro,char *str){
     char *ret1[maxsplit],*ret2[maxsplit-2];
-    if(profile_data_nitems>10000){
+    if(profile_data_nitems>=10000){
         fprintf(stderr,"ERROR %d:Can't add record--new_profile()\n",OVERNITEMS);
         return NULL;
     }
