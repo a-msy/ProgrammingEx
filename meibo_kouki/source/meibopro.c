@@ -68,6 +68,7 @@ void cmd_sort(int youso);
 int partition (int left, int right,int youso);
 void quick_sort(int left, int right,int youso);
 void cmd_delete(int param);
+void cmd_help();
 void exec_command(char cmd, char *param);
 
 /*profile*/
@@ -174,6 +175,7 @@ void parse_line(char *line){
 
 void exec_command(char cmd, char *param)
  {
+
     switch(cmd){
         case 'Q':
             cmd_quit();
@@ -206,13 +208,25 @@ void exec_command(char cmd, char *param)
         case 'S':
             cmd_sort(strtol(param,endp,base1));
         break;
-
         
+        case 'H':
+            cmd_help();
+            break;
+
         default:
             fprintf(stderr, "ERROR %d:%%%c command is not defined.--exec_command()\n",NOTDEFINED,cmd);
+            fprintf(stderr,"command list : %H\n");
         break;
     }
  }
+
+void cmd_help(){
+    fprintf(stderr,"CMD LIST\n\nQ\n--quit\n\nC\n--check\n\nP [number]\n--print\n\n");
+    fprintf(stderr,"R [filename]\n--read\n\nW [filename]\n--write\n\n");
+    fprintf(stderr,"F [keyword]\n--find\n\nS [number]\n--sort\n\n");
+    fprintf(stderr,"D [number]\n--delete\n\n");
+    return ;
+}
 
 void cmd_quit(){
     fprintf(stderr, "END SYSTEM.\n");
@@ -229,7 +243,6 @@ void cmd_print(struct profile *pro,int param){
         return ;
     }
     int i;
-    fprintf(stderr,"param is %d.\n",param);
     
     if(param == 0){//０のとき
     fprintf(stderr, "******print record data******\n");
@@ -317,6 +330,7 @@ char *date_to_string(char buf[],struct date *date){
     sprintf(buf,"%04d-%02d-%02d",date->y,date->m,date->d);
     return buf;
 }
+
 void cmd_find(char *keyword){
     int i,check=0;
     struct profile *p;
@@ -358,28 +372,22 @@ int compare_profile(struct profile *p1, struct profile *p2, int youso)
     if(youso < 0)youso*=-1;
   switch (youso) {
     case 1:
-      return (p1->id) - (p2->id);
-      break;
+      return (p1->id) - (p2->id);break;
 
     case 2:
-      return strcmp(p1->name,p2->name); /* name */
-      break;
+      return strcmp(p1->name,p2->name);break;
       
     case 3:
-      return compare_date(&p1->found,&p2->found); /*found*/
-      break;
+      return compare_date(&p1->found,&p2->found);break;
 
     case 4:
-      return strcmp(p1->add, p2->add); /* home */
-      break;
+      return strcmp(p1->add, p2->add);break;
 
     case 5:
-      return strcmp(p1->others, p2->others); /* comment */
-      break;
+      return strcmp(p1->others, p2->others);break;
     
     default:
-        return 0;
-        break;
+        return 0;break;
     }
 }
 
@@ -399,7 +407,7 @@ void cmd_sort(int youso){
         fprintf(stderr,"ERROR %d:sort param is 1 to 5.---cmd_sort()\n",PARAMERROR);
         return;
     }
-/**
+/**bubble
     for(i=0;i<profile_data_nitems;i++){
         for(j=0;j<profile_data_nitems-1;j++){
             if(compare_profile(&profile_data_store[j],&profile_data_store[j+1],youso) > 0){
