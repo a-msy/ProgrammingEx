@@ -55,21 +55,30 @@ void parse_line(char *line);
 
 void printdata(struct profile *pro, int i);
 /*cmd*/
+void exec_command(char *cmd, char *param);
 void cmd_quit();
 void cmd_check();
 void cmd_print(struct profile *pro,int param);
+void cmd_pex(int param);
 void cmd_read(char *filename);
 void cmd_write(char *filename);
+void cmd_binread(char *filename);
+void cmd_binwrite(char *filename);
 void cmd_find(char *keyword);
+void cmd_findb(char *keyword);
 void swap_struct(struct profile *i, struct profile *j);
 int compare_profile(struct profile *p1, struct profile *p2, int column);
 int compare_date(struct date *d1, struct date *d2);
 void cmd_sort(int youso);
+void cmd_qsort(int youso);
 int partition (int left, int right,int youso);
 void quick_sort(int left, int right,int youso);
 void cmd_delete(int param);
 void cmd_help();
-void exec_command(char cmd, char *param);
+void cmd_size();
+int find_kai(char *s, char * cp);
+
+
 
 /*profile*/
 struct profile *new_profile(struct profile *pro,char *str);
@@ -128,7 +137,6 @@ int split (char *str,char *ret[],char sep,int max){
 
     if(count<max)count = luck;
     else if(count>max)count = over;
-    error_split(count);
     return count;
 }
 
@@ -165,65 +173,76 @@ void error_split(int check){
 }
 
 void parse_line(char *line){
+    char *ret[2];
+    int com=0;
+    
     if(line[0]=='%'){
-        exec_command(line[1], &line[3]);
+        com=split(line,ret,' ',2);
+        exec_command(ret[0], ret[1]);
     }
     else{
         new_profile(&profile_data_store[profile_data_nitems],line);
     }
 }
 
-void exec_command(char cmd, char *param)
- {
-
-    switch(cmd){
-        case 'Q':
-            cmd_quit();
-        break;
-        
-        case 'C':
-            cmd_check();
-        break;
-        
-        case 'P':
-            cmd_print(&profile_data_store[0],strtol(param,endp,base1));
-        break;
-        
-        case 'R':
-            cmd_read(param);
-        break;
-        
-        case 'W':
-            cmd_write(param);
-        break;
-        
-        case 'F':
-            cmd_find(param);
-        break;
-
-        case 'D':
+void exec_command(char *cmd, char *param){
+    if(strcmp(cmd,"%Q")==0||strcmp(cmd,"%q")==0){
+        cmd_quit();
+    }
+    else if(strcmp(cmd,"%C")==0||strcmp(cmd,"%c")==0){
+        cmd_check();
+    }
+    else if(strcmp(cmd,"%E")==0||strcmp(cmd,"%e")==0){
+        cmd_pex(strtol(param,endp,base1));
+    }
+    else if(strcmp(cmd,"%P")==0||strcmp(cmd,"%p")==0){
+        cmd_print(&profile_data_store[0],strtol(param,endp,base1));
+    }
+    else if(strcmp(cmd,"%R")==0||strcmp(cmd,"%r")==0){
+        cmd_read(param);
+    }
+    else if(strcmp(cmd,"%W")==0||strcmp(cmd,"%w")==0){
+        cmd_write(param);
+    }
+    else if(strcmp(cmd,"%F")==0||strcmp(cmd,"%f")==0){
+        cmd_find(param);
+    }
+    else if(strcmp(cmd,"%FB")==0||strcmp(cmd,"%fb")==0){
+        cmd_findb(param);
+    }
+    else if(strcmp(cmd,"%D")==0||strcmp(cmd,"%d")==0){
         cmd_delete(strtol(param,endp,base1));
-            break;
-        
-        case 'S':
-            cmd_sort(strtol(param,endp,base1));
-        break;
-        
-        case 'H':
-            cmd_help();
-            break;
-
-        default:
-            fprintf(stderr, "ERROR %d:%%%c command is not defined.--exec_command()\n",NOTDEFINED,cmd);
-            fprintf(stderr,"command list : %H\n");
-        break;
+    }
+    else if(strcmp(cmd,"%S")==0||strcmp(cmd,"%s")==0){
+        cmd_sort(strtol(param,endp,base1));
+    }
+    else if(strcmp(cmd,"%QS")==0||strcmp(cmd,"%qs")==0){
+        cmd_qsort(strtol(param,endp,base1));
+    }
+    else if(strcmp(cmd,"%H")==0||strcmp(cmd,"%h")==0){
+        cmd_help();
+    }
+    else if(strcmp(cmd,"%BW")==0||strcmp(cmd,"%bw")==0){
+        cmd_binwrite(param);
+    }
+    else if(strcmp(cmd,"%BR")==0||strcmp(cmd,"br")==0){
+        cmd_binread(param);
+    }
+    else if(strcmp(cmd,"%SIZE")==0||strcmp(cmd,"size")==0){
+        cmd_size();
+    }
+    else {
+        fprintf(stderr, "ERROR %d:%s command is not defined.--exec_command()\n",NOTDEFINED,cmd);
+        fprintf(stderr,"command list : %%H\n");
     }
  }
 
 void cmd_help(){
-    fprintf(stderr,"CMD LIST\n\nQ\n--quit\n\nC\n--check\n\nP [number]\n--print\n\n");
+    fprintf(stderr,"CMD LIST\n\nQ\n--quit\n\nC\n--check\n\nP [number]\n--print\n\nE [number]\n--print expansion\n\n");
     fprintf(stderr,"R [filename]\n--read\n\nW [filename]\n--write\n\n");
-    fprintf(stderr,"F [keyword]\n--find\n\nS [number]\n--sort\n\n");
+    fprintf(stderr,"BR [keyword]\n--binaryread\n\nBW [number]\n--binarywrite\n\n");
+    fprintf(stderr,"F [keyword]\n--find\n\nFB [number]\n--find part\n\n");
+    fprintf(stderr,"S [keyword]\n--find\n\nQS [number]\n--quicksort\n\n");
     fprintf(stderr,"D [number]\n--delete\n\n");
     return ;
 }
@@ -233,10 +252,12 @@ void cmd_quit(){
     exit(0);
     return;
 }
+
 void cmd_check(){
     fprintf(stdout,"%d profile(s)\n",profile_data_nitems);
     return;
 }
+
 void cmd_print(struct profile *pro,int param){
     if(profile_data_nitems == 0){
         fprintf(stderr,"ERROR %d:No record. No print.--cmd_print()\n",NORECORD);
@@ -291,6 +312,12 @@ void printdata(struct profile *pro, int i){
     fprintf(stderr,"--------------------------------------------\n");
 }
 
+void cmd_pex(int param){
+    param-=1;
+    printdata(&profile_data_store[param],param);
+    return;
+}
+
 void cmd_read(char *filename){
     char line[LIMIT+1];
     FILE *fp;
@@ -316,11 +343,29 @@ void cmd_write(char *filename){
     for(i=0;i < profile_data_nitems;i++){
         fprintf(fp,"%d,",profile_data_store[i].id);
         fprintf(fp,"%s,",profile_data_store[i].name);
-        fprintf(fp,"%d-%d-%d,",profile_data_store[i].found.y,profile_data_store[i].found.m,profile_data_store[i].found.d);
+        fprintf(fp,"%04d-%02d-%02d,",profile_data_store[i].found.y,profile_data_store[i].found.m,profile_data_store[i].found.d);
         fprintf(fp,"%s,",profile_data_store[i].add);
         fprintf(fp,"%s",profile_data_store[i].others);
         fprintf(fp,"\n");
     }
+    fclose(fp);
+    fprintf(stderr,"wrote %s\n",filename);
+    return;
+}
+
+void cmd_binread(char *filename){
+    return;    
+}
+
+void cmd_binwrite(char *filename){
+    FILE *fp;
+    int i=0;
+    if (fopen(filename, "wb") == NULL)
+    {
+        fprintf(stderr,"ERROR %d:openfile error!!!---cmd_write()\n",NOFILEOPEN);
+        return;
+    }
+    fwrite(&profile_data_store[0],sizeof(struct profile),1,fp);
     fclose(fp);
     fprintf(stderr,"wrote %s\n",filename);
     return;
@@ -357,6 +402,56 @@ void cmd_find(char *keyword){
     
     return;
 }
+
+void cmd_findb(char *keyword){
+    int i,check=0;
+    struct profile *p;
+    char found_str[11];
+    
+    for(i=0;i < profile_data_nitems;i++){
+        p=&profile_data_store[i];
+        date_to_string(found_str,&p->found);
+        if( 
+                (p->id) == strtol(keyword,endp,base1)||
+                find_kai(p->name,keyword)==0||
+                find_kai(p->add,keyword)==0||
+                find_kai(p->others,keyword)==0||
+                find_kai(found_str,keyword)==0
+            ){
+                printdata(p,i);
+                check=1;
+        }
+    }
+    if(check==0){
+        fprintf(stderr,"No match data.\n");
+    }
+    return;
+}
+
+int find_kai(char *s, char * cp){
+	char *s1, *s2;
+	if( *cp == '\0') return 1; /*cpの文字列長が0ならsを返す*/ 
+
+	while( *s != '\0'){
+		while(*s != '\0' && *s != *cp) {/*先頭文字が合うまで探す*/
+			s++;
+		}
+		if(*s == '\0') return 1;/*見つからない*/
+		s1 = s;
+		s2 = cp;
+		while ( *s1 == *s2 && *s1 != '\0'){ /*cpの先頭以降の文字列が一致するか*/
+			s1++;
+			s2++;
+		}
+		if( *s2 == '\0'){/* cp の文字列は、全て一致した*/
+    
+			return 0;
+		}
+		s++; /*次の位置から、調べ直す*/
+	}
+	return 1;/*見つからない*/
+}
+
 void swap_struct(struct profile *i, struct profile *j){
     struct profile temp;
     
@@ -367,8 +462,7 @@ void swap_struct(struct profile *i, struct profile *j){
     return;
 }
 
-int compare_profile(struct profile *p1, struct profile *p2, int youso)
-{
+int compare_profile(struct profile *p1, struct profile *p2, int youso){
     if(youso < 0)youso*=-1;
   switch (youso) {
     case 1:
@@ -391,23 +485,25 @@ int compare_profile(struct profile *p1, struct profile *p2, int youso)
     }
 }
 
-int compare_date(struct date *d1, struct date *d2)
-{
+int compare_date(struct date *d1, struct date *d2){
   if (d1->y != d2->y) return d1->y - d2->y;
   if (d1->m != d2->m) return d1->m - d2->m;
   return (d1->d) - (d2->d);
 }
 
 void cmd_sort(int youso){
-    /*youso>0 syoujyunn, youso<0 koujyunn*/
     int i,j;
-    //int check=0;
+    int check=0;
 
     if(youso>5||youso<1){
         fprintf(stderr,"ERROR %d:sort param is 1 to 5.---cmd_sort()\n",PARAMERROR);
         return;
     }
-/**bubble
+    
+    if(profile_data_nitems<=0){
+        return;
+    }
+
     for(i=0;i<profile_data_nitems;i++){
         for(j=0;j<profile_data_nitems-1;j++){
             if(compare_profile(&profile_data_store[j],&profile_data_store[j+1],youso) > 0){
@@ -417,16 +513,23 @@ void cmd_sort(int youso){
         }
     }
     fprintf(stderr,"%d swap.\n",check);
-**/
+    return;
+}
+
+void cmd_qsort(int youso){
+        if(youso>5||youso<1){
+        fprintf(stderr,"ERROR %d:sort param is 1 to 5.---cmd_sort()\n",PARAMERROR);
+        return;
+    }
+    
     if(profile_data_nitems<=0){
         return;
     }
-
     quick_sort(0,profile_data_nitems-1,youso);
     fprintf(stderr,"quicksort end.===count:%d\n",quick_count);
     quick_count=0;
-
-    return;/*sort kurousitane*/
+    return;
+    
 }
 
 void quick_sort(int left, int right,int youso){
@@ -475,11 +578,14 @@ void cmd_delete(int param){
 
 struct profile *new_profile(struct profile *pro,char *str){
     char *ret1[maxsplit],*ret2[maxsplit-2];
+    int count=0;
     if(profile_data_nitems>=10000){
         fprintf(stderr,"ERROR %d:Can't add record--new_profile()\n",OVERNITEMS);
         return NULL;
     }
-    if(split(str,ret1,',',maxsplit)!=maxsplit){
+    count=split(str,ret1,',',maxsplit);
+    if(count!=maxsplit){
+        error_split(count);
         fprintf(stderr,"ERROR %d:wrong format of input(ex.001,name,1999-01-01,address,other)--new_profile()\n",FORMATINPUT);
         return NULL;
     }//文字列用
@@ -506,4 +612,17 @@ struct profile *new_profile(struct profile *pro,char *str){
     fprintf(stderr,"Add profile.\n");
     profile_data_nitems++;
     return pro;
+}
+
+void cmd_size(){
+    fprintf(stderr,"struct profile = %d\n",sizeof(struct profile));
+    fprintf(stderr,"id = %d\n",sizeof(profile_data_store[0].id));
+    fprintf(stderr,"name = %d\n",sizeof(profile_data_store[0].name));
+    fprintf(stderr,"add = %d\n",sizeof(profile_data_store[0].add));
+    fprintf(stderr,"found.y = %d\n",sizeof(profile_data_store[0].found.y));
+    fprintf(stderr,"found.m = %d\n",sizeof(profile_data_store[0].found.m));
+    fprintf(stderr,"found.d = %d\n",sizeof(profile_data_store[0].found.d));
+    fprintf(stderr,"Com. = %d\n",sizeof(profile_data_store[0].others));
+    return;
+    //araiment seiyaku
 }
