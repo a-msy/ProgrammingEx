@@ -25,6 +25,10 @@ typedef enum{
     OVERNITEMS,PARAMERROR,
 } ERROR;
 
+typedef enum{
+    Q,C,P,E,R,W,BR,BW,F,FB,S,QS,D,SIZE,LIST
+}HELP;
+
 struct date {
     int y;//year
     int m;//month
@@ -238,12 +242,21 @@ void exec_command(char *cmd, char *param){
  }
 
 void cmd_help(){
-    fprintf(stderr,"CMD LIST\n\nQ\n--quit\n\nC\n--check\n\nP [number]\n--print\n\nE [number]\n--print expansion\n\n");
-    fprintf(stderr,"R [filename]\n--read\n\nW [filename]\n--write\n\n");
-    fprintf(stderr,"BR [keyword]\n--binaryread\n\nBW [number]\n--binarywrite\n\n");
-    fprintf(stderr,"F [keyword]\n--find\n\nFB [number]\n--find part\n\n");
-    fprintf(stderr,"S [keyword]\n--find\n\nQS [number]\n--quicksort\n\n");
-    fprintf(stderr,"D [number]\n--delete\n\n");
+    int i;
+    char help_list[LIST][40]=
+    {
+        "Q : quit system","C : check data num","P [value] : print data",
+        "E : print specified data","R [filename] : read csv data","W [filename] : write csv data",
+        "BR : read binary data","BW : write binary data",
+        "F [word] : Exact match search","FB [word] : Partial match search",
+        "S [value] : sort (bubble)","QS [value] : quick sort",
+        "D [value] : delete data","SIZE : size check",
+    };
+
+    for(i=0;i<LIST;i++){
+        fprintf(stderr,"%s\n",help_list[i]);
+    }
+
     return ;
 }
 
@@ -313,6 +326,20 @@ void printdata(struct profile *pro, int i){
 }
 
 void cmd_pex(int param){
+    if(profile_data_nitems == 0 || param == 0){
+        fprintf(stderr,"ERROR %d:No record. No print.--cmd_print()\n",NORECORD);
+        return ;
+    }
+
+    if(param<0){
+        param*=(-1);
+    }
+
+    if( param > profile_data_nitems){
+            fprintf(stderr,"ERROR %d:over number of record.--cmd_print()\n",OVERNUMBERRECORD);
+            fprintf(stderr,"ERROR %d:number of item is %d\n",NUMITEM,profile_data_nitems);
+            return;
+    }
     param-=1;
     printdata(&profile_data_store[param],param);
     return;
