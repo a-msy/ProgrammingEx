@@ -3,7 +3,7 @@
  * Author: 09430509
  *
  * Created on 2019/04/10
- * update on 2019/07/03
+ * update on 2019/07/24
  */
 
 #include <stdio.h>
@@ -646,6 +646,7 @@ void cmd_size(){
     fprintf(stderr,"id = %d\n",sizeof(profile_data_store[0].id));
     fprintf(stderr,"name = %d\n",sizeof(profile_data_store[0].name));
     fprintf(stderr,"add = %d\n",sizeof(profile_data_store[0].add));
+    fprintf(stderr,"found = %d\n",sizeof(profile_data_store[0].found));
     fprintf(stderr,"found.y = %d\n",sizeof(profile_data_store[0].found.y));
     fprintf(stderr,"found.m = %d\n",sizeof(profile_data_store[0].found.m));
     fprintf(stderr,"found.d = %d\n",sizeof(profile_data_store[0].found.d));
