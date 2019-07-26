@@ -1,14 +1,14 @@
-This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.sjis) (TeX Live 2019/W32TeX) (preloaded format=platex 2019.6.4)  26 JUL 2019 16:03
+This is e-pTeX, Version 3.14159265-p3.8.2-190709-2.6 (utf8.sjis) (TeX Live 2019/W32TeX) (preloaded format=platex 2019.7.20)  27 JUL 2019 00:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**c:/home/ProgrammingEx/meibo_kouki/report/kimatu1/kimatu_report
-(c:/home/ProgrammingEx/meibo_kouki/report/kimatu1/kimatu_report.tex
+**"d:/OneDrive - 岡山大学/2年次/2学期/ProgrammingEx/meibo_kouki/report/kimatu1/kimatu_report"
+(d:/OneDrive - 岡山大学/2年次/2学期/ProgrammingEx/meibo_kouki/report/kimatu1/kimatu_report.tex
 pLaTeX2e <2019-04-06> (based on LaTeX2e <2018-12-01>)
-(c:/w32tex/share/texmf-dist/tex/platex/base/jarticle.cls
+(d:/app/w32tex/share/texmf-dist/tex/platex/base/jarticle.cls
 Document Class: jarticle 2019/04/02 v1.8b Standard pLaTeX class
 \c@@paper=\count83
-(c:/w32tex/share/texmf-dist/tex/platex/base/jsize11.clo
+(d:/app/w32tex/share/texmf-dist/tex/platex/base/jsize11.clo
 File: jsize11.clo 2019/04/02 v1.8b Standard pLaTeX file (size option)
 )
 \c@part=\count84
@@ -28,17 +28,17 @@ LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
 \@lnumwidth=\dimen119
 \bibindent=\dimen120
 \heisei=\count92
-) (c:/w32tex/share/texmf-dist/tex/latex/geometry/geometry.sty
+) (d:/app/w32tex/share/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2018/04/16 v5.8 Page Geometry
- (c:/w32tex/share/texmf-dist/tex/latex/graphics/keyval.sty
+ (d:/app/w32tex/share/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks15
-) (c:/w32tex/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+) (d:/app/w32tex/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
-) (c:/w32tex/share/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+) (d:/app/w32tex/share/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
-) (c:/w32tex/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+) (d:/app/w32tex/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count93
@@ -53,40 +53,70 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layouthoffset=\dimen127
 \Gm@layoutvoffset=\dimen128
 \Gm@dimlist=\toks16
- (c:/w32tex/share/texmf-dist/tex/latex/geometry/geometry.cfg)) (c:/w32tex/share/texmf-dist/tex/latex/graphics/graphicx.sty
+ (d:/app/w32tex/share/texmf-dist/tex/latex/geometry/geometry.cfg)) (d:/app/w32tex/share/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
- (c:/w32tex/share/texmf-dist/tex/latex/graphics/graphics.sty
+ (d:/app/w32tex/share/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
- (c:/w32tex/share/texmf-dist/tex/latex/graphics/trig.sty
+ (d:/app/w32tex/share/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-) (c:/w32tex/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+) (d:/app/w32tex/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: dvips.def on input line 99.
- (c:/w32tex/share/texmf-dist/tex/latex/graphics-def/dvips.def
+ (d:/app/w32tex/share/texmf-dist/tex/latex/graphics-def/dvips.def
 File: dvips.def 2017/06/20 v3.1d Graphics/color driver for dvips
 ))
 \Gin@req@height=\dimen129
 \Gin@req@width=\dimen130
+) (d:/app/w32tex/share/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count96
+\lst@gtempboxa=\box43
+\lst@token=\toks17
+\lst@length=\count97
+\lst@currlwidth=\dimen131
+\lst@column=\count98
+\lst@pos=\count99
+\lst@lostspace=\dimen132
+\lst@width=\dimen133
+\lst@newlines=\count100
+\lst@lineno=\count101
+\lst@maxwidth=\dimen134
+ (d:/app/w32tex/share/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
+\c@lstnumber=\count102
+\lst@skipnumbers=\count103
+\lst@framebox=\box44
+) (d:/app/w32tex/share/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2019/02/27 1.8b listings configuration
+))
+Package: listings 2019/02/27 1.8b (Carsten Heinz)
+ (d:/app/w32tex/share/texmf-dist/tex/latex/listings/jlisting.sty
+Package: jlisting 2006/02/20 0.2 (Thor)
+\lst@nextchar=\count104
+\lst@inputfile=\read1
+) (d:/app/w32tex/share/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/02/27 1.8b listings language file
+) (d:/app/w32tex/share/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
 ) (./kimatu_report.aux)
 \openout1 = `kimatu_report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: dvips
@@ -122,26 +152,27 @@ LaTeX Font Info:    ... okay on input line 27.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+\c@lstlisting=\count105
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 28.
+(Font)              <12> on input line 44.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 28.
+(Font)              <8> on input line 44.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 28.
+(Font)              <6> on input line 44.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 34.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 50.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 34.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 50.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 68.
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 86.
-(c:/w32tex/share/texmf-dist/tex/latex/base/omlcmr.fd
+(Font)              <10.95> on input line 80.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 98.
+(d:/app/w32tex/share/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 86.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 98.
 
-Overfull \hbox (23.74976pt too wide) in paragraph at lines 82--94
+Overfull \hbox (23.74976pt too wide) in paragraph at lines 94--106
  [][][][] 
  []
 
@@ -149,148 +180,48 @@ Overfull \hbox (23.74976pt too wide) in paragraph at lines 82--94
 
 ]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 140.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 153.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 140.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 153.
  [2] [3] [4] [5] [6]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 407.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 410.
  [7] [8]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10.95> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 521.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 516.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10.95> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 521.
- [9]
-Overfull \hbox (10.41585pt too wide) in paragraph at lines 575--577
-[]\JY1/mc/m/n/10.95 本プログラムは ， デ ータがすでに \OT1/cmr/m/n/10.95 10000 \JY1/mc/m/n/10.95 件ある状態で新規入力が行われた場合でも一度[] \OT1/cmtt/m/n/10.95 new_profile
- []
-
-[10]
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 516.
+ [9] [10]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 606.
- [11] [12] [13] [14] [15] [16] [17] [18] [19]
-Overfull \hbox (85.50117pt too wide) in paragraph at lines 1509--1509
-[]   \OT1/cmtt/m/n/10 239         fprintf(stderr, "ERROR %d:%s command is not defined.--exec_command()\n",NOTDEFINED,cmd);[] 
- []
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 601.
+ [11] [12] [13] [14] [15]
+
+LaTeX Font Warning: Font shape `JT1/mc/m/it' undefined
+(Font)              using `JT1/mc/m/n' instead on input line 860.
 
 
-Overfull \hbox (96.00108pt too wide) in paragraph at lines 1509--1509
-[]   \OT1/cmtt/m/n/10 249         "E : print specified data","R [filename] : read csv data","W [filename] : write csv data",[] 
- []
+LaTeX Font Warning: Font shape `JY1/mc/m/it' undefined
+(Font)              using `JY1/mc/m/n' instead on input line 860.
 
+[16]
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <9> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 879.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <9> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 879.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 879.
+ [17] [18] [19] [20] [21] [22] [23] [24] [25] (./kimatu_report.aux)
 
-Overfull \hbox (1.5019pt too wide) in paragraph at lines 1509--1509
-[]   \OT1/cmtt/m/n/10 276         fprintf(stderr,"ERROR %d:No record. No print.--cmd_print()\n",NORECORD);[] 
- []
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-Overfull \hbox (75.00127pt too wide) in paragraph at lines 1509--1509
-[]   \OT1/cmtt/m/n/10 291             fprintf(stderr,"ERROR %d:over number of record.--cmd_print()\n",OVERNUMBERRECORD);[] 
- []
-
-
-Overfull \hbox (54.00145pt too wide) in paragraph at lines 1509--1509
-[]   \OT1/cmtt/m/n/10 292             fprintf(stderr,"ERROR %d:number of item is %d\n",NUMITEM,profile_data_nitems);[] 
- []
-
-[20]
-Overfull \hbox (75.00127pt too wide) in paragraph at lines 1509--1509
-[]   \OT1/cmtt/m/n/10 305             fprintf(stderr,"ERROR %d:over number of record.--cmd_print()\n",OVERNUMBERRECORD);[] 
- []
-
-
-Overfull \hbox (54.00145pt too wide) in paragraph at lines 1509--1509
-[]   \OT1/cmtt/m/n/10 306             fprintf(stderr,"ERROR %d:number of item is %d\n",NUMITEM,profile_data_nitems);[] 
- []
-
-
-Overfull \hbox (33.00163pt too wide) in paragraph at lines 1509--1509
-[]   \OT1/cmtt/m/n/10 322     fprintf(stdout,"Birth : %04d-%02d-%02d\n",pro->found.y,pro->found.m,pro->found.d);[] 
- []
-
-
-Overfull \hbox (1.5019pt too wide) in paragraph at lines 1509--1509
-[]   \OT1/cmtt/m/n/10 330         fprintf(stderr,"ERROR %d:No record. No print.--cmd_print()\n",NORECORD);[] 
- []
-
-
-Overfull \hbox (75.00127pt too wide) in paragraph at lines 1509--1509
-[]   \OT1/cmtt/m/n/10 339             fprintf(stderr,"ERROR %d:over number of record.--cmd_print()\n",OVERNUMBERRECORD);[] 
- []
-
-
-Overfull \hbox (54.00145pt too wide) in paragraph at lines 1509--1509
-[]   \OT1/cmtt/m/n/10 340             fprintf(stderr,"ERROR %d:number of item is %d\n",NUMITEM,profile_data_nitems);[] 
- []
-
-[21]
-Overfull \hbox (1.5019pt too wide) in paragraph at lines 1509--1509
-[]   \OT1/cmtt/m/n/10 367         fprintf(stderr,"ERROR %d:openfile error!!!---cmd_write()\n",NOFILEOPEN);[] 
- []
-
-
-Overfull \hbox (1.5019pt too wide) in paragraph at lines 1509--1509
-[]   \OT1/cmtt/m/n/10 392         fprintf(stderr,"ERROR %d:openfile error!!!---cmd_write()\n",NOFILEOPEN);[] 
- []
-
-[22] [23]
-Overfull \hbox (17.25177pt too wide) in paragraph at lines 1509--1509
-[]   \OT1/cmtt/m/n/10 526         fprintf(stderr,"ERROR %d:sort param is 1 to 5.---cmd_sort()\n",PARAMERROR);[] 
- []
-
-
-Overfull \hbox (59.2514pt too wide) in paragraph at lines 1509--1509
-[]   \OT1/cmtt/m/n/10 536             if(compare_profile(&profile_data_store[j],&profile_data_store[j+1],youso) > 0){[] 
- []
-
-[24]
-Overfull \hbox (17.25177pt too wide) in paragraph at lines 1509--1509
-[]   \OT1/cmtt/m/n/10 548         fprintf(stderr,"ERROR %d:sort param is 1 to 5.---cmd_sort()\n",PARAMERROR);[] 
- []
-
-
-Overfull \hbox (69.75131pt too wide) in paragraph at lines 1509--1509
-[]   \OT1/cmtt/m/n/10 570         while (compare_profile(&profile_data_store[i],&profile_data_store[pivot],youso) < 0){[] 
- []
-
-
-Overfull \hbox (69.75131pt too wide) in paragraph at lines 1509--1509
-[]   \OT1/cmtt/m/n/10 573         while (compare_profile(&profile_data_store[pivot],&profile_data_store[j],youso) < 0){[] 
- []
-
-
-Overfull \hbox (27.75168pt too wide) in paragraph at lines 1509--1509
-[]   \OT1/cmtt/m/n/10 595             fprintf(stderr,"ERROR %d:error param.--cmd_delete()\n",OVERNUMBERRECORD);[] 
- []
-
-
-Overfull \hbox (54.00145pt too wide) in paragraph at lines 1509--1509
-[]   \OT1/cmtt/m/n/10 596             fprintf(stderr,"ERROR %d:number of item is %d\n",NUMITEM,profile_data_nitems);[] 
- []
-
-[25]
-Overfull \hbox (1.5019pt too wide) in paragraph at lines 1509--1509
-[]   \OT1/cmtt/m/n/10 610         fprintf(stderr,"ERROR %d:Can't add record--new_profile()\n",OVERNITEMS);[] 
- []
-
-
-Overfull \hbox (232.4999pt too wide) in paragraph at lines 1509--1509
-[]   \OT1/cmtt/m/n/10 616         fprintf(stderr,"ERROR %d:wrong format of input(ex.001,name,1999-01-01,address,other)--new_profile()\n",FORMATINPUT);[] 
- []
-
-
-Overfull \hbox (106.50099pt too wide) in paragraph at lines 1509--1509
-[]   \OT1/cmtt/m/n/10 632         fprintf(stderr,"ERROR %d:wrong format of date.(ex.1999-01-01)--new_profile()\n",FORMATDATE);[] 
- []
-
-[26] (./kimatu_report.aux) ) 
+ ) 
 Here is how much of TeX's memory you used:
- 1213 strings out of 493216
- 16350 string characters out of 6145931
- 106179 words of memory out of 5000000
- 5232 multiletter control sequences out of 15000+600000
- 16407 words of font info for 65 fonts, out of 8000000 for 9000
+ 3247 strings out of 493215
+ 42764 string characters out of 6145920
+ 471709 words of memory out of 5000000
+ 7240 multiletter control sequences out of 15000+600000
+ 17800 words of font info for 71 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 25i,14n,20p,554b,401s stack positions out of 5000i,500n,10000p,500000b,80000s
+ 26i,14n,49p,583b,1794s stack positions out of 5000i,500n,10000p,500000b,80000s
 
-Output written on kimatu_report.dvi (26 pages, 87216 bytes).
+Output written on kimatu_report.dvi (25 pages, 124760 bytes).

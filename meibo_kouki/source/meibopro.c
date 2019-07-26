@@ -3,7 +3,7 @@
  * Author: 09430509
  *
  * Created on 2019/04/10
- * update on 2019/07/24
+ * update on 2019/07/26
  */
 
 #include <stdio.h>
@@ -261,9 +261,14 @@ void cmd_help(){
 }
 
 void cmd_quit(){
-    fprintf(stderr, "END SYSTEM.\n");
-    exit(0);
-    return;
+    fprintf(stderr,"Are you sure you want to quit?(y or n)>>>");
+    if(fgetc(stdin)=='y'){
+        fprintf(stderr, "END SYSTEM.\n");
+        exit(0);
+    }
+    else{
+        return; 
+    }
 }
 
 void cmd_check(){
